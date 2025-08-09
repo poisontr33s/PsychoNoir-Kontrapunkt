@@ -9,7 +9,7 @@ jobs:
   mark-stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v9
+      - uses: actions/stale@28ca1036281a5e5922ead5184a1dc7897d9beb95
         with:
           days-before-stale: 30
           days-before-close: 7
