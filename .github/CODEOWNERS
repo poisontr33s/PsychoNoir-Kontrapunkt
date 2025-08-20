@@ -1,0 +1,28 @@
+# CODEOWNERS file for PsychoNoir-Kontrapunkt repository
+# This file defines the default reviewers for pull requests.
+
+# Global fallback - repository owner
+* @poisontr33s
+
+# GitHub configuration and workflows
+/.github/ @poisontr33s
+/.github/workflows/ @poisontr33s
+
+# Backend Python code
+/backend/python/ @poisontr33s
+
+# Frontend code
+/frontend/ @poisontr33s
+
+# Documentation
+*.md @poisontr33s
+/docs/ @poisontr33s
+
+# Configuration files
+package.json @poisontr33s
+jest.config.js @poisontr33s
+/backend/requirements.txt @poisontr33s
+.gitignore @poisontr33s
+
+# Archive and legacy code
+/arkiv_gamle_ruby_prosjekter/ @poisontr33s

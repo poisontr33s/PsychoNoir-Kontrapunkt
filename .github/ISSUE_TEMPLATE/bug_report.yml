@@ -1,0 +1,45 @@
+---
+name: Bug Report
+about: Create a report to help us improve
+title: '[BUG] '
+labels: ['bug', 'needs-triage']
+assignees: ''
+
+---
+
+## Bug Description
+**Beskrivelse av feilen:**
+En kort og klar beskrivelse av hva feilen er.
+
+## Steps to Reproduce
+**Steg for å reprodusere:**
+1. Gå til '...'
+2. Klikk på '...'
+3. Rull ned til '...'
+4. Se feil
+
+## Expected Behavior
+**Forventet oppførsel:**
+En kort og klar beskrivelse av hva du forventet skulle skje.
+
+## Actual Behavior
+**Faktisk oppførsel:**
+En kort og klar beskrivelse av hva som faktisk skjedde.
+
+## Screenshots
+**Skjermbilder:**
+Hvis aktuelt, legg til skjermbilder for å hjelpe med å forklare problemet.
+
+## Environment
+**Miljø:**
+- OS: [f.eks. iOS]
+- Browser: [f.eks. chrome, safari]
+- Version: [f.eks. 22]
+
+## Additional Context
+**Tilleggskontekst:**
+Legg til annen relevant kontekst om problemet her.
+
+## Psycho-Noir Context
+**Psycho-Noir Kontekst:**
+Hvis relevant, beskriv hvordan denne feilen påvirker den overordnede psycho-noir-opplevelsen eller narrativet.

@@ -1,0 +1,64 @@
+name: "Branch Naming Validation"
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  validate-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Validate Branch Name
+      run: |
+        BRANCH_NAME="${{ github.head_ref }}"
+        echo "Validating branch name: $BRANCH_NAME"
+        
+        # Psycho-Noir themed branch naming patterns
+        VALID_PATTERNS=(
+          "^main$"
+          "^develop$"
+          "^feature/.*"
+          "^fix/.*"
+          "^hotfix/.*"
+          "^release/.*"
+          "^psycho-noir/.*"
+          "^skyskraper/.*"
+          "^rustbelt/.*"
+          "^usynlig-hand/.*"
+          "^copilot/.*"
+          "^experimental/.*"
+          "^archive/.*"
+        )
+        
+        VALID=false
+        for pattern in "${VALID_PATTERNS[@]}"; do
+          if [[ $BRANCH_NAME =~ $pattern ]]; then
+            VALID=true
+            echo "✅ Branch name matches pattern: $pattern"
+            break
+          fi
+        done
+        
+        if [[ $VALID == false ]]; then
+          echo "❌ Branch name '$BRANCH_NAME' does not follow naming conventions"
+          echo ""
+          echo "Valid patterns for Psycho-Noir Kontrapunkt:"
+          echo "  - feature/description    (nye features)"
+          echo "  - fix/description        (bug fixes)"
+          echo "  - hotfix/description     (kritiske fixes)"
+          echo "  - psycho-noir/topic      (rammeverk-utvikling)"
+          echo "  - skyskraper/feature     (høytek systemer)"
+          echo "  - rustbelt/improvement   (overlevelse-mekanismer)"
+          echo "  - usynlig-hand/mystery   (skjulte funksjoner)"
+          echo "  - experimental/idea      (eksperimentell utvikling)"
+          echo ""
+          echo "Eksempler:"
+          echo "  - feature/astrid-surveillance-system"
+          echo "  - fix/iron-maiden-data-processing"
+          echo "  - skyskraper/quantum-ai-predictions"
+          echo "  - rustbelt/scrap-symphony-parser"
+          echo ""
+          exit 1
+        fi
+        
+        echo "🎭 Branch name follows Psycho-Noir conventions!"

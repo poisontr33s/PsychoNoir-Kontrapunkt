@@ -1,0 +1,48 @@
+---
+name: Feature Request
+about: Suggest an idea for this project
+title: '[FEATURE] '
+labels: ['enhancement', 'needs-triage']
+assignees: ''
+
+---
+
+## Feature Description
+**Funksjonsbeskriving:**
+En kort og klar beskrivelse av den nye funksjonen.
+
+## Problem Statement
+**Problemstilling:**
+Er din funksjon relatert til et problem? Beskriv det. F.eks. "Jeg er alltid frustrert når [...]"
+
+## Proposed Solution
+**Foreslått løsning:**
+En kort og klar beskrivelse av hva du ønsker skal skje.
+
+## Alternative Solutions
+**Alternative løsninger:**
+En kort og klar beskrivelse av eventuelle alternative løsninger eller funksjoner du har vurdert.
+
+## Implementation Ideas
+**Implementeringsideer:**
+Hvis du har tekniske ideer om hvordan dette kan implementeres, del dem her.
+
+## Psycho-Noir Integration
+**Psycho-Noir Integrasjon:**
+Hvordan passer denne funksjonen inn i det overordnede "Psycho-Noir Kontrapunkt"-rammeverket? 
+
+- [ ] Beriker Skyskraperen (high-tech, overvåkning, informasjon)
+- [ ] Styrker Rustbeltet (industrielt forfall, overlevelse, improvisasjon) 
+- [ ] Utforsker Den Usynlige Hånd (skjulte manipulasjoner, glitcher)
+- [ ] Annet (spesifiser)
+
+## Additional Context
+**Tilleggskontekst:**
+Legg til annen relevant kontekst eller skjermbilder om funksjonsforespørselen her.
+
+## Priority
+**Prioritet:**
+- [ ] Kritisk (hindrer grunnleggende funksjonalitet)
+- [ ] Høy (betydelig forbedring av brukeropplevelse)
+- [ ] Medium (ønskelig forbedring)
+- [ ] Lav (nice-to-have)

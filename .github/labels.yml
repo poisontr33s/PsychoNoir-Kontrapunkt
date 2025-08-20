@@ -1,0 +1,149 @@
+# Label configuration for Psycho-Noir Kontrapunkt repository
+# This file defines the standardized labels used across the project
+
+# Priority Labels
+- name: "priority: critical"
+  color: "d73a4a"
+  description: "Critical issues that block core functionality"
+
+- name: "priority: high"
+  color: "ff6b6b"
+  description: "High priority issues that should be addressed soon"
+
+- name: "priority: medium"
+  color: "ffa726"
+  description: "Medium priority issues"
+
+- name: "priority: low"
+  color: "4fc3f7"
+  description: "Low priority issues that can be addressed later"
+
+# Type Labels
+- name: "type: bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "type: feature"
+  color: "0e8a16"
+  description: "New feature or enhancement"
+
+- name: "type: documentation"
+  color: "5319e7"
+  description: "Improvements or additions to documentation"
+
+- name: "type: refactor"
+  color: "fbca04"
+  description: "Code refactoring without functional changes"
+
+- name: "type: security"
+  color: "b60205"
+  description: "Security-related issues"
+
+# Status Labels
+- name: "status: needs-triage"
+  color: "ededed"
+  description: "Needs initial review and categorization"
+
+- name: "status: in-progress"
+  color: "0052cc"
+  description: "Currently being worked on"
+
+- name: "status: blocked"
+  color: "5319e7"
+  description: "Blocked by other issues or dependencies"
+
+- name: "status: needs-review"
+  color: "0e8a16"
+  description: "Ready for review"
+
+- name: "status: needs-testing"
+  color: "ffa726"
+  description: "Needs testing before merge"
+
+# Psycho-Noir Specific Labels
+- name: "psycho-noir: skyskraper"
+  color: "2c5aa0"
+  description: "Related to Skyskraper domain (high-tech, surveillance, control)"
+
+- name: "psycho-noir: rustbelt"
+  color: "8b4513"
+  description: "Related to Rustbelt domain (industrial decay, survival, improvisation)"
+
+- name: "psycho-noir: usynlig-hand"
+  color: "4a148c"
+  description: "Related to Den Usynlige Hånd (hidden manipulations, glitches)"
+
+- name: "psycho-noir: core"
+  color: "000000"
+  description: "Core framework concepts and architecture"
+
+- name: "psycho-noir: narrative"
+  color: "6a1b9a"
+  description: "Narrative elements and storytelling aspects"
+
+- name: "psycho-noir: character"
+  color: "8e24aa"
+  description: "Character development and psychology"
+
+# Technical Labels
+- name: "tech: frontend"
+  color: "1976d2"
+  description: "Frontend-related changes"
+
+- name: "tech: backend"
+  color: "388e3c"
+  description: "Backend-related changes"
+
+- name: "tech: python"
+  color: "3776ab"
+  description: "Python-specific code"
+
+- name: "tech: javascript"
+  color: "f7df1e"
+  description: "JavaScript-specific code"
+
+- name: "tech: ci-cd"
+  color: "795548"
+  description: "CI/CD pipeline and automation"
+
+- name: "tech: docker"
+  color: "0db7ed"
+  description: "Docker and containerization"
+
+# Special Labels
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention is needed - good for newcomers"
+
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers to the project"
+
+- name: "question"
+  color: "cc317c"
+  description: "Further information is requested"
+
+- name: "duplicate"
+  color: "cfd3d7"
+  description: "This issue or pull request already exists"
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "This will not be worked on"
+
+- name: "stale"
+  color: "ededed"
+  description: "Inactive for extended period"
+
+- name: "pinned"
+  color: "2c5aa0"
+  description: "Important issue that should not be auto-closed"
+
+# Experimental Labels
+- name: "experimental"
+  color: "ff9800"
+  description: "Experimental features or concepts"
+
+- name: "breaking-change"
+  color: "d73a4a"
+  description: "Changes that break existing functionality"

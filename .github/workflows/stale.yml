@@ -1,0 +1,80 @@
+name: "Stale Issue Management"
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/stale@v9
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        
+        # Days of inactivity before an issue/PR is marked stale
+        days-before-stale: 60
+        
+        # Days of inactivity before a stale issue/PR is closed
+        days-before-close: 14
+        
+        # Issues
+        stale-issue-message: |
+          Denne issue-en har vært inaktiv i 60 dager og er markert som "stale".
+          
+          **Psycho-Noir Status Update Protokoll:**
+          - Hvis denne issue-en fortsatt er relevant, kommenter for å fjerne stale-markering
+          - Hvis ikke relevant lengre, vil den bli lukket om 14 dager
+          - For kritiske Skyskraper-systemer eller Rustbelt-overlevelse issues, tag @poisontr33s
+          
+          *"I Skyskraperen dokumenteres alt. I Rustbeltet overlever kun det som er nødvendig."*
+        
+        close-issue-message: |
+          Denne issue-en er automatisk lukket på grunn av inaktivitet.
+          
+          **Den Usynlige Hånds Arkiv-Protokoll:**
+          - Issue arkivert som inaktiv
+          - Kan gjenåpnes hvis relevant igjen
+          - Kontakt @poisontr33s for kritiske spørsmål
+          
+          *"Selv lukkede systemer kan manifest igjen under riktige betingelser..."*
+        
+        # Pull Requests
+        stale-pr-message: |
+          Denne Pull Request har vært inaktiv i 60 dager og er markert som "stale".
+          
+          **Psycho-Noir Merge Protokoll:**
+          - Hvis denne PR-en fortsatt skal merges, kommenter eller push nye commits
+          - Hvis ikke relevant lengre, vil den bli lukket om 14 dager
+          - Konfliktløsning kan kreves før merge
+          
+          *"I kode-verdenen overlever kun de implementasjonene som vedlikeholdes."*
+        
+        close-pr-message: |
+          Denne Pull Request er automatisk lukket på grunn av inaktivitet.
+          
+          **Kode-Arkiv Protokoll:**
+          - PR arkivert som inaktiv
+          - Kan gjenåpnes hvis arbeidet skal fortsettes
+          - Nye PR-er kan opprettes for lignende funksjonalitet
+          
+          *"Ikke alle kode-fragmenter overlever kompilerings-spøkelsene..."*
+        
+        # Label management
+        stale-issue-label: 'stale'
+        stale-pr-label: 'stale'
+        exempt-issue-labels: 'pinned,security,critical,psycho-noir-core'
+        exempt-pr-labels: 'pinned,security,work-in-progress,psycho-noir-core'
+        
+        # Only issues - don't close PRs automatically (too risky)
+        days-before-pr-close: -1
+        
+        # Additional configuration
+        remove-stale-when-updated: true
+        operations-per-run: 100

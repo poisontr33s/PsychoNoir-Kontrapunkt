@@ -1,0 +1,37 @@
+---
+name: Question
+about: Ask a question about the project
+title: '[QUESTION] '
+labels: ['question', 'needs-response']
+assignees: ''
+
+---
+
+## Question
+**Spørsmål:**
+Hva lurer du på?
+
+## Context
+**Kontekst:**
+Beskriv konteksten rundt spørsmålet ditt. Hva prøver du å oppnå?
+
+## What You've Tried
+**Hva du har prøvd:**
+Beskriv eventuelle forsøk du har gjort for å finne svaret selv.
+
+## Related Documentation
+**Relatert dokumentasjon:**
+Har du sjekket:
+- [ ] README.md
+- [ ] .github/copilot-instructions.md
+- [ ] orchestrina-codex.md
+- [ ] Eksisterende issues og PRs
+
+## Psycho-Noir Relevance
+**Psycho-Noir Relevans:**
+Er spørsmålet ditt relatert til:
+- [ ] Rammeverkets konseptuelle elementer
+- [ ] Karakterutvikling (Astrid Møller, The Iron Maiden, Den Usynlige Hånd)
+- [ ] Tekniske implementasjoner
+- [ ] Narrativ struktur
+- [ ] Annet (spesifiser)
