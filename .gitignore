@@ -162,3 +162,11 @@ consolidated-report/
 deployment-package/
 production-frontend/
 production-backend/
+
+# Psycho-Noir Intelligence System - Runtime Artifacts
+psycho-noir-logs/
+psycho-noir-intelligence/
+psycho-noir-reports/
+*.intelligence.json
+*.classification.json
+*.session.json
