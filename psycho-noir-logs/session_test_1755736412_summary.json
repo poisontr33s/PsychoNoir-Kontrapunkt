@@ -1,0 +1,24 @@
+{
+    "session_id": "test_1755736412",
+    "timestamp": "2025-08-21T00:33:32+00:00",
+    "classification_file": "[0;36m[INFO][0m Classifying logs for session: test_1755736412
+[1;33m[WARNING][0m Classification failed, creating basic result
+[0;32m[SUCCESS][0m Classification completed: /home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-logs/classification_test_1755736412.json
+/home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-logs/classification_test_1755736412.json",
+    "intelligence_file": "[0;36m[INFO][0m Processing intelligence from classification: [0;36m[INFO][0m Classifying logs for session: test_1755736412
+[1;33m[WARNING][0m Classification failed, creating basic result
+[0;32m[SUCCESS][0m Classification completed: /home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-logs/classification_test_1755736412.json
+/home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-logs/classification_test_1755736412.json
+[1;33m[WARNING][0m Intelligence processing failed, creating basic result
+[0;32m[SUCCESS][0m Intelligence processed: /home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-intelligence/intelligence_1755736412.json
+/home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-intelligence/intelligence_1755736412.json", 
+    "report_file": "[0;36m[INFO][0m Generating consciousness report for session: test_1755736412
+[1;33m[WARNING][0m Report generation failed, creating basic HTML report
+[0;32m[SUCCESS][0m Report generated: /home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-reports/report_test_1755736412_1755736412.html
+/home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-reports/report_test_1755736412_1755736412.html",
+    "paths": {
+        "logs": "/home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-logs",
+        "intelligence": "/home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-intelligence",
+        "reports": "/home/runner/work/PsychoNoir-Kontrapunkt/PsychoNoir-Kontrapunkt/psycho-noir-reports"
+    }
+}
