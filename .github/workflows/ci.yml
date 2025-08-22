@@ -1,4 +1,4 @@
-name: "CI - Build and Test"
+name: "CI - Build and Test with Observatory Integration"
 
 on:
   push:
@@ -6,10 +6,67 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  # Observatory Integration
+  OBSERVATORY_ENABLED: true
+  FAILURE_CAPTURE_MODE: true
+
 jobs:
-  # Frontend build job with matrix strategy
+  # Observatory Pre-Flight Check
+  observatory_preflight:
+    name: "Observatory Pre-Flight Check"
+    runs-on: ubuntu-latest
+    outputs:
+      observatory_id: ${{ steps.gen-id.outputs.id }}
+      risk_level: ${{ steps.risk.outputs.level }}
+    
+    steps:
+    - name: Generate Observatory ID
+      id: gen-id
+      run: |
+        OBS_ID="CI_$(date +%Y%m%d_%H%M%S)_${{ github.run_number }}"
+        echo "id=$OBS_ID" >> $GITHUB_OUTPUT
+        echo "🔍 Observatory ID: $OBS_ID"
+    
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Quick Risk Assessment
+      id: risk
+      run: |
+        # Quick risk assessment for CI runs
+        RISK_SCORE=0
+        
+        # Check for common issues
+        if [ ! -f "package.json" ]; then
+          RISK_SCORE=$((RISK_SCORE + 20))
+        fi
+        
+        if [ -f "backend/requirements.txt" ] && grep -q "^\\.$" backend/requirements.txt; then
+          RISK_SCORE=$((RISK_SCORE + 30))
+        fi
+        
+        # Recent commit activity
+        COMMITS=$(git rev-list --count HEAD~5..HEAD 2>/dev/null || echo "0")
+        if [ "$COMMITS" -gt 3 ]; then
+          RISK_SCORE=$((RISK_SCORE + 15))
+        fi
+        
+        if [ "$RISK_SCORE" -lt 20 ]; then
+          LEVEL="LOW"
+        elif [ "$RISK_SCORE" -lt 40 ]; then
+          LEVEL="MEDIUM"
+        else
+          LEVEL="HIGH"
+        fi
+        
+        echo "level=$LEVEL" >> $GITHUB_OUTPUT
+        echo "🎯 Risk Level: $LEVEL (Score: $RISK_SCORE)"
+
+  # Frontend build job with matrix strategy and observatory integration
   frontend-build:
-    name: Build Frontend (${{ matrix.browser }})
+    name: "Build Frontend (${{ matrix.browser }}) [Observatory: ${{ needs.observatory_preflight.outputs.observatory_id }}]"
+    needs: observatory_preflight
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -18,6 +75,20 @@ jobs:
         node-version: [18, 20]
     
     steps:
+    - name: Observatory Runner Start Log
+      run: |
+        echo "🔬 Observatory CI Runner Started"
+        echo "Observatory ID: ${{ needs.observatory_preflight.outputs.observatory_id }}"
+        echo "Risk Level: ${{ needs.observatory_preflight.outputs.risk_level }}"
+        echo "Runner Type: frontend-build"
+        echo "Matrix: ${{ matrix.browser }}-node${{ matrix.node-version }}"
+        echo "Start Time: $(date -u)"
+        
+        # Create observatory tracking
+        mkdir -p ci-observatory
+        echo "Observatory ID: ${{ needs.observatory_preflight.outputs.observatory_id }}" > ci-observatory/frontend-${{ matrix.browser }}-node${{ matrix.node-version }}.log
+        echo "Start: $(date -u)" >> ci-observatory/frontend-${{ matrix.browser }}-node${{ matrix.node-version }}.log
+        echo "Risk: ${{ needs.observatory_preflight.outputs.risk_level }}" >> ci-observatory/frontend-${{ matrix.browser }}-node${{ matrix.node-version }}.log
     - name: Checkout repository
       uses: actions/checkout@v4
     
@@ -49,10 +120,26 @@ jobs:
           dist/frontend/
           frontend/
         retention-days: 30
+    
+    - name: Observatory Runner End Log
+      if: always()
+      run: |
+        echo "End: $(date -u)" >> ci-observatory/frontend-${{ matrix.browser }}-node${{ matrix.node-version }}.log
+        echo "Status: ${{ job.status }}" >> ci-observatory/frontend-${{ matrix.browser }}-node${{ matrix.node-version }}.log
+        echo "🏁 Observatory CI Runner Completed: ${{ job.status }}"
+    
+    - name: Upload Observatory CI Data
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: ci-observatory-frontend-${{ matrix.browser }}-node${{ matrix.node-version }}-${{ github.run_number }}
+        path: ci-observatory/
+        retention-days: 30
 
-  # Backend Python job with matrix strategy  
+  # Backend Python job with matrix strategy and observatory integration
   backend-build:
-    name: Build Backend (${{ matrix.python-version }}, ${{ matrix.os }})
+    name: "Build Backend (${{ matrix.python-version }}, ${{ matrix.os }}) [Observatory: ${{ needs.observatory_preflight.outputs.observatory_id }}]"
+    needs: observatory_preflight
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -61,6 +148,18 @@ jobs:
         python-version: ['3.9', '3.10', '3.11']
     
     steps:
+    - name: Observatory Backend Runner Start Log
+      run: |
+        echo "🔬 Observatory Backend Runner Started"
+        echo "Observatory ID: ${{ needs.observatory_preflight.outputs.observatory_id }}"
+        echo "Matrix: ${{ matrix.os }}-py${{ matrix.python-version }}"
+        echo "Start Time: $(date -u)"
+        
+        # Create observatory tracking
+        mkdir -p ci-observatory
+        echo "Observatory ID: ${{ needs.observatory_preflight.outputs.observatory_id }}" > ci-observatory/backend-${{ matrix.os }}-py${{ matrix.python-version }}.log
+        echo "Start: $(date -u)" >> ci-observatory/backend-${{ matrix.os }}-py${{ matrix.python-version }}.log
+        echo "Risk: ${{ needs.observatory_preflight.outputs.risk_level }}" >> ci-observatory/backend-${{ matrix.os }}-py${{ matrix.python-version }}.log
     - name: Checkout repository
       uses: actions/checkout@v4
     
@@ -121,10 +220,26 @@ jobs:
           backend/python/htmlcov/
           backend/python/coverage.xml
         retention-days: 7
+    
+    - name: Observatory Backend Runner End Log
+      if: always()
+      run: |
+        echo "End: $(date -u)" >> ci-observatory/backend-${{ matrix.os }}-py${{ matrix.python-version }}.log
+        echo "Status: ${{ job.status }}" >> ci-observatory/backend-${{ matrix.os }}-py${{ matrix.python-version }}.log
+        echo "🏁 Observatory Backend Runner Completed: ${{ job.status }}"
+    
+    - name: Upload Observatory Backend Data
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: ci-observatory-backend-${{ matrix.os }}-py${{ matrix.python-version }}-${{ github.run_number }}
+        path: ci-observatory/
+        retention-days: 30
 
-  # Node.js test job
+  # Node.js test job with observatory integration
   node-test:
-    name: Test Node.js (${{ matrix.node-version }}, ${{ matrix.os }})
+    name: "Test Node.js (${{ matrix.node-version }}, ${{ matrix.os }}) [Observatory: ${{ needs.observatory_preflight.outputs.observatory_id }}]"
+    needs: observatory_preflight
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -133,6 +248,12 @@ jobs:
         node-version: [18, 20]
     
     steps:
+    - name: Observatory Node Test Start Log
+      run: |
+        echo "🔬 Observatory Node Test Started"
+        mkdir -p ci-observatory
+        echo "Observatory ID: ${{ needs.observatory_preflight.outputs.observatory_id }}" > ci-observatory/node-test-${{ matrix.os }}-node${{ matrix.node-version }}.log
+        echo "Start: $(date -u)" >> ci-observatory/node-test-${{ matrix.os }}-node${{ matrix.node-version }}.log
     - name: Checkout repository
       uses: actions/checkout@v4
     
@@ -163,14 +284,33 @@ jobs:
           test-results/jest/
           coverage/
         retention-days: 7
+    
+    - name: Observatory Node Test End Log
+      if: always()
+      run: |
+        echo "End: $(date -u)" >> ci-observatory/node-test-${{ matrix.os }}-node${{ matrix.node-version }}.log
+        echo "Status: ${{ job.status }}" >> ci-observatory/node-test-${{ matrix.os }}-node${{ matrix.node-version }}.log
+    
+    - name: Upload Observatory Node Test Data
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: ci-observatory-node-test-${{ matrix.os }}-node${{ matrix.node-version }}-${{ github.run_number }}
+        path: ci-observatory/
+        retention-days: 30
 
-  # Integration job that downloads and combines artifacts
+  # Integration job that downloads and combines artifacts with observatory analysis
   integration:
-    name: Integration Testing
-    needs: [frontend-build, backend-build, node-test]
+    name: "Integration Testing [Observatory: ${{ needs.observatory_preflight.outputs.observatory_id }}]"
+    needs: [observatory_preflight, frontend-build, backend-build, node-test]
     runs-on: ubuntu-latest
     
     steps:
+    - name: Observatory Integration Start
+      run: |
+        echo "🔬 Observatory Integration Analysis Started"
+        echo "Observatory ID: ${{ needs.observatory_preflight.outputs.observatory_id }}"
+        mkdir -p ci-observatory integration-observatory
     - name: Checkout repository
       uses: actions/checkout@v4
     
@@ -195,11 +335,21 @@ jobs:
         path: ./artifacts/test-results/
         merge-multiple: true
     
+    - name: Download CI Observatory Data
+      uses: actions/download-artifact@v4
+      with:
+        pattern: ci-observatory-*
+        path: ./ci-observatory-data/
+        merge-multiple: true
+      continue-on-error: true
+    
     - name: Create integration report
       run: |
         mkdir -p integration-report
         echo "# Integration Report" > integration-report/report.md
         echo "Generated: $(date)" >> integration-report/report.md
+        echo "Observatory ID: ${{ needs.observatory_preflight.outputs.observatory_id }}" >> integration-report/report.md
+        echo "Risk Level: ${{ needs.observatory_preflight.outputs.risk_level }}" >> integration-report/report.md
         echo "" >> integration-report/report.md
         echo "## Frontend Builds" >> integration-report/report.md
         find artifacts/frontend -name "build-info.txt" -exec echo "- {}" \; >> integration-report/report.md
@@ -209,6 +359,22 @@ jobs:
         echo "" >> integration-report/report.md
         echo "## Test Results" >> integration-report/report.md
         find artifacts/test-results -name "*.xml" -exec echo "- {}" \; >> integration-report/report.md
+        
+        # Observatory Analysis
+        echo "" >> integration-report/report.md
+        echo "## 🔬 Observatory Analysis" >> integration-report/report.md
+        TOTAL_RUNNERS=$(find ci-observatory-data -name "*.log" | wc -l)
+        FAILED_RUNNERS=$(grep -l "Status: failure" ci-observatory-data/*.log 2>/dev/null | wc -l)
+        SUCCESS_RUNNERS=$(grep -l "Status: success" ci-observatory-data/*.log 2>/dev/null | wc -l)
+        
+        echo "- **Total CI Runners Monitored:** $TOTAL_RUNNERS" >> integration-report/report.md
+        echo "- **Successful Runners:** $SUCCESS_RUNNERS" >> integration-report/report.md
+        echo "- **Failed Runners:** $FAILED_RUNNERS" >> integration-report/report.md
+        
+        if [ "$TOTAL_RUNNERS" -gt 0 ]; then
+          SUCCESS_RATE=$((SUCCESS_RUNNERS * 100 / TOTAL_RUNNERS))
+          echo "- **Success Rate:** ${SUCCESS_RATE}%" >> integration-report/report.md
+        fi
         
         # List all downloaded artifacts
         echo "" >> integration-report/report.md

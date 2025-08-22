@@ -1,0 +1,665 @@
+name: "Runner Observatory - Digital Necromancy System"
+
+# This workflow implements a comprehensive failure logging and categorization system
+# that captures runner data before failures and builds a knowledge base from crashes
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    # Run every 2 hours to match the failure interval pattern
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+    inputs:
+      force_observatory:
+        description: 'Force run observatory system'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  OBSERVATORY_VERSION: "1.0.0"
+  PSYCHO_NOIR_MODE: "DIGITAL_NECROMANCY"
+  FAILURE_TAXONOMY_LEVEL: "HIERARCHICAL"
+
+jobs:
+  # Pre-execution metadata capture - runs before any other jobs
+  pre_execution_scan:
+    name: "Pre-Execution Observatory Scan"
+    runs-on: ubuntu-latest
+    outputs:
+      scan_id: ${{ steps.generate-scan-id.outputs.scan_id }}
+      system_fingerprint: ${{ steps.system-scan.outputs.fingerprint }}
+      predicted_failure_risk: ${{ steps.risk-assessment.outputs.risk_level }}
+    
+    steps:
+    - name: Generate Observatory Scan ID
+      id: generate-scan-id
+      run: |
+        SCAN_ID="OBSERVATORY_$(date +%Y%m%d_%H%M%S)_${{ github.run_number }}"
+        echo "scan_id=$SCAN_ID" >> $GITHUB_OUTPUT
+        echo "🔍 Observatory Scan ID: $SCAN_ID"
+    
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: System Environment Scan
+      id: system-scan
+      run: |
+        mkdir -p observatory/pre-execution
+        
+        # Capture comprehensive system state
+        echo "# Pre-Execution System Scan" > observatory/pre-execution/system-state.md
+        echo "Scan ID: ${{ steps.generate-scan-id.outputs.scan_id }}" >> observatory/pre-execution/system-state.md
+        echo "Timestamp: $(date -u)" >> observatory/pre-execution/system-state.md
+        echo "Commit: ${{ github.sha }}" >> observatory/pre-execution/system-state.md
+        echo "Event: ${{ github.event_name }}" >> observatory/pre-execution/system-state.md
+        echo "Actor: ${{ github.actor }}" >> observatory/pre-execution/system-state.md
+        echo "" >> observatory/pre-execution/system-state.md
+        
+        # System resources
+        echo "## System Resources" >> observatory/pre-execution/system-state.md
+        echo "CPU Cores: $(nproc)" >> observatory/pre-execution/system-state.md
+        echo "Memory: $(free -h | grep Mem: | awk '{print $2}')" >> observatory/pre-execution/system-state.md
+        echo "Disk Space: $(df -h / | tail -1 | awk '{print $4}')" >> observatory/pre-execution/system-state.md
+        echo "Load Average: $(uptime | cut -d',' -f3-)" >> observatory/pre-execution/system-state.md
+        
+        # Environment variables that might affect runs
+        echo "" >> observatory/pre-execution/system-state.md
+        echo "## Environment Context" >> observatory/pre-execution/system-state.md
+        env | grep -E "(NODE_|PYTHON_|GITHUB_|CI_|RUNNER_)" | sort >> observatory/pre-execution/system-state.md
+        
+        # Generate system fingerprint for correlation
+        FINGERPRINT=$(echo "${{ runner.os }}-${{ github.sha }}-$(date +%H)" | sha256sum | cut -d' ' -f1 | head -c 16)
+        echo "fingerprint=$FINGERPRINT" >> $GITHUB_OUTPUT
+        echo "System Fingerprint: $FINGERPRINT" >> observatory/pre-execution/system-state.md
+    
+    - name: Risk Assessment
+      id: risk-assessment
+      run: |
+        # Analyze repository state for failure predictors
+        echo "# Failure Risk Assessment" > observatory/pre-execution/risk-assessment.md
+        
+        # Check for common failure indicators
+        RISK_SCORE=0
+        
+        # Package.json issues
+        if [ -f "package.json" ]; then
+          if ! npm list --depth=0 >/dev/null 2>&1; then
+            RISK_SCORE=$((RISK_SCORE + 30))
+            echo "- Package dependency conflicts detected (+30)" >> observatory/pre-execution/risk-assessment.md
+          fi
+        fi
+        
+        # Requirements.txt issues
+        if [ -f "backend/requirements.txt" ]; then
+          if grep -q "^\\.$" backend/requirements.txt; then
+            RISK_SCORE=$((RISK_SCORE + 25))
+            echo "- Invalid requirements.txt detected (+25)" >> observatory/pre-execution/risk-assessment.md
+          fi
+        fi
+        
+        # Recent commit frequency (high frequency = higher instability)
+        RECENT_COMMITS=$(git rev-list --count HEAD~10..HEAD 2>/dev/null || echo "0")
+        if [ "$RECENT_COMMITS" -gt 5 ]; then
+          RISK_SCORE=$((RISK_SCORE + 15))
+          echo "- High commit frequency detected: $RECENT_COMMITS commits (+15)" >> observatory/pre-execution/risk-assessment.md
+        fi
+        
+        # Time of day factor (some hours have higher failure rates)
+        HOUR=$(date +%H)
+        if [ "$HOUR" -ge 14 ] && [ "$HOUR" -le 16 ]; then
+          RISK_SCORE=$((RISK_SCORE + 10))
+          echo "- Peak failure time window (14:00-16:00 UTC) (+10)" >> observatory/pre-execution/risk-assessment.md
+        fi
+        
+        # Determine risk level
+        if [ "$RISK_SCORE" -lt 25 ]; then
+          RISK_LEVEL="LOW"
+        elif [ "$RISK_SCORE" -lt 50 ]; then
+          RISK_LEVEL="MEDIUM"
+        else
+          RISK_LEVEL="HIGH"
+        fi
+        
+        echo "risk_level=$RISK_LEVEL" >> $GITHUB_OUTPUT
+        echo "" >> observatory/pre-execution/risk-assessment.md
+        echo "**Total Risk Score: $RISK_SCORE**" >> observatory/pre-execution/risk-assessment.md
+        echo "**Risk Level: $RISK_LEVEL**" >> observatory/pre-execution/risk-assessment.md
+    
+    - name: Upload Pre-Execution Data
+      uses: actions/upload-artifact@v4
+      with:
+        name: observatory-pre-execution-${{ steps.generate-scan-id.outputs.scan_id }}
+        path: observatory/pre-execution/
+        retention-days: 90
+
+  # Matrix of potential failure points - intentionally comprehensive to capture patterns
+  failure_matrix_scan:
+    name: "Failure Matrix: ${{ matrix.category }}-${{ matrix.variant }}"
+    needs: pre_execution_scan
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true  # Always continue to gather data even from failures
+    strategy:
+      fail-fast: false
+      max-parallel: 8  # Limit parallel jobs to prevent resource exhaustion
+      matrix:
+        include:
+          # Frontend combinations (high failure potential)
+          - category: "frontend"
+            variant: "chrome-node18"
+            os: "ubuntu-latest"
+            node_version: "18"
+            browser: "chrome"
+          - category: "frontend"
+            variant: "firefox-node20"
+            os: "ubuntu-latest"
+            node_version: "20"
+            browser: "firefox"
+          - category: "frontend"
+            variant: "safari-node18"
+            os: "macos-latest"
+            node_version: "18"
+            browser: "safari"
+          
+          # Backend combinations (Python version conflicts common)
+          - category: "backend"
+            variant: "py39-ubuntu"
+            os: "ubuntu-latest"
+            python_version: "3.9"
+          - category: "backend"
+            variant: "py310-windows"
+            os: "windows-latest"
+            python_version: "3.10"
+          - category: "backend"
+            variant: "py311-macos"
+            os: "macos-latest"
+            python_version: "3.11"
+          
+          # Security scans (CodeQL often fails)
+          - category: "security"
+            variant: "python-analysis"
+            os: "ubuntu-latest"
+            language: "python"
+          - category: "security"
+            variant: "ruby-analysis"
+            os: "ubuntu-latest"
+            language: "ruby"
+          
+          # Integration tests (complex failure patterns)
+          - category: "integration"
+            variant: "cross-platform"
+            os: "ubuntu-latest"
+          
+          # Deployment simulation (resource intensive)
+          - category: "deployment"
+            variant: "production-sim"
+            os: "ubuntu-latest"
+
+    steps:
+    - name: Observatory Runner Initialization
+      run: |
+        echo "🔬 Observatory Runner Starting"
+        echo "Category: ${{ matrix.category }}"
+        echo "Variant: ${{ matrix.variant }}"
+        echo "OS: ${{ matrix.os }}"
+        echo "Scan ID: ${{ needs.pre_execution_scan.outputs.scan_id }}"
+        echo "Predicted Risk: ${{ needs.pre_execution_scan.outputs.predicted_failure_risk }}"
+        
+        # Create runner-specific directory
+        mkdir -p observatory/runners/${{ matrix.category }}-${{ matrix.variant }}
+        
+        # Log runner startup state
+        echo "# Runner Observatory Log" > observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "Scan ID: ${{ needs.pre_execution_scan.outputs.scan_id }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "Category: ${{ matrix.category }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "Variant: ${{ matrix.variant }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "OS: ${{ runner.os }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "Architecture: ${{ runner.arch }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "Start Time: $(date -u)" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "System Fingerprint: ${{ needs.pre_execution_scan.outputs.system_fingerprint }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        
+        # Capture initial process state
+        echo "" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        echo "## Initial System State" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        ps aux | head -10 >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/startup.md
+        
+        # Set up failure monitoring
+        echo "OBSERVATORY_RUNNER_ID=${{ matrix.category }}-${{ matrix.variant }}" >> $GITHUB_ENV
+        echo "OBSERVATORY_START_TIME=$(date +%s)" >> $GITHUB_ENV
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Category-Specific Setup and Execution
+      id: category-execution
+      run: |
+        echo "🎭 Executing ${{ matrix.category }} variant ${{ matrix.variant }}"
+        
+        # Initialize outcome tracking
+        OUTCOME="UNKNOWN"
+        ERROR_TYPE="NONE"
+        ERROR_DETAILS=""
+        
+        case "${{ matrix.category }}" in
+          "frontend")
+            echo "Setting up frontend environment..."
+            if [ -n "${{ matrix.node_version }}" ]; then
+              echo "Node version: ${{ matrix.node_version }}"
+              # Simulate frontend setup that might fail
+              if ! npm --version; then
+                OUTCOME="FAILURE"
+                ERROR_TYPE="ENVIRONMENT_SETUP"
+                ERROR_DETAILS="npm not available"
+              else
+                # Try to install dependencies
+                if npm ci; then
+                  if npm run build 2>&1 | tee build.log; then
+                    OUTCOME="SUCCESS"
+                  else
+                    OUTCOME="FAILURE"
+                    ERROR_TYPE="BUILD_FAILURE"
+                    ERROR_DETAILS="$(tail -5 build.log)"
+                  fi
+                else
+                  OUTCOME="FAILURE"
+                  ERROR_TYPE="DEPENDENCY_FAILURE"
+                  ERROR_DETAILS="npm ci failed"
+                fi
+              fi
+            fi
+            ;;
+          
+          "backend")
+            echo "Setting up backend environment..."
+            if [ -n "${{ matrix.python_version }}" ]; then
+              # Simulate backend setup
+              if ! python3 --version; then
+                OUTCOME="FAILURE"
+                ERROR_TYPE="ENVIRONMENT_SETUP"
+                ERROR_DETAILS="python3 not available"
+              else
+                # Try Python package operations
+                if pip install --upgrade pip; then
+                  if [ -f "backend/requirements.txt" ]; then
+                    if pip install -r backend/requirements.txt; then
+                      OUTCOME="SUCCESS"
+                    else
+                      OUTCOME="FAILURE"
+                      ERROR_TYPE="DEPENDENCY_FAILURE"
+                      ERROR_DETAILS="requirements.txt installation failed"
+                    fi
+                  else
+                    OUTCOME="SUCCESS"
+                  fi
+                else
+                  OUTCOME="FAILURE"
+                  ERROR_TYPE="ENVIRONMENT_SETUP"
+                  ERROR_DETAILS="pip upgrade failed"
+                fi
+              fi
+            fi
+            ;;
+          
+          "security")
+            echo "Running security analysis..."
+            # Simulate security scan that might timeout or fail
+            if [ "${{ matrix.language }}" = "python" ]; then
+              if find . -name "*.py" | head -5; then
+                OUTCOME="SUCCESS"
+              else
+                OUTCOME="FAILURE"
+                ERROR_TYPE="NO_ANALYSIS_TARGET"
+                ERROR_DETAILS="No Python files found"
+              fi
+            elif [ "${{ matrix.language }}" = "ruby" ]; then
+              if find . -name "*.rb" | head -5; then
+                OUTCOME="SUCCESS"
+              else
+                OUTCOME="FAILURE"
+                ERROR_TYPE="NO_ANALYSIS_TARGET"
+                ERROR_DETAILS="No Ruby files found"
+              fi
+            fi
+            ;;
+          
+          "integration")
+            echo "Running integration tests..."
+            # Simulate complex integration that might fail
+            if [ -d "frontend" ] && [ -d "backend" ]; then
+              OUTCOME="SUCCESS"
+            else
+              OUTCOME="FAILURE"
+              ERROR_TYPE="MISSING_COMPONENTS"
+              ERROR_DETAILS="Required directories not found"
+            fi
+            ;;
+          
+          "deployment")
+            echo "Simulating deployment..."
+            # Resource-intensive simulation that might fail
+            if df -h | grep -q "100%"; then
+              OUTCOME="FAILURE"
+              ERROR_TYPE="DISK_SPACE"
+              ERROR_DETAILS="Insufficient disk space"
+            else
+              OUTCOME="SUCCESS"
+            fi
+            ;;
+          
+          *)
+            OUTCOME="FAILURE"
+            ERROR_TYPE="UNKNOWN_CATEGORY"
+            ERROR_DETAILS="Unrecognized category: ${{ matrix.category }}"
+            ;;
+        esac
+        
+        # Log the outcome
+        echo "outcome=$OUTCOME" >> $GITHUB_OUTPUT
+        echo "error_type=$ERROR_TYPE" >> $GITHUB_OUTPUT
+        echo "error_details=$ERROR_DETAILS" >> $GITHUB_OUTPUT
+        
+        echo "🎯 Execution completed: $OUTCOME"
+        if [ "$OUTCOME" = "FAILURE" ]; then
+          echo "💀 Error Type: $ERROR_TYPE"
+          echo "📝 Details: $ERROR_DETAILS"
+        fi
+
+    - name: Observatory Outcome Logging
+      if: always()
+      run: |
+        END_TIME=$(date +%s)
+        DURATION=$((END_TIME - OBSERVATORY_START_TIME))
+        
+        # Create comprehensive outcome log
+        echo "# Observatory Outcome Report" > observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Scan ID: ${{ needs.pre_execution_scan.outputs.scan_id }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Runner ID: $OBSERVATORY_RUNNER_ID" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "End Time: $(date -u)" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Duration: ${DURATION}s" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Outcome: ${{ steps.category-execution.outputs.outcome }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Error Type: ${{ steps.category-execution.outputs.error_type }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Error Details: ${{ steps.category-execution.outputs.error_details }}" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        
+        # Add system state at completion
+        echo "" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "## Final System State" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Memory Usage: $(free -h | grep Mem:)" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Disk Usage: $(df -h /)" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        echo "Process Count: $(ps aux | wc -l)" >> observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.md
+        
+        # Create machine-readable outcome data
+        cat > observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/outcome.json << EOF
+        {
+          "scan_id": "${{ needs.pre_execution_scan.outputs.scan_id }}",
+          "runner_id": "$OBSERVATORY_RUNNER_ID",
+          "category": "${{ matrix.category }}",
+          "variant": "${{ matrix.variant }}",
+          "os": "${{ runner.os }}",
+          "outcome": "${{ steps.category-execution.outputs.outcome }}",
+          "error_type": "${{ steps.category-execution.outputs.error_type }}",
+          "error_details": "${{ steps.category-execution.outputs.error_details }}",
+          "duration_seconds": $DURATION,
+          "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "system_fingerprint": "${{ needs.pre_execution_scan.outputs.system_fingerprint }}",
+          "predicted_risk": "${{ needs.pre_execution_scan.outputs.predicted_failure_risk }}"
+        }
+        EOF
+
+    - name: Upload Runner Observatory Data
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: observatory-runner-${{ matrix.category }}-${{ matrix.variant }}-${{ github.run_number }}
+        path: observatory/runners/${{ matrix.category }}-${{ matrix.variant }}/
+        retention-days: 30
+
+  # Failure Analysis and Categorization Engine
+  failure_taxonomist:
+    name: "Failure Taxonomist - Digital Necromancy Analysis"
+    needs: [pre_execution_scan, failure_matrix_scan]
+    runs-on: ubuntu-latest
+    if: always()  # Always run to process whatever data we collected
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Download All Observatory Data
+      uses: actions/download-artifact@v4
+      with:
+        pattern: observatory-*
+        path: ./observatory-data/
+        merge-multiple: true
+    
+    - name: Taxonomic Analysis Engine
+      run: |
+        mkdir -p failure-library/{categories,patterns,evolution}
+        
+        echo "🧬 Running Digital Necromancy Analysis..."
+        echo "# Failure Taxonomy Report" > failure-library/taxonomy-report.md
+        echo "Generated: $(date -u)" >> failure-library/taxonomy-report.md
+        echo "Scan ID: ${{ needs.pre_execution_scan.outputs.scan_id }}" >> failure-library/taxonomy-report.md
+        echo "" >> failure-library/taxonomy-report.md
+        
+        # Initialize counters
+        TOTAL_RUNNERS=0
+        SUCCESS_COUNT=0
+        FAILURE_COUNT=0
+        UNKNOWN_COUNT=0
+        
+        # Process each outcome.json file
+        echo "## Runner Outcomes Analysis" >> failure-library/taxonomy-report.md
+        
+        declare -A ERROR_TYPES
+        declare -A CATEGORY_STATS
+        declare -A OS_PATTERNS
+        
+        for outcome_file in $(find observatory-data -name "outcome.json" 2>/dev/null || echo ""); do
+          if [ -f "$outcome_file" ]; then
+            TOTAL_RUNNERS=$((TOTAL_RUNNERS + 1))
+            
+            # Extract data using basic shell tools (avoiding jq dependency)
+            OUTCOME=$(grep '"outcome"' "$outcome_file" | cut -d'"' -f4)
+            ERROR_TYPE=$(grep '"error_type"' "$outcome_file" | cut -d'"' -f4)
+            CATEGORY=$(grep '"category"' "$outcome_file" | cut -d'"' -f4)
+            OS=$(grep '"os"' "$outcome_file" | cut -d'"' -f4)
+            DURATION=$(grep '"duration_seconds"' "$outcome_file" | cut -d':' -f2 | tr -d ' ,')
+            
+            case "$OUTCOME" in
+              "SUCCESS") SUCCESS_COUNT=$((SUCCESS_COUNT + 1)) ;;
+              "FAILURE") FAILURE_COUNT=$((FAILURE_COUNT + 1)) ;;
+              *) UNKNOWN_COUNT=$((UNKNOWN_COUNT + 1)) ;;
+            esac
+            
+            # Count error types
+            if [ "$ERROR_TYPE" != "NONE" ]; then
+              ERROR_TYPES["$ERROR_TYPE"]=$((${ERROR_TYPES["$ERROR_TYPE"]:-0} + 1))
+            fi
+            
+            # Count category stats
+            CATEGORY_STATS["$CATEGORY"]=$((${CATEGORY_STATS["$CATEGORY"]:-0} + 1))
+            
+            # Track OS patterns
+            OS_PATTERNS["$OS"]=$((${OS_PATTERNS["$OS"]:-0} + 1))
+            
+            echo "- $CATEGORY ($OS): $OUTCOME [$ERROR_TYPE] (${DURATION}s)" >> failure-library/taxonomy-report.md
+          fi
+        done
+        
+        # Summary statistics
+        echo "" >> failure-library/taxonomy-report.md
+        echo "## Summary Statistics" >> failure-library/taxonomy-report.md
+        echo "Total Runners: $TOTAL_RUNNERS" >> failure-library/taxonomy-report.md
+        echo "Successful: $SUCCESS_COUNT" >> failure-library/taxonomy-report.md
+        echo "Failed: $FAILURE_COUNT" >> failure-library/taxonomy-report.md
+        echo "Unknown: $UNKNOWN_COUNT" >> failure-library/taxonomy-report.md
+        
+        if [ "$TOTAL_RUNNERS" -gt 0 ]; then
+          SUCCESS_RATE=$((SUCCESS_COUNT * 100 / TOTAL_RUNNERS))
+          FAILURE_RATE=$((FAILURE_COUNT * 100 / TOTAL_RUNNERS))
+          echo "Success Rate: ${SUCCESS_RATE}%" >> failure-library/taxonomy-report.md
+          echo "Failure Rate: ${FAILURE_RATE}%" >> failure-library/taxonomy-report.md
+        fi
+        
+        # Error type analysis
+        echo "" >> failure-library/taxonomy-report.md
+        echo "## Error Type Taxonomy" >> failure-library/taxonomy-report.md
+        for error_type in "${!ERROR_TYPES[@]}"; do
+          echo "- $error_type: ${ERROR_TYPES[$error_type]} occurrences" >> failure-library/taxonomy-report.md
+        done
+        
+        # Category analysis
+        echo "" >> failure-library/taxonomy-report.md
+        echo "## Category Analysis" >> failure-library/taxonomy-report.md
+        for category in "${!CATEGORY_STATS[@]}"; do
+          echo "- $category: ${CATEGORY_STATS[$category]} runners" >> failure-library/taxonomy-report.md
+        done
+        
+        # OS pattern analysis
+        echo "" >> failure-library/taxonomy-report.md
+        echo "## OS Pattern Analysis" >> failure-library/taxonomy-report.md
+        for os in "${!OS_PATTERNS[@]}"; do
+          echo "- $os: ${OS_PATTERNS[$os]} runners" >> failure-library/taxonomy-report.md
+        done
+
+    - name: Create Failure Knowledge Base
+      run: |
+        echo "📚 Building Failure Knowledge Base..."
+        
+        # Create hierarchical categorization
+        mkdir -p failure-library/knowledge-base/{environment,dependency,build,security,integration}
+        
+        # Environment failures
+        echo "# Environment Setup Failures" > failure-library/knowledge-base/environment/README.md
+        echo "Failures related to system environment, missing tools, or configuration issues" >> failure-library/knowledge-base/environment/README.md
+        grep -r "ENVIRONMENT_SETUP" observatory-data/ > failure-library/knowledge-base/environment/instances.txt 2>/dev/null || echo "No environment failures found" > failure-library/knowledge-base/environment/instances.txt
+        
+        # Dependency failures
+        echo "# Dependency Resolution Failures" > failure-library/knowledge-base/dependency/README.md
+        echo "Failures related to package installation, version conflicts, or missing dependencies" >> failure-library/knowledge-base/dependency/README.md
+        grep -r "DEPENDENCY_FAILURE" observatory-data/ > failure-library/knowledge-base/dependency/instances.txt 2>/dev/null || echo "No dependency failures found" > failure-library/knowledge-base/dependency/instances.txt
+        
+        # Build failures
+        echo "# Build Process Failures" > failure-library/knowledge-base/build/README.md
+        echo "Failures during compilation, transpilation, or asset generation" >> failure-library/knowledge-base/build/README.md
+        grep -r "BUILD_FAILURE" observatory-data/ > failure-library/knowledge-base/build/instances.txt 2>/dev/null || echo "No build failures found" > failure-library/knowledge-base/build/instances.txt
+        
+        # Security failures
+        echo "# Security Analysis Failures" > failure-library/knowledge-base/security/README.md
+        echo "Failures in code scanning, vulnerability detection, or security tooling" >> failure-library/knowledge-base/security/README.md
+        grep -r "NO_ANALYSIS_TARGET" observatory-data/ > failure-library/knowledge-base/security/instances.txt 2>/dev/null || echo "No security failures found" > failure-library/knowledge-base/security/instances.txt
+        
+        # Integration failures
+        echo "# Integration Test Failures" > failure-library/knowledge-base/integration/README.md
+        echo "Failures in component integration, cross-platform compatibility, or system tests" >> failure-library/knowledge-base/integration/README.md
+        grep -r "MISSING_COMPONENTS" observatory-data/ > failure-library/knowledge-base/integration/instances.txt 2>/dev/null || echo "No integration failures found" > failure-library/knowledge-base/integration/instances.txt
+
+    - name: Generate Evolution Patterns
+      run: |
+        echo "🧬 Analyzing Evolution Patterns..."
+        
+        # Create temporal analysis
+        echo "# Failure Evolution Patterns" > failure-library/evolution/temporal-analysis.md
+        echo "Analysis of how failures change over time and correlation patterns" >> failure-library/evolution/temporal-analysis.md
+        echo "" >> failure-library/evolution/temporal-analysis.md
+        
+        # Risk correlation analysis
+        echo "## Risk Prediction vs Actual Outcomes" >> failure-library/evolution/temporal-analysis.md
+        PREDICTED_RISK="${{ needs.pre_execution_scan.outputs.predicted_failure_risk }}"
+        echo "Predicted Risk Level: $PREDICTED_RISK" >> failure-library/evolution/temporal-analysis.md
+        
+        if [ "$FAILURE_COUNT" -gt "$SUCCESS_COUNT" ]; then
+          echo "Actual Outcome: HIGH_FAILURE_RATE" >> failure-library/evolution/temporal-analysis.md
+          if [ "$PREDICTED_RISK" = "HIGH" ]; then
+            echo "Prediction Accuracy: CORRECT" >> failure-library/evolution/temporal-analysis.md
+          else
+            echo "Prediction Accuracy: UNDERESTIMATED" >> failure-library/evolution/temporal-analysis.md
+          fi
+        else
+          echo "Actual Outcome: LOW_FAILURE_RATE" >> failure-library/evolution/temporal-analysis.md
+          if [ "$PREDICTED_RISK" = "LOW" ]; then
+            echo "Prediction Accuracy: CORRECT" >> failure-library/evolution/temporal-analysis.md
+          else
+            echo "Prediction Accuracy: OVERESTIMATED" >> failure-library/evolution/temporal-analysis.md
+          fi
+        fi
+        
+        # Create machine-readable evolution data
+        cat > failure-library/evolution/evolution-data.json << EOF
+        {
+          "scan_id": "${{ needs.pre_execution_scan.outputs.scan_id }}",
+          "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "predicted_risk": "$PREDICTED_RISK",
+          "total_runners": $TOTAL_RUNNERS,
+          "success_count": $SUCCESS_COUNT,
+          "failure_count": $FAILURE_COUNT,
+          "unknown_count": $UNKNOWN_COUNT,
+          "system_fingerprint": "${{ needs.pre_execution_scan.outputs.system_fingerprint }}"
+        }
+        EOF
+
+    - name: Run Advanced Failure Analysis Engine
+      run: |
+        echo "🚀 Running Advanced Failure Analysis Engine..."
+        
+        # Make analysis script executable
+        chmod +x .github/scripts/failure-analysis.sh
+        
+        # Run comprehensive analysis
+        .github/scripts/failure-analysis.sh comprehensive observatory-data failure-library/advanced-analysis
+        
+        # Integration with existing analysis
+        if [ -f "failure-library/advanced-analysis/analysis-summary.json" ]; then
+          echo "## 🧬 Advanced Analysis Results" >> failure-library/taxonomy-report.md
+          echo "" >> failure-library/taxonomy-report.md
+          
+          # Extract key metrics from JSON
+          ADVANCED_SUCCESS_RATE=$(grep '"success_rate"' failure-library/advanced-analysis/analysis-summary.json | cut -d':' -f2 | tr -d ' ,%')
+          ADVANCED_FAILURE_RATE=$(grep '"failure_rate"' failure-library/advanced-analysis/analysis-summary.json | cut -d':' -f2 | tr -d ' ,%')
+          
+          echo "- **Advanced Success Rate**: ${ADVANCED_SUCCESS_RATE}%" >> failure-library/taxonomy-report.md
+          echo "- **Advanced Failure Rate**: ${ADVANCED_FAILURE_RATE}%" >> failure-library/taxonomy-report.md
+          echo "- **Detailed Analysis**: See \`advanced-analysis/reports/\` for comprehensive breakdown" >> failure-library/taxonomy-report.md
+        fi
+
+    - name: Upload Failure Library
+      uses: actions/upload-artifact@v4
+      with:
+        name: failure-library-${{ needs.pre_execution_scan.outputs.scan_id }}
+        path: failure-library/
+        retention-days: 365  # Keep library data for a year
+
+    - name: Create Observatory Summary
+      run: |
+        echo "# 🔬 Observatory Digital Necromancy Summary" > observatory-summary.md
+        echo "**Scan ID:** ${{ needs.pre_execution_scan.outputs.scan_id }}" >> observatory-summary.md
+        echo "**Generated:** $(date -u)" >> observatory-summary.md
+        echo "**System Fingerprint:** ${{ needs.pre_execution_scan.outputs.system_fingerprint }}" >> observatory-summary.md
+        echo "**Predicted Risk:** ${{ needs.pre_execution_scan.outputs.predicted_failure_risk }}" >> observatory-summary.md
+        echo "" >> observatory-summary.md
+        echo "## 📊 Execution Results" >> observatory-summary.md
+        echo "- **Total Runners:** $TOTAL_RUNNERS" >> observatory-summary.md
+        echo "- **Successful:** $SUCCESS_COUNT" >> observatory-summary.md
+        echo "- **Failed:** $FAILURE_COUNT" >> observatory-summary.md
+        echo "- **Unknown:** $UNKNOWN_COUNT" >> observatory-summary.md
+        echo "" >> observatory-summary.md
+        echo "## 🎭 Psycho-Noir Integration" >> observatory-summary.md
+        echo "The Observatory has successfully extracted digital essence from $TOTAL_RUNNERS failed runners," >> observatory-summary.md
+        echo "cataloging their final moments in our taxonomic necropolis. Each failure becomes" >> observatory-summary.md
+        echo "a data point in our evolving understanding of systemic chaos patterns." >> observatory-summary.md
+        echo "" >> observatory-summary.md
+        echo "**Failure Library Location:** \`failure-library-${{ needs.pre_execution_scan.outputs.scan_id }}\`" >> observatory-summary.md
+        echo "**Observatory Data:** \`observatory-data/\`" >> observatory-summary.md
+        
+        # Display summary
+        cat observatory-summary.md
+
+    - name: Upload Observatory Summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: observatory-summary-${{ needs.pre_execution_scan.outputs.scan_id }}
+        path: observatory-summary.md
+        retention-days: 90
