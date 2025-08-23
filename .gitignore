@@ -35,17 +35,27 @@ pip-log.txt
 pip-delete-this-directory.txt
 .pytest_cache/
 
-# Node.js
+# PNPM
+.pnpm-store/
+.pnpm-debug.log*
+pnpm-lock.yaml
+
+# NPM (legacy - repository migrated to PNPM)
 node_modules/
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.npm/
-*.log
+package-lock.json
 
-# NPM cache and logs
+# NPM cache and logs (Windows and Unix paths) 
 .npm/_logs/
 .npm/_cacache/
+**/.npm/_cacache/
+**/C:\Users\*\.npm/
+C:\Users\*\.npm/
+*/.npm/
+
+# Windows npm cache paths (absolute paths should not be committed)
+C:\Users\eldno\.npm/
+C:\Users\*\.npm/
 
 # IDE
 .vscode/
@@ -56,4 +66,7 @@ yarn-error.log*
 # OS
 .DS_Store
 Thumbs.db
-C:\Users\eldno\.npm
+
+# Windows npm cache paths (absolute and relative)
+C:\Users\eldno\.npm/
+C:\Users\*\.npm/

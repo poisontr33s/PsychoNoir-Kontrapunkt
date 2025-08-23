@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Psycho-Noir Kontrapunkt custom styles */
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-skyskraperen-900 text-skyskraperen-100;
+  }
+}
+
+@layer components {
+  .psycho-noir-glitch {
+    @apply animate-glitch;
+    text-shadow: 
+      -1px -1px 0 #ff0000,
+      1px 1px 0 #00ff00,
+      -1px 1px 0 #0000ff;
+  }
+  
+  .skyskraperen-interface {
+    @apply bg-gradient-to-br from-skyskraperen-800 to-skyskraperen-900 
+           border border-skyskraperen-600 
+           shadow-lg backdrop-blur-sm;
+  }
+  
+  .rustbeltet-interface {
+    @apply bg-gradient-to-br from-rustbeltet-800 to-rustbeltet-900 
+           border border-rustbeltet-600 
+           shadow-lg backdrop-blur-sm;
+  }
+  
+  .observatory-monitor {
+    @apply font-mono text-sm bg-black text-green-400 
+           p-4 rounded border border-green-500/30
+           shadow-inner;
+  }
+}
+
+@layer utilities {
+  .text-shadow-noir {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .digital-necromancy {
+    @apply animate-pulse-slow filter grayscale hover:grayscale-0 
+           transition-all duration-500;
+  }
+}

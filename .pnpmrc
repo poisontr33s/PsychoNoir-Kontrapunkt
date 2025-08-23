@@ -1,0 +1,40 @@
+# PNPM configuration for PsychoNoir-Kontrapunkt
+# Stalwart Observatory v3.0 - Claude 4.0 Sonnet implementation
+
+# Store settings
+store-dir=.pnpm-store
+virtual-store-dir=.pnpm
+
+# Performance and reliability
+auto-install-peers=true
+dedupe-peer-dependents=true
+enable-pre-post-scripts=true
+fund=false
+audit-level=moderate
+
+# Monorepo settings
+shared-workspace-lockfile=true
+link-workspace-packages=true
+prefer-workspace-packages=true
+
+# Registry configuration
+registry=https://registry.npmjs.org/
+
+# Progress and logging
+progress=true
+reporter=default
+loglevel=notice
+
+# Security
+save-exact=true
+strict-peer-dependencies=false
+
+# Psycho-Noir thematic configuration
+# Digital necromancy for failed dependencies
+resolution-mode=highest
+prefer-offline=false
+
+# The Observatory watches all package resolutions
+# Den Usynlige Hånd observes through dependency graphs
+shamefully-hoist=false
+side-effects-cache=true

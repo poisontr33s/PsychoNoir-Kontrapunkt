@@ -1,0 +1,14 @@
+# PNPM Workspace Configuration
+# Stalwart Observatory v3.0 - Claude 4.0 Sonnet Implementation
+
+packages:
+  - 'frontend'
+  - 'backend/**'
+  - 'tests/**'
+  - '!**/node_modules/**'
+  - '!**/.pnpm-store/**'
+
+# Psycho-Noir Observatory workspace structure
+# Skyskraperen: frontend (precise UI control)
+# Rustbeltet: backend/** (adaptive backend services)  
+# Den Usynlige Hånd: tests/** (pattern detection)

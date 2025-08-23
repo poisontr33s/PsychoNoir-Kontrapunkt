@@ -1,0 +1,47 @@
+{
+  "name": "@psycho-noir/frontend-skyskraperen",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Skyskraperen - Frontend precision interface for PsychoNoir Kontrapunkt",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
+    "format": "prettier --write .",
+    "tailwind:build": "tailwindcss -i ./styles/input.css -o ./dist/output.css --watch",
+    "tailwind:minify": "tailwindcss -i ./styles/input.css -o ./dist/output.min.css --minify",
+    "clean": "rm -rf dist node_modules .vite",
+    "observatory:scan": "echo '🦾 Frontend Observatory Scan' && pnpm lint && pnpm build"
+  },
+  "dependencies": {
+    "vite": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-legacy": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.45.0",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "psycho-noir",
+    "skyskraperen",
+    "frontend",
+    "vite",
+    "tailwind"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poisontr33s/PsychoNoir-Kontrapunkt.git",
+    "directory": "frontend"
+  }
+}
