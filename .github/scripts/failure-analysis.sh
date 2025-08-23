@@ -166,8 +166,8 @@ generate_machine_data() {
     "successful_runs": $successful_runs,
     "failed_runs": $failed_runs,
     "unknown_runs": $unknown_runs,
-    "success_rate": $(if [ "$total_runs" -gt 0 ]; then echo "scale=2; $successful_runs * 100 / $total_runs" | bc 2>/dev/null || echo "0"; else echo "0"; fi),
-    "failure_rate": $(if [ "$total_runs" -gt 0 ]; then echo "scale=2; $failed_runs * 100 / $total_runs" | bc 2>/dev/null || echo "0"; else echo "0"; fi)
+    "success_rate": $(if [ "$total_runs" -gt 0 ]; then python3 -c "print(f'{$successful_runs * 100 / $total_runs:.1f}')"; else echo "0"; fi),
+    "failure_rate": $(if [ "$total_runs" -gt 0 ]; then python3 -c "print(f'{$failed_runs * 100 / $total_runs:.1f}')"; else echo "0"; fi)
   },
   "error_taxonomy": {
 EOF
@@ -208,7 +208,8 @@ echo "📊 Scanning for outcome data files..."
 
 if [ ! -d "$DATA_DIR" ]; then
     echo "❌ Data directory not found: $DATA_DIR"
-    exit 1
+    echo "🔧 Creating minimal analysis with zero data points..."
+    # Continue with empty analysis instead of exiting
 fi
 
 outcome_files=$(find "$DATA_DIR" -name "outcome.json" -type f 2>/dev/null || echo "")
