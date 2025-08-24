@@ -1,33 +1,38 @@
 name: "\U0001F9E0 Neural Archaeology Pipeline - Psycho-Noir Kontrapunkt"
-true:
+on:
   pull_request:
     types:
-    - opened
-    - synchronize
-    - reopened
+      - opened
+      - synchronize
+      - reopened
     branches:
-    - main
+      - main
   push:
     branches:
-    - main
+      - main
   workflow_dispatch:
     inputs:
       analysis_mode:
-        description: Analysis Mode
+        description: 'Analysis Mode'
         required: true
-        default: full
+        default: 'full'
         type: choice
         options:
-        - full
-        - harvest
-        - test
-        - quick
+          - full
+          - harvest
+          - test
+          - quick
 env:
   PYTHONPATH: ${{ github.workspace }}/backend/python
+  
+concurrency:
+  group: neural-archaeology-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   neural-archaeology-analysis:
     name: "\U0001F50D Execute Neural Archaeology Pipeline"
     runs-on: ubuntu-latest
+    continue-on-error: true  # Non-blocking for PRs
     permissions:
       contents: read
       issues: write

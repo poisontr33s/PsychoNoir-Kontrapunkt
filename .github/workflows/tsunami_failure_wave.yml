@@ -1,24 +1,27 @@
 name: "\U0001F30A TSUNAMI FAILURE WAVE - Continuous Data Generation"
-true:
+on:
   schedule:
-  - cron: 0 */2 * * *
-  - cron: 30 */3 * * *
+    - cron: '0 */6 * * *'  # Every 6 hours
   workflow_dispatch:
     inputs:
       wave_intensity:
-        description: Failure wave intensity
+        description: 'Failure wave intensity'
         required: false
-        default: tsunami
+        default: 'tsunami'
         type: choice
         options:
-        - ripple
-        - wave
-        - storm
-        - tsunami
-        - apocalypse
+          - ripple
+          - wave
+          - storm
+          - tsunami
+          - apocalypse
 env:
   FAILURE_WAVE_MODE: ACTIVE
   DATA_COLLECTION_TARGET: MAXIMUM
+  
+concurrency:
+  group: tsunami-failure-wave
+  cancel-in-progress: true
 jobs:
   rapid-fire-failures:
     name: "\U0001F4A5 Rapid Fire ${{ matrix.batch }}"

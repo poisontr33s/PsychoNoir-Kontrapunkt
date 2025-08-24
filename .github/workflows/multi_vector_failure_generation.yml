@@ -1,28 +1,26 @@
 name: "\U0001F680 Multi-Vector Failure Generation Pipeline"
-true:
-  pull_request:
-    branches:
-    - main
-  push:
-    branches:
-    - main
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Daily at 3 AM UTC
   workflow_dispatch:
     inputs:
       intensity:
-        description: Failure generation intensity
+        description: 'Failure generation intensity'
         required: false
-        default: maximum
+        default: 'maximum'
         type: choice
         options:
-        - moderate
-        - high
-        - maximum
-        - experimental
-  schedule:
-  - cron: 0 * * * *
+          - moderate
+          - high
+          - maximum
+          - experimental
 env:
   FAILURE_GENERATION_MODE: ${{ github.event.inputs.intensity || 'maximum' }}
   NEURAL_ARCHAEOLOGY_ACTIVE: 'true'
+  
+concurrency:
+  group: multi-vector-failure-generation
+  cancel-in-progress: true
 jobs:
   architecture-chaos-matrix:
     name: "\U0001F3D7\uFE0F ${{ matrix.arch }}-${{ matrix.os }} Architecture Chaos"

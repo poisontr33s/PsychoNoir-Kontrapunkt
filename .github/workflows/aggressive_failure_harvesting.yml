@@ -1,35 +1,27 @@
 name: "\U0001F525 AGGRESSIVE FAILURE HARVESTING - Data Mining Operation"
-true:
-  push:
-    branches:
-    - main
-    - test/*
-    - feat/*
-    - dev/*
-  pull_request:
-    types:
-    - opened
-    - synchronize
-    - reopened
-    - closed
+on:
   schedule:
-  - cron: '*/30 * * * *'
+    - cron: '0 2 * * *'  # Daily at 2 AM UTC
   workflow_dispatch:
     inputs:
       chaos_level:
-        description: Chaos intensity (low/medium/high/maximum)
+        description: 'Chaos intensity (low/medium/high/maximum)'
         required: false
-        default: high
+        default: 'high'
         type: choice
         options:
-        - low
-        - medium
-        - high
-        - maximum
+          - low
+          - medium
+          - high
+          - maximum
 env:
   PSYCHO_NOIR_CHAOS_MODE: MAXIMUM_HARVEST
   FORCE_FAILURES: 'true'
   DATA_MINING_ACTIVE: 'true'
+  
+concurrency:
+  group: aggressive-failure-harvesting
+  cancel-in-progress: true
 jobs:
   massive-failure-matrix:
     name: "\U0001F480 ${{ matrix.failure_type }} Failure Generator (${{ matrix.os\

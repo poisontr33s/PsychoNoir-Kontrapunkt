@@ -1,0 +1,270 @@
+name: 'CI Triage - Bidirectional Failure Reporting'
+description: 'Executes tests with intelligent failure triage and structured error reporting'
+author: 'Psycho-Noir Kontrapunkt'
+
+inputs:
+  name:
+    description: 'Component label for this test execution'
+    required: true
+  run:
+    description: 'Shell command to execute'
+    required: true
+  working-directory:
+    description: 'Working directory for command execution'
+    required: false
+    default: '.'
+
+outputs:
+  exit-code:
+    description: 'Exit code from the executed command'
+    value: ${{ steps.execute.outputs.exit-code }}
+  triage-report:
+    description: 'Path to the generated triage report'
+    value: ${{ steps.execute.outputs.triage-report }}
+  error-code:
+    description: 'Structured error code for automation'
+    value: ${{ steps.parse.outputs.error-code }}
+  solution-suggestion:
+    description: 'Automated solution suggestion'
+    value: ${{ steps.parse.outputs.solution-suggestion }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: '🎯 Execute Command with Triage'
+      id: execute
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        set +e  # Don't exit on command failure
+        
+        echo "🎯 Executing: ${{ inputs.name }}"
+        echo "📁 Working directory: $(pwd)"
+        echo "🚀 Command: ${{ inputs.run }}"
+        echo ""
+        
+        # Create triage directory
+        mkdir -p triage-output
+        
+        # Execute command and capture output
+        echo "Starting execution at: $(date -Iseconds)" | tee triage-output/triage.log
+        echo "Component: ${{ inputs.name }}" | tee -a triage-output/triage.log
+        echo "Command: ${{ inputs.run }}" | tee -a triage-output/triage.log
+        echo "Working directory: $(pwd)" | tee -a triage-output/triage.log
+        echo "---" | tee -a triage-output/triage.log
+        
+        # Execute the actual command
+        EXIT_CODE=0
+        ${{ inputs.run }} 2>&1 | tee -a triage-output/triage.log || EXIT_CODE=$?
+        
+        echo "---" | tee -a triage-output/triage.log
+        echo "Execution completed at: $(date -Iseconds)" | tee -a triage-output/triage.log
+        echo "Exit code: $EXIT_CODE" | tee -a triage-output/triage.log
+        
+        # Set outputs
+        echo "exit-code=$EXIT_CODE" >> $GITHUB_OUTPUT
+        echo "triage-report=triage-output/triage-report.json" >> $GITHUB_OUTPUT
+        
+        # Store exit code for next step
+        echo $EXIT_CODE > triage-output/exit_code
+
+    - name: '🧠 Parse Results and Generate Intelligence'
+      id: parse
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        # Read exit code from previous step
+        EXIT_CODE=$(cat triage-output/exit_code)
+        
+        # Initialize triage report structure
+        cat > triage-output/triage-report.json << EOF
+        {
+          "component": "${{ inputs.name }}",
+          "command": "${{ inputs.run }}",
+          "working_directory": "$(pwd)",
+          "timestamp": "$(date -Iseconds)",
+          "exit_code": $EXIT_CODE,
+          "status": "$([ $EXIT_CODE -eq 0 ] && echo 'SUCCESS' || echo 'FAILURE')",
+          "log_file": "triage.log",
+          "error_analysis": {},
+          "solution_suggestions": [],
+          "error_code": "",
+          "context": {
+            "github_ref": "${{ github.ref }}",
+            "github_event_name": "${{ github.event_name }}",
+            "runner_os": "${{ runner.os }}",
+            "component_type": "$(echo '${{ inputs.name }}' | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g')"
+          }
+        }
+        EOF
+        
+        # Analyze failure patterns if exit code is non-zero
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo "🔍 Analyzing failure patterns..."
+          
+          # Extract error patterns from log
+          ERROR_PATTERNS=""
+          SOLUTION_SUGGESTIONS=""
+          ERROR_CODE="UNKNOWN_FAILURE"
+          
+          # Pattern matching for common errors
+          if grep -q "ModuleNotFoundError\|ImportError" triage-output/triage.log; then
+            ERROR_CODE="DEPENDENCY_MISSING"
+            ERROR_PATTERNS="Python module import failure detected"
+            SOLUTION_SUGGESTIONS="Check requirements.txt and run 'pip install -r requirements.txt'"
+          elif grep -q "npm ERR!\|yarn ERR!" triage-output/triage.log; then
+            ERROR_CODE="NODE_DEPENDENCY_FAILURE" 
+            ERROR_PATTERNS="Node.js dependency issue detected"
+            SOLUTION_SUGGESTIONS="Clear node_modules and run 'npm ci' or 'npm install'"
+          elif grep -q "ENOSPC\|No space left" triage-output/triage.log; then
+            ERROR_CODE="DISK_SPACE_EXHAUSTED"
+            ERROR_PATTERNS="Disk space exhaustion detected"
+            SOLUTION_SUGGESTIONS="Free up disk space or increase runner disk allocation"
+          elif grep -q "timeout\|TIMEOUT" triage-output/triage.log; then
+            ERROR_CODE="OPERATION_TIMEOUT"
+            ERROR_PATTERNS="Timeout detected"
+            SOLUTION_SUGGESTIONS="Increase timeout limits or optimize operation performance"
+          elif grep -q "Permission denied\|EACCES" triage-output/triage.log; then
+            ERROR_CODE="PERMISSION_DENIED"
+            ERROR_PATTERNS="Permission error detected"
+            SOLUTION_SUGGESTIONS="Check file permissions or use appropriate user privileges"
+          elif grep -q "Connection refused\|Network is unreachable" triage-output/triage.log; then
+            ERROR_CODE="NETWORK_CONNECTIVITY"
+            ERROR_PATTERNS="Network connectivity issue detected"
+            SOLUTION_SUGGESTIONS="Check network configuration and service availability"
+          elif grep -q "Out of memory\|OOM\|Cannot allocate memory" triage-output/triage.log; then
+            ERROR_CODE="MEMORY_EXHAUSTED"
+            ERROR_PATTERNS="Memory exhaustion detected"
+            SOLUTION_SUGGESTIONS="Increase memory allocation or optimize memory usage"
+          elif grep -q "SyntaxError\|Parse error" triage-output/triage.log; then
+            ERROR_CODE="SYNTAX_ERROR"
+            ERROR_PATTERNS="Syntax error in code detected"
+            SOLUTION_SUGGESTIONS="Review code syntax and fix parsing errors"
+          elif grep -q "AssertionError\|Test failed" triage-output/triage.log; then
+            ERROR_CODE="TEST_ASSERTION_FAILURE"
+            ERROR_PATTERNS="Test assertion failure detected"
+            SOLUTION_SUGGESTIONS="Review failing test cases and fix implementation"
+          fi
+          
+          # Update the JSON with analysis results
+          python3 -c "
+        import json
+        import sys
+        
+        # Read the current report
+        with open('triage-output/triage-report.json', 'r') as f:
+            report = json.load(f)
+        
+        # Update with error analysis
+        report['error_analysis'] = {
+            'patterns_detected': '$ERROR_PATTERNS',
+            'error_category': '$ERROR_CODE',
+            'log_snippet': '''$(tail -n 20 triage-output/triage.log | sed \"s/'/\\\\'/g\")'''
+        }
+        
+        report['solution_suggestions'] = ['$SOLUTION_SUGGESTIONS'] if '$SOLUTION_SUGGESTIONS' else []
+        report['error_code'] = '$ERROR_CODE'
+        
+        # Add failure context for psycho-noir theme
+        report['context']['failure_domain'] = 'Rustbeltet' if 'build' in '${{ inputs.name }}'.lower() else 'Skyskraperen'
+        report['context']['archaeological_value'] = 'HIGH' if '$ERROR_CODE' != 'UNKNOWN_FAILURE' else 'MEDIUM'
+        
+        # Write back
+        with open('triage-output/triage-report.json', 'w') as f:
+            json.dump(report, f, indent=2)
+        " || echo "Python analysis failed, using basic report"
+        
+        else
+          # Success case
+          ERROR_CODE="SUCCESS"
+          python3 -c "
+        import json
+        with open('triage-output/triage-report.json', 'r') as f:
+            report = json.load(f)
+        report['error_code'] = 'SUCCESS'
+        report['context']['archaeological_value'] = 'LOW'
+        with open('triage-output/triage-report.json', 'w') as f:
+            json.dump(report, f, indent=2)
+        " || echo "Python success analysis failed"
+        fi
+        
+        # Set outputs for downstream jobs
+        echo "error-code=$ERROR_CODE" >> $GITHUB_OUTPUT
+        
+        # Extract solution suggestion for output
+        SOLUTION=$(python3 -c "
+        import json
+        try:
+            with open('triage-output/triage-report.json', 'r') as f:
+                report = json.load(f)
+            suggestions = report.get('solution_suggestions', [])
+            print(suggestions[0] if suggestions else 'No specific solution available')
+        except:
+            print('Analysis unavailable')
+        " 2>/dev/null || echo "Analysis unavailable")
+        
+        echo "solution-suggestion=$SOLUTION" >> $GITHUB_OUTPUT
+        
+        # Display summary
+        echo ""
+        echo "🧠 Triage Analysis Complete:"
+        echo "   📊 Component: ${{ inputs.name }}"
+        echo "   🎯 Status: $([ $EXIT_CODE -eq 0 ] && echo '✅ SUCCESS' || echo '❌ FAILURE')"
+        echo "   🔍 Error Code: $ERROR_CODE"
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo "   💡 Solution: $SOLUTION"
+        fi
+
+    - name: '📊 Upload Triage Artifacts'
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: triage-${{ inputs.name }}-${{ github.run_number }}
+        path: ${{ inputs.working-directory }}/triage-output/
+        retention-days: 7
+
+    - name: '🎭 Generate Psycho-Noir Intelligence Summary'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      if: always()
+      run: |
+        echo ""
+        echo "🎭 === PSYCHO-NOIR KONTRAPUNKT: INTELLIGENCE SUMMARY ==="
+        
+        EXIT_CODE=$(cat triage-output/exit_code)
+        
+        if [ $EXIT_CODE -eq 0 ]; then
+          echo "🌟 Den Usynlige Hånd: System harmony maintained in the ${{ inputs.name }} domain"
+          echo "✨ Skyskraperen protocols: All systems nominal"
+        else
+          echo "⚡ Den Usynlige Hånd: Disturbance detected in the ${{ inputs.name }} sector"
+          echo "🔧 Rustbeltet response: Adaptive countermeasures required"
+          
+          # Read error code
+          ERROR_CODE=$(python3 -c "
+        import json
+        try:
+            with open('triage-output/triage-report.json', 'r') as f:
+                report = json.load(f)
+            print(report.get('error_code', 'UNKNOWN'))
+        except:
+            print('UNKNOWN')
+        " 2>/dev/null || echo "UNKNOWN")
+          
+          echo "🎯 Failure Archaeology Code: $ERROR_CODE"
+          echo "📊 Intelligence gathered for neural network enhancement"
+        fi
+        
+        echo "=============================================================="
+        echo ""
+
+    - name: '🚨 Set Job Status Based on Exit Code'
+      shell: bash
+      run: |
+        EXIT_CODE=$(cat ${{ inputs.working-directory }}/triage-output/exit_code)
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo "💥 Component ${{ inputs.name }} failed with exit code $EXIT_CODE"
+          exit $EXIT_CODE
+        else
+          echo "✅ Component ${{ inputs.name }} completed successfully"
+        fi
