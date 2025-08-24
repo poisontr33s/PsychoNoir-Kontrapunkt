@@ -16,6 +16,8 @@ consolidated-report/
 deployment-package/
 production-frontend/
 production-backend/
+triage-output/
+test-triage/
 
 # Build outputs
 dist/
