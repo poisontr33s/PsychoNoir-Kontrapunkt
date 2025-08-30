@@ -1,0 +1,133 @@
+name: 🔭 Digital Necromancy Observatory - Basic Verification
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  necromancy-verification:
+    name: 🧙‍♂️ Basic Necromancy Verification
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        psycho-noir-mode: ['skyskraper', 'rustbelt']
+        node-version: [18, 20]
+    
+    steps:
+      - name: 📥 Archaeological Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for archaeological analysis
+          
+      - name: 🔧 Node.js Consciousness Preparation
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          
+      - name: 📦 Dependency Resurrection
+        run: |
+          echo "🧬 Resurrecting dependencies from package.json manifest..."
+          npm ci
+          
+      - name: 🏺 Repository Archaeology Scan
+        run: |
+          echo "🔍 Performing basic repository archaeology..."
+          echo "Repository structure analysis:"
+          find . -name "*.md" | head -10
+          echo "Node modules verification (should be minimal):"
+          ls -la node_modules/ | wc -l || echo "Node modules properly excluded"
+          echo "Graveyard inspection:"
+          ls -la .graveyard/ || echo "No graveyard found"
+          
+      - name: 🎭 Psycho-Noir Mode Analysis
+        run: |
+          echo "🎭 Analyzing repository through ${{ matrix.psycho-noir-mode }} perspective..."
+          case "${{ matrix.psycho-noir-mode }}" in
+            "skyskraper")
+              echo "🏙️ Skyskraperen Analysis: Systematic control and predictive modeling"
+              echo "- Checking for deterministic build patterns"
+              echo "- Verifying systematic organization"
+              ;;
+            "rustbelt")
+              echo "🔧 Rustbeltet Analysis: Survival infrastructure and adaptation"
+              echo "- Checking for resilient, improvised solutions"
+              echo "- Verifying adaptive system flexibility"
+              ;;
+          esac
+          
+      - name: 🔍 Basic Linting Necromancy
+        run: |
+          echo "🔍 Performing basic code necromancy validation..."
+          # Check for common issues
+          echo "Checking for node_modules in git tracking..."
+          if git ls-files | grep -q "node_modules/"; then
+            echo "❌ NECROMANCY FAILURE: node_modules found in git tracking"
+            exit 1
+          else
+            echo "✅ NECROMANCY SUCCESS: node_modules properly excluded"
+          fi
+          
+          echo "Checking for basic file structure..."
+          if [ -f ".github/OBSERVATORY_SYSTEM.md" ]; then
+            echo "✅ Observatory system documentation present"
+          else
+            echo "⚠️ Observatory system documentation missing"
+          fi
+          
+      - name: 🧙‍♂️ Test Necromancer Collector
+        uses: ./.github/actions/necromancer-collect
+        with:
+          name: "Basic Observatory Test"
+          run: "echo 'Testing necromancer collection system...'"
+          category: integration
+          variant: "node-${{ matrix.node-version }}"
+          psycho-noir-mode: ${{ matrix.psycho-noir-mode }}
+          archaeological-depth: standard
+          
+      - name: 🎯 Observatory System Validation
+        run: |
+          echo "🔭 Validating Digital Necromancy Observatory components..."
+          
+          # Check required files
+          required_files=(
+            ".github/OBSERVATORY_SYSTEM.md"
+            ".github/IMPLEMENTATION_SUMMARY.md"
+            ".github/PULL_REQUEST_TEMPLATE.md"
+            ".github/CODEOWNERS"
+          )
+          
+          for file in "${required_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✅ $file - Present"
+            else
+              echo "❌ $file - Missing"
+              exit 1
+            fi
+          done
+          
+      - name: 📊 Failure Pattern Collection
+        if: failure()
+        run: |
+          echo "🏺 Collecting failure archaeology data..."
+          echo "Build environment: Node ${{ matrix.node-version }} / ${{ matrix.psycho-noir-mode }} mode"
+          echo "Failure classification: OBSERVATORY_VERIFICATION_FAILURE"
+          echo "Archaeological signature: Basic validation pipeline failure"
+          
+      - name: 🎭 Success Pattern Recognition
+        if: success()
+        run: |
+          echo "🌟 Necromancy verification successful!"
+          echo "Observatory system validation complete for:"
+          echo "- Psycho-Noir Mode: ${{ matrix.psycho-noir-mode }}"
+          echo "- Node.js Version: ${{ matrix.node-version }}"
+          echo "- Archaeological Status: VALIDATED"

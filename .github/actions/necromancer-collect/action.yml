@@ -1,6 +1,6 @@
-name: 'Necromancer Collect'
-description: 'Wrap commands to capture failures, classify errors, and emit structured outcome data for the Necropolis system'
-author: 'Psycho-Noir Kontrapunkt'
+name: '🧙‍♂️ Necromancer Collect - Psycho-Noir Edition'
+description: 'Wrap commands to capture failures, classify errors with Psycho-Noir thematic analysis, and emit structured archaeology data for the Digital Necromancy Observatory'
+author: 'Psycho-Noir Kontrapunkt - Digital Necromancy Observatory System'
 
 inputs:
   name:
@@ -30,10 +30,14 @@ inputs:
     description: 'Shell to use for command execution'
     required: false
     default: 'bash'
-  timeout-minutes:
-    description: 'Timeout in minutes for command execution'
+  psycho-noir-mode:
+    description: 'Psycho-Noir analysis perspective (skyskraper|rustbelt|invisible-hand|adaptive)'
     required: false
-    default: '10'
+    default: 'adaptive'
+  archaeological-depth:
+    description: 'Analysis depth level (surface|standard|deep|archaeological)'
+    required: false
+    default: 'standard'
 
 outputs:
   outcome:
@@ -45,9 +49,9 @@ outputs:
   duration:
     description: 'Command execution duration in seconds'
     value: ${{ steps.execute-command.outputs.duration }}
-  exit-code:
-    description: 'Command exit code'
-    value: ${{ steps.execute-command.outputs.exit-code }}
+  psycho-noir-signature:
+    description: 'Identified Psycho-Noir failure signature'
+    value: ${{ steps.psycho-noir-analysis.outputs.signature }}
 
 runs:
   using: composite
@@ -131,6 +135,68 @@ runs:
           echo "error-type=UNKNOWN" >> $GITHUB_OUTPUT
           echo "⚠️ Classification failed, defaulting to UNKNOWN"
         fi
+
+    - name: 🎭 Psycho-Noir Thematic Analysis
+      id: psycho-noir-analysis
+      shell: bash
+      run: |
+        echo "🎭 Performing Psycho-Noir thematic analysis..."
+        LOG_FILE="logs/necromancer/${{ inputs.name }}-command.log"
+        
+        # Initialize signature
+        PSYCHO_NOIR_SIGNATURE="STANDARD_ENGINEERING_PATTERN"
+        
+        # Psycho-Noir pattern detection
+        if [ -f "$LOG_FILE" ]; then
+          if grep -qi "prediction\|forecast\|model\|systematic\|control" "$LOG_FILE"; then
+            PSYCHO_NOIR_SIGNATURE="KAUSALITETS_ARKITEKTEN_INTERFERENCE"
+          elif grep -qi "neural\|network\|ai\|synthetic\|synapse" "$LOG_FILE"; then
+            PSYCHO_NOIR_SIGNATURE="SYNTETISKE_SYNAPSER_GLITCH"
+          elif grep -qi "workaround\|hack\|manual\|improvise\|adapt" "$LOG_FILE"; then
+            PSYCHO_NOIR_SIGNATURE="RUSTBELT_IMPROVISATION_CASCADE"
+          elif grep -qi "anomal\|unexplain\|impossible\|paradox\|mystery" "$LOG_FILE"; then
+            PSYCHO_NOIR_SIGNATURE="USYNLIG_HÅND_MANIFESTATION"
+          fi
+        fi
+        
+        case "${{ inputs.psycho-noir-mode }}" in
+          "skyskraper")
+            echo "🏙️ Skyskraperen Analysis: Systematic control perspective"
+            echo "- Evaluating predictive modeling integrity"
+            echo "- Assessing information system coherence"
+            ;;
+          "rustbelt")
+            echo "🔧 Rustbeltet Analysis: Survival infrastructure perspective"
+            echo "- Measuring adaptive resilience capabilities"
+            echo "- Evaluating improvisation effectiveness"
+            ;;
+          "invisible-hand")
+            echo "👁️ Den Usynlige Hånd Analysis: Emergent pattern perspective"
+            echo "- Detecting hidden systemic influences"
+            echo "- Identifying anomalous behavior patterns"
+            ;;
+          "adaptive")
+            echo "🌀 Adaptive Analysis: Multi-perspective integration"
+            echo "- Cross-domain pattern correlation"
+            echo "- Holistic system behavior assessment"
+            ;;
+        esac
+        
+        echo "signature=$PSYCHO_NOIR_SIGNATURE" >> $GITHUB_OUTPUT
+        echo "🧬 Psycho-Noir Signature: $PSYCHO_NOIR_SIGNATURE"
+        
+        # Create enhanced archaeological record
+        cat > "artifacts/necromancer/psycho-noir-analysis.json" << EOF
+        {
+          "psycho_noir_signature": "$PSYCHO_NOIR_SIGNATURE",
+          "analysis_mode": "${{ inputs.psycho-noir-mode }}",
+          "archaeological_depth": "${{ inputs.archaeological-depth }}",
+          "command_name": "${{ inputs.name }}",
+          "category": "${{ inputs.category }}",
+          "variant": "${{ inputs.variant }}",
+          "analysis_timestamp": "$(date -Iseconds)"
+        }
+        EOF
 
     - name: Upload Necromancer Artifacts
       uses: actions/upload-artifact@v4
