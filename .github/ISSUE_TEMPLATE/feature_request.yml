@@ -1,0 +1,152 @@
+name: ✨ Feature Request / Funksjonsforespørsel  
+description: Propose new functionality or enhancement / Foreslå ny funksjonalitet eller forbedring
+title: "[FEATURE] "
+labels: ["enhancement", "concept-expansion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🌟 Consciousness Expansion Request
+        
+        **Bidra til utviklingen av Psycho-Noir Kontrapunkt-rammeverket gjennom kreativ visjon og teknisk innovasjon.**
+        
+        *Contribute to the development of the Psycho-Noir Kontrapunkt framework through creative vision and technical innovation.*
+
+  - type: input
+    id: concept_essence
+    attributes:
+      label: 🧬 Concept Essence / Konseptessens
+      description: Core idea in one compelling sentence / Kjerneidé i én fengende setning
+      placeholder: "e.g., Implement real-time failure visualization dashboard with Psycho-Noir theming"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: consciousness_domain
+    attributes:
+      label: 🎭 Consciousness Domain / Bevissthetsdomene
+      description: Which aspect of the framework will this enhance? / Hvilken del av rammeverket vil dette forbedre?
+      options:
+        - "🏙️ Skyskraperen - Control & Information Systems"
+        - "🔧 Rustbeltet - Survival & Adaptation Infrastructure"
+        - "👁️ Den Usynlige Hånd - Emergent & Hidden Patterns"
+        - "🌀 Cross-Domain Integration - Multi-layered enhancement"
+        - "🔬 Meta-Framework - System architecture improvements"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: implementation_scale
+    attributes:
+      label: 📐 Implementation Scale / Implementeringsskala
+      description: What scope of change does this represent? / Hvilket omfang av endring representerer dette?
+      options:
+        - "🔧 Incremental Enhancement - Small improvement to existing functionality"
+        - "⚙️ Significant Feature - New capability within existing domain"
+        - "🌟 Paradigm Extension - Fundamental new approach or methodology"
+        - "🚀 Revolutionary Integration - Game-changing systemic enhancement"
+        - "🎭 Narrative Deepening - Primarily thematic/conceptual development"
+
+  - type: textarea
+    id: vision_description
+    attributes:
+      label: 🎨 Vision Description / Visjonsbeskrivelse
+      description: Detailed description of the proposed functionality / Detaljert beskrivelse av foreslått funksjonalitet
+      placeholder: |
+        **English Description:**
+        Explain what you envision, how it would work, and why it matters...
+        
+        **Norsk Beskrivelse:**
+        Forklar hva du ser for deg, hvordan det ville fungere, og hvorfor det er viktig...
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: psycho_noir_integration
+    attributes:
+      label: 🎭 Psycho-Noir Integration / Psyko-Noir Integrasjon
+      description: How does this enhance the thematic framework? / Hvordan forbedrer dette det tematiske rammeverket?
+      placeholder: |
+        **Skyskraperen Perspective:** How does this serve control and systematic optimization?
+        **Rustbeltet Perspective:** How does this support survival and adaptive resilience?
+        **Den Usynlige Hånd Perspective:** How does this reveal or interact with hidden patterns?
+        
+        **Narrative Resonance:** What thematic elements does this activate or deepen?
+      render: markdown
+
+  - type: textarea
+    id: technical_approach
+    attributes:
+      label: 🛠️ Technical Approach / Teknisk Tilnærming
+      description: How might this be implemented? / Hvordan kunne dette implementeres?
+      placeholder: |
+        **Technology Stack:** What tools, languages, or frameworks?
+        **Architecture:** How would this integrate with existing systems?
+        **Data Flow:** What information needs to be processed or stored?
+        **Performance:** Any specific performance or scalability considerations?
+        
+        **Alternative Approaches:** Different ways this could be achieved?
+      render: markdown
+
+  - type: textarea
+    id: user_experience
+    attributes:
+      label: 👤 User Experience Vision / Brukeropplevelse-visjon
+      description: How would users interact with this feature? / Hvordan ville brukere samhandle med denne funksjonen?
+      placeholder: |
+        **User Journey:** Step-by-step interaction flow
+        **Interface Design:** What would the UI/UX look like?
+        **Accessibility:** How does this serve different user needs?
+        **Documentation:** What guidance would users need?
+      render: markdown
+
+  - type: checkboxes
+    id: enhancement_aspects
+    attributes:
+      label: 🌟 Enhancement Aspects / Forbedring-aspekter
+      description: Which dimensions would this feature address? / Hvilke dimensjoner ville denne funksjonen adressere?
+      options:
+        - label: "Cognitive Enhancement - Improves understanding and decision-making"
+        - label: "Efficiency Optimization - Reduces time or resource requirements"
+        - label: "Creative Expression - Enables new forms of artistic or conceptual work"
+        - label: "Community Building - Facilitates collaboration and knowledge sharing"
+        - label: "Technical Innovation - Introduces cutting-edge technical capabilities"
+        - label: "Accessibility Improvement - Makes the system more inclusive"
+        - label: "Security Enhancement - Strengthens system integrity and privacy"
+        - label: "Educational Value - Helps users learn and grow"
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: 🎯 Success Criteria / Suksesskriterier
+      description: How would we know this feature is successful? / Hvordan ville vi vite at denne funksjonen er vellykket?
+      placeholder: |
+        **Quantitative Measures:**
+        - Performance metrics
+        - Usage statistics
+        - Technical benchmarks
+        
+        **Qualitative Measures:**
+        - User feedback
+        - Thematic coherence
+        - Community adoption
+
+  - type: input
+    id: implementation_priority
+    attributes:
+      label: ⚡ Implementation Priority / Implementeringsprioritet
+      description: How important is this enhancement? / Hvor viktig er denne forbedringen?
+      placeholder: "Low / Medium / High / Revolutionary / Lav / Middels / Høy / Revolusjonær"
+
+  - type: textarea
+    id: inspiration_sources
+    attributes:
+      label: 💡 Inspiration Sources / Inspirasjon-kilder
+      description: What inspired this idea? / Hva inspirerte denne ideen?
+      placeholder: |
+        **Cultural References:** Books, films, games, art that influenced this concept
+        **Technical Inspirations:** Other projects, tools, or technologies
+        **Personal Experiences:** Real-world situations or challenges
+        **Community Feedback:** Discussions, suggestions, or observed needs
+      render: markdown
