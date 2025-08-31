@@ -1,0 +1,155 @@
+name: ❓ Question / Spørsmål
+description: Ask questions about the system or seek guidance / Still spørsmål om systemet eller søk veiledning
+title: "[QUESTION] "
+labels: ["question", "consciousness-inquiry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🔍 Consciousness Inquiry Portal
+        
+        **Velkommen til stedet hvor nysgjerrighet møter kunnskap. Still spørsmål om teknologi, konsepter, eller filosofi innenfor Psycho-Noir Kontrapunkt-rammeverket.**
+        
+        *Welcome to the place where curiosity meets knowledge. Ask questions about technology, concepts, or philosophy within the Psycho-Noir Kontrapunkt framework.*
+
+  - type: input
+    id: inquiry_essence
+    attributes:
+      label: 🧠 Inquiry Essence / Forespørsel-essens
+      description: Your core question in clear, direct language / Kjernespørsmålet ditt i klart, direkte språk
+      placeholder: "e.g., How does the Digital Necromancy Observatory classify failures? / f.eks., Hvordan klassifiserer det digitale nekromanti-observatoriet feil?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: inquiry_domain
+    attributes:
+      label: 🎭 Inquiry Domain / Forespørsel-domene
+      description: Which aspect of the framework does your question relate to? / Hvilken del av rammeverket relaterer spørsmålet ditt til?
+      options:
+        - "🏙️ Skyskraperen - Control systems, data analysis, predictive modeling"
+        - "🔧 Rustbeltet - Survival strategies, adaptation, improvisation techniques"
+        - "👁️ Den Usynlige Hånd - Emergent patterns, hidden influences, systemic anomalies"
+        - "🌀 Cross-Domain - Integration between multiple aspects"
+        - "🛠️ Technical Implementation - Code, workflows, infrastructure"
+        - "🎨 Creative Framework - Thematic development, narrative integration"
+        - "📚 Documentation - Understanding existing guides and explanations"
+        - "🤝 Community - Collaboration, contribution, participation"
+        - "🔮 Meta-Questions - Questions about the framework itself"
+
+  - type: dropdown
+    id: complexity_level
+    attributes:
+      label: 📊 Complexity Level / Kompleksitetsnivå
+      description: How deep or technical is your question? / Hvor dyp eller teknisk er spørsmålet ditt?
+      options:
+        - "🌱 Beginner - Just starting to explore the framework"
+        - "🌿 Intermediate - Some familiarity, seeking deeper understanding"
+        - "🌳 Advanced - Experienced user with specific technical questions"
+        - "🔬 Architectural - Deep system design and philosophical inquiries"
+        - "🎭 Meta-Conceptual - Questions about the nature of the framework itself"
+
+  - type: textarea
+    id: detailed_inquiry
+    attributes:
+      label: 📝 Detailed Inquiry / Detaljert Forespørsel
+      description: Elaborate on your question with context and specific details / Utdyp spørsmålet ditt med kontekst og spesifikke detaljer
+      placeholder: |
+        **Background / Bakgrunn:**
+        What led to this question? What have you already tried or researched?
+        
+        **Specific Details / Spesifikke Detaljer:**
+        Any particular scenarios, code examples, or situations involved?
+        
+        **Expected Understanding / Forventet Forståelse:**
+        What kind of answer or guidance are you looking for?
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_understanding
+    attributes:
+      label: 🧩 Current Understanding / Nåværende Forståelse
+      description: What do you already know about this topic? / Hva vet du allerede om dette emnet?
+      placeholder: |
+        **What I Think I Know / Hva jeg tror jeg vet:**
+        Share your current understanding, even if uncertain
+        
+        **Potential Misconceptions / Potensielle Misforståelser:**
+        Areas where you might be confused or uncertain
+        
+        **Related Knowledge / Relatert Kunnskap:**
+        Connected concepts or experiences that might be relevant
+      render: markdown
+
+  - type: checkboxes
+    id: inquiry_aspects
+    attributes:
+      label: 🎯 Inquiry Aspects / Forespørsel-aspekter
+      description: What dimensions of understanding are you seeking? / Hvilke dimensjoner av forståelse søker du?
+      options:
+        - label: "Conceptual Clarity - Understanding core ideas and principles"
+        - label: "Technical Implementation - How things work under the hood"
+        - label: "Practical Application - How to use or apply specific features"
+        - label: "Best Practices - Recommended approaches and methodologies"
+        - label: "Troubleshooting - Solving specific problems or issues"
+        - label: "Creative Integration - How to contribute or extend the framework"
+        - label: "Philosophical Depth - Understanding the deeper meaning and purpose"
+        - label: "Community Context - How others are using or thinking about this"
+
+  - type: textarea
+    id: attempted_research
+    attributes:
+      label: 🔍 Attempted Research / Forsøkt Forskning
+      description: What resources have you already consulted? / Hvilke ressurser har du allerede konsultert?
+      placeholder: |
+        **Documentation Reviewed / Gjennomgått Dokumentasjon:**
+        - Which guides, READMEs, or documentation files have you read?
+        
+        **Code Exploration / Kode-utforskning:**
+        - Any specific files or functions you've examined?
+        
+        **External Resources / Eksterne Ressurser:**
+        - Other websites, tutorials, or references you've consulted?
+        
+        **Community Discussions / Samfunnsdiskusjoner:**
+        - Any existing issues, discussions, or conversations you've found?
+      render: markdown
+
+  - type: textarea
+    id: use_case_context
+    attributes:
+      label: 🎯 Use Case Context / Brukssak-kontekst
+      description: What are you trying to accomplish? / Hva prøver du å oppnå?
+      placeholder: |
+        **Primary Goal / Primærmål:**
+        What do you ultimately want to achieve?
+        
+        **Project Context / Prosjekt-kontekst:**
+        Are you working on something specific where this knowledge applies?
+        
+        **Learning Objectives / Læringsmål:**
+        What skills or understanding do you want to develop?
+      render: markdown
+
+  - type: dropdown
+    id: response_preference
+    attributes:
+      label: 💬 Response Preference / Svar-preferanse
+      description: What kind of response would be most helpful? / Hvilken type svar ville være mest nyttig?
+      options:
+        - "📖 Comprehensive Explanation - Detailed, thorough answer with examples"
+        - "⚡ Quick Overview - Brief, direct answer to get me started"
+        - "🎓 Tutorial Format - Step-by-step guidance or walkthrough"
+        - "🔗 Resource Collection - Links to relevant documentation and examples"
+        - "🎭 Psycho-Noir Integration - Answer that includes thematic context"
+        - "💻 Code Examples - Practical implementation examples"
+        - "🤝 Community Discussion - Input from multiple perspectives"
+
+  - type: input
+    id: urgency_level
+    attributes:
+      label: ⏰ Urgency Level / Hastesgrad
+      description: How time-sensitive is this question? / Hvor tidssensitivt er dette spørsmålet?
+      placeholder: "Low / Medium / High / Blocking work / Lav / Middels / Høy / Blokkerer arbeid"

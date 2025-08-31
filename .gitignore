@@ -38,17 +38,25 @@ pip-delete-this-directory.txt
 .ruff_cache/
 .cache/
 
-# Node.js
+# Node.js - Enhanced Necromancy Prevention
 node_modules/
+*/node_modules/
+**/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnp.js
+.pnp.cjs
+.yarn/
 # NPM cache and logs
 .npm/
 npm-cache/
 **/.npm/
 */.npm/
 *.npm/
+# Package locks (should be committed, but ensuring no stray copies)
+**/node_modules/.package-lock.json
+**/node_modules/package-lock.json
 # Handle stray Windows-style path checked into repo root (literal backslashes)
 C:\Users\*\.npm/
 C:\\Users\\eldno\\.npm/

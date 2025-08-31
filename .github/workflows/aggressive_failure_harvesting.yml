@@ -1,5 +1,5 @@
 name: "\U0001F525 AGGRESSIVE FAILURE HARVESTING - Data Mining Operation"
-true:
+on:
   push:
     branches:
     - main
@@ -13,7 +13,7 @@ true:
     - reopened
     - closed
   schedule:
-  - cron: '*/30 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       chaos_level:

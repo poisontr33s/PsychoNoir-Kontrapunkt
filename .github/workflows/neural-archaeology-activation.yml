@@ -1,5 +1,5 @@
 name: "\U0001F9E0 Neural Archaeology System - Active Monitoring"
-true:
+on:
   pull_request:
     types:
     - opened
@@ -43,7 +43,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
         cache: pip
     - name: Cache Python dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}

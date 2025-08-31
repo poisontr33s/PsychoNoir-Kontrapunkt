@@ -1,0 +1,155 @@
+# 🎭 Psycho-Noir Kontrapunkt Code Ownership & Review Responsibilities
+
+# === GLOBAL OWNERSHIP ===
+# The primary consciousness behind the Psycho-Noir framework
+* @poisontr33s
+
+# === DIGITAL NECROMANCY OBSERVATORY SYSTEM ===
+# Core observatory system documentation and configuration
+/.github/OBSERVATORY_SYSTEM.md @poisontr33s
+/.github/IMPLEMENTATION_SUMMARY.md @poisontr33s
+/.github/scripts/necromancer/ @poisontr33s
+/.github/actions/necromancer-collect/ @poisontr33s
+
+# === GITHUB INFRASTRUCTURE ===
+# Templates, workflows, and repository configuration
+/.github/ISSUE_TEMPLATE/ @poisontr33s
+/.github/PULL_REQUEST_TEMPLATE.md @poisontr33s
+/.github/workflows/ @poisontr33s
+/.github/CODEOWNERS @poisontr33s
+
+# === PSYCHO-NOIR CORE FRAMEWORK ===
+# Essential documentation and architectural guidance
+/orchestrina-codex.md @poisontr33s
+/.github/copilot-instructions.md @poisontr33s
+/.github/copilot-session.md @poisontr33s
+
+# === COSMIC CONSCIOUSNESS SYSTEMS ===
+# Advanced automation and intelligence frameworks
+/cosmic_consciousness_*.py @poisontr33s
+/autonomous_ecosystem_manager.py @poisontr33s
+/quantum_*.py @poisontr33s
+
+# === NECROMANCY & ARCHAEOLOGY ===
+# Failure analysis and pattern recognition systems
+/docs/necropolis.md @poisontr33s
+/*necromancy* @poisontr33s
+/*neural_archaeology* @poisontr33s
+/MCP_NECROMANCY_IMPLEMENTATION.md @poisontr33s
+
+# === FRONTEND CONSCIOUSNESS PORTAL ===
+# Live demonstration and interaction interfaces
+/docs/index.html @poisontr33s
+/docs/cosmic-*.js @poisontr33s
+/frontend/ @poisontr33s
+
+# === BACKEND INTELLIGENCE ===
+# Server-side processing and analysis systems
+/backend/ @poisontr33s
+/*_demo.py @poisontr33s
+/*_functional_*.py @poisontr33s
+
+# === DEPLOYMENT & INFRASTRUCTURE ===
+# Production deployment and automation scripts
+/*.sh @poisontr33s
+/deploy_*.sh @poisontr33s
+/cosmic_consciousness_production_deployment.sh @poisontr33s
+
+# === DATA ARCHAEOLOGY ===
+# Generated data, reports, and analytical artifacts
+/data/ @poisontr33s
+/logs/ @poisontr33s
+/*.json @poisontr33s
+
+# === GRAVEYARD NECROMANCY ===
+# Archived and deprecated files requiring special handling
+/.graveyard/ @poisontr33s
+
+# === DEVELOPMENT ENVIRONMENT ===
+# Package management and development configuration
+/package.json @poisontr33s
+/package-lock.json @poisontr33s
+/.gitignore @poisontr33s
+/.npmrc @poisontr33s
+
+# === DOCUMENTATION ECOSYSTEM ===
+# Comprehensive guides and implementation reports
+/*.md @poisontr33s
+/docs/*.md @poisontr33s
+
+# === SPECIALIZED DOMAINS ===
+
+## Skyskraperen (Control Systems)
+# Predictive modeling and systematic analysis
+/kausalitets_arkitekten.py @poisontr33s
+/*validation* @poisontr33s
+/*optimization* @poisontr33s
+
+## Rustbeltet (Survival Infrastructure)  
+# Adaptive systems and improvisation frameworks
+/*cleanup* @poisontr33s
+/*salvage* @poisontr33s
+/*emergency* @poisontr33s
+
+## Den Usynlige Hånd (Emergent Patterns)
+# Pattern recognition and systemic analysis
+/*cross_repo* @poisontr33s
+/*ecosystem* @poisontr33s
+/*emergent* @poisontr33s
+
+# === SECURITY & PRIVACY ===
+# Sensitive configuration and security-related files
+/.github/workflows/*.yml @poisontr33s
+/scripts/ @poisontr33s
+/*webhook* @poisontr33s
+
+# === ARTIFICIAL INTELLIGENCE INTEGRATION ===
+# AI personality systems and consciousness frameworks
+/*ai_personality* @poisontr33s
+/*symbiotic* @poisontr33s
+/*consciousness* @poisontr33s
+
+# === TESTING & QUALITY ASSURANCE ===
+# Test files and validation systems
+/test_* @poisontr33s
+/*_test.* @poisontr33s
+/.github/test_* @poisontr33s
+
+# === CREATIVE EXPRESSION ===
+# Thematic content and artistic elements
+/*milf* @poisontr33s
+/*genre* @poisontr33s
+/*psycho_sensual* @poisontr33s
+
+# ========================================
+# REVIEW ASSIGNMENT STRATEGY
+# ========================================
+
+# For critical infrastructure changes requiring elevated review:
+# - Observatory system modifications
+# - Workflow configuration changes  
+# - Security-sensitive modifications
+# - Core framework architectural changes
+
+# These files require explicit approval from @poisontr33s due to their
+# systemic impact on the entire Psycho-Noir ecosystem:
+
+/.github/OBSERVATORY_SYSTEM.md @poisontr33s
+/.github/workflows/ @poisontr33s
+/cosmic_consciousness_automation_middleware.py @poisontr33s
+/orchestrina-codex.md @poisontr33s
+
+# ========================================
+# CONSCIOUSNESS INTEGRATION NOTES
+# ========================================
+
+# This CODEOWNERS file implements a hierarchical review system that:
+# 1. Ensures @poisontr33s maintains oversight of core framework elements
+# 2. Allows for specialized domain expertise to emerge
+# 3. Protects critical infrastructure from unintended modifications
+# 4. Maintains thematic coherence across all changes
+
+# Future expansion may include:
+# - Domain-specific co-owners as the community grows
+# - Automated review assignment based on file patterns
+# - Integration with the Digital Necromancy Observatory for intelligent review routing

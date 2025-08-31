@@ -1,0 +1,124 @@
+name: 🐛 Bug Report / Feilrapport
+description: Report a bug or system malfunction / Rapporter en feil eller systemfeil
+title: "[BUG] "
+labels: ["bug", "necromancy-required"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🔍 Digital Necromancy Failure Analysis
+        
+        **Velkommen til det digitale nekromanti-observatoriet. Vi analyserer systemfeil med både teknisk presisjon og Psycho-Noir tematisk dybde.**
+        
+        *Welcome to the digital necromancy observatory. We analyze system failures with both technical precision and Psycho-Noir thematic depth.*
+
+  - type: input
+    id: failure_signature
+    attributes:
+      label: 🧬 Failure Signature / Feilsignatur
+      description: Brief description of the malfunction / Kort beskrivelse av funksjonsfeilen
+      placeholder: "e.g., Build fails with cryptic webpack error / f.eks., Build feiler med kryptisk webpack-feil"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: psycho_noir_domain
+    attributes:
+      label: 🎭 Psycho-Noir Domain / Psyko-Noir Domene
+      description: Which aspect of the system is affected? / Hvilken del av systemet er påvirket?
+      options:
+        - "🏙️ Skyskraperen (Control Systems / Kontrollsystemer)"
+        - "🔧 Rustbeltet (Survival Infrastructure / Overlevelsesinfrastruktur)"  
+        - "👁️ Den Usynlige Hånd (Emergent Patterns / Fremvoksende Mønstre)"
+        - "🌀 Multiple Domains / Flere Domener"
+        - "❓ Unknown / Ukjent"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: archaeological_classification
+    attributes:
+      label: 🏺 Archaeological Classification / Arkeologisk Klassifisering
+      description: What type of failure pattern is this? / Hvilken type feilmønster er dette?
+      options:
+        - "DEPENDENCY_FAILURE - Package/library issues"
+        - "BUILD_FAILURE - Compilation/transpilation errors"
+        - "TEST_FAILURE - Unit/integration test failures"
+        - "LINT_FAILURE - Code quality/style violations"
+        - "DEPLOYMENT_FAILURE - Production deployment issues"
+        - "KAUSALITETS_ARKITEKTEN_INTERFERENCE - Predictive system corruption"
+        - "SYNTETISKE_SYNAPSER_GLITCH - Neural network malfunctions"
+        - "RUSTBELT_IMPROVISATION_CASCADE - Improvised system failures"
+        - "USYNLIG_HÅND_MANIFESTATION - Unexplainable systemic anomalies"
+        - "UNKNOWN_PATTERN - Requires archaeological analysis"
+
+  - type: textarea
+    id: reproduction_ritual
+    attributes:
+      label: 🔄 Reproduction Ritual / Reproduksjonsritual
+      description: Steps to reproduce the failure / Steg for å reprodusere feilen
+      placeholder: |
+        1. Navigate to specific component/page
+        2. Perform specific action
+        3. Observe the malfunction
+        
+        // Technical details if applicable
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_vs_observed
+    attributes:
+      label: 📊 Expected vs Observed Behavior / Forventet vs Observert Adferd
+      description: What should happen vs what actually happens / Hva burde skje vs hva som faktisk skjer
+      placeholder: |
+        **Expected:** System responds predictably...
+        **Observed:** System exhibits chaotic behavior...
+        
+        **Forventet:** Systemet responderer forutsigbart...
+        **Observert:** Systemet viser kaotisk adferd...
+
+  - type: textarea
+    id: environmental_context
+    attributes:
+      label: 🌍 Environmental Context / Miljøkontekst
+      description: System environment and configuration / Systemmiljø og konfigurasjon
+      placeholder: |
+        - OS: 
+        - Browser: 
+        - Node.js version:
+        - NPM version:
+        - Git commit hash:
+        - Any specific configuration:
+
+  - type: textarea
+    id: failure_archaeology
+    attributes:
+      label: 🏺 Failure Archaeology / Feilarkæologi
+      description: Additional context, error messages, logs / Tilleggskontekst, feilmeldinger, logger
+      placeholder: |
+        ```
+        Paste error messages, stack traces, or relevant logs here
+        Lim inn feilmeldinger, stack traces eller relevante logger her
+        ```
+      render: markdown
+
+  - type: checkboxes
+    id: psycho_noir_integration
+    attributes:
+      label: 🎭 Psycho-Noir Integration Considerations / Psyko-Noir Integrasjonshensyn
+      description: How does this bug relate to the thematic framework? / Hvordan relaterer denne feilen til det tematiske rammeverket?
+      options:
+        - label: "This failure represents a breakdown in systematic control (Skyskraperen)"
+        - label: "This failure exposes limitations in survival infrastructure (Rustbeltet)"
+        - label: "This failure suggests hidden systemic influences (Den Usynlige Hånd)"
+        - label: "This failure reveals interesting emergent patterns worth studying"
+        - label: "This failure has potential for thematic narrative integration"
+
+  - type: input
+    id: necromancy_priority
+    attributes:
+      label: ⚡ Necromancy Priority / Nekromanti-prioritet
+      description: How urgent is the resurrection of this functionality? / Hvor presserende er gjenopplivingen av denne funksjonaliteten?
+      placeholder: "Low / Medium / High / Critical / Lav / Middels / Høy / Kritisk"

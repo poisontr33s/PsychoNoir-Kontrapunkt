@@ -1,5 +1,5 @@
 name: "Jules Enhanced CI - Den Usynlige H\xE5nds Optimization Protocol"
-true:
+on:
   push:
     branches:
     - main

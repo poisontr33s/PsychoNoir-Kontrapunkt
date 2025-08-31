@@ -1,5 +1,5 @@
 name: "\U0001F9E0 Neural Archaeology Pre-PR Analysis"
-true:
+on:
   pull_request:
     types:
     - opened
@@ -42,7 +42,7 @@ jobs:
         python-version: '3.12'
         cache: pip
     - name: Cache Python dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}

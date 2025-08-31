@@ -1,5 +1,5 @@
 name: "\U0001F680 Multi-Vector Failure Generation Pipeline"
-true:
+on:
   pull_request:
     branches:
     - main
