@@ -1,5 +1,5 @@
 name: CodeQL Advanced
-true:
+on:
   push:
     branches:
     - main

@@ -1,5 +1,5 @@
 name: "\U0001F9E0 Neural Archaeology System - Active Monitoring"
-true:
+on:
   pull_request:
     types:
     - opened
