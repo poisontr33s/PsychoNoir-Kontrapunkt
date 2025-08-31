@@ -1,12 +1,13 @@
 import qrcode
 import io
 import base64
+import os
 
 def generate_qr_code_for_iphone():
     """Generate QR code for iPhone access to mobile portal"""
     
-    # Mobile portal URL
-    mobile_url = "http://10.0.0.112:8080/mobile.html"
+    # Mobile portal URL (updated for GitHub Pages)
+    mobile_url = "https://poisontr33s.github.io/PsychoNoir-Kontrapunkt/mobile.html"
     
     # Create QR code
     qr = qrcode.QRCode(
@@ -22,8 +23,10 @@ def generate_qr_code_for_iphone():
     # Create QR code image
     qr_img = qr.make_image(fill_color="black", back_color="white")
     
-    # Save QR code
-    qr_img.save("/workspaces/PsychoNoir-Kontrapunkt/docs/iphone_access_qr.png")
+    # Get current directory and save QR code
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    qr_path = os.path.join(current_dir, "docs", "iphone_access_qr.png")
+    qr_img.save(qr_path)
     
     print("🎭✨ PSYCHO-NOIR KONTRAPUNKT - iPhone QR ACCESS ✨🎭")
     print("=" * 60)

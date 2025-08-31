@@ -206,4 +206,4 @@ runs:
         path: |
           logs/necromancer/
           artifacts/necromancer/
-        retention-days: ${{ vars.NECRO_ARTIFACT_RETENTION_DAYS || '14' }}
+        retention-days: 14
