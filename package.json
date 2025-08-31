@@ -17,6 +17,10 @@
   "devDependencies": {
     "jest": "^29.7.0"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/frontend/**/*.test.js"]
+  },
   "dependencies": {
     "ansi-escapes": "7.0.0",
     "ansi-regex": "6.0.1",
