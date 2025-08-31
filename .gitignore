@@ -21,6 +21,14 @@ production-backend/
 dist/
 build/
 coverage/
+htmlcov/
+
+# ML Siphoning artifacts  
+ml_siphon_manifest.json
+*.pkl
+*.model
+training_data/
+ml_datasets/
 
 # Python
 __pycache__/

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psychonoir-kontrapunkt"
+version = "0.1.0"
+description = "🎭 PsychoNoir Kontrapunkt Digital Necromancy Observatory System"
+authors = [{name = "PoisonTr33s", email = "dev@psychonoir.kontrapunkt"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "flask>=2.3.0",
+    "requests>=2.31.0", 
+    "psutil>=5.9.0",
+    "SQLAlchemy>=2.0.0",
+    "flask-cors>=4.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0"
+]
+
+ml = [
+    "scikit-learn>=1.3.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0"
+]
+
+[tool.setuptools]
+packages = ["psychonoir_kontrapunkt"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "--cov=psychonoir_kontrapunkt --cov-report=html --cov-report=xml"
