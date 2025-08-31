@@ -44,7 +44,7 @@ jobs:
         python-version: '3.12'
         cache: pip
     - name: Cache Python dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -88,24 +88,20 @@ jobs:
       run: "echo \"\U0001F4CA Generating visual failure analysis...\"\ncd backend/python\n\
         python failure_analysis_visualizer.py\n"
     - name: "\U0001F4CB Upload Archaeology Database"
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: failure-archaeology-database
-        path: 'data/generert/failure_archaeology.db
-
+        path: |
+          data/generert/failure_archaeology.db
           data/generert/*.log
-
-          '
         retention-days: 30
     - name: "\U0001F4CA Upload Analysis Reports"
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: neural-archaeology-reports
-        path: 'data/rapporter/*.json
-
+        path: |
+          data/rapporter/*.json
           data/rapporter/*.md
-
-          '
         retention-days: 30
     - name: "\U0001F3AF Comment PR with Neural Archaeology Results"
       if: github.event_name == 'pull_request'
@@ -147,7 +143,7 @@ jobs:
       with:
         python-version: '3.12'
     - name: Cache Python dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -159,7 +155,7 @@ jobs:
 
         '
     - name: "\U0001F4E5 Download Archaeology Database"
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: failure-archaeology-database
         path: data/generert/
@@ -205,7 +201,7 @@ jobs:
     - name: "\U0001F4E5 Checkout Repository"
       uses: actions/checkout@v4
     - name: "\U0001F4E5 Download Analysis Results"
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: neural-archaeology-reports
         path: data/rapporter/
