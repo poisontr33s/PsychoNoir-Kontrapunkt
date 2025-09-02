@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>💻📱 Jules Micro IDE</title>
+  <meta name="theme-color" content="#0b0b0f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Jules IDE" />
+  <link rel="manifest" href="data:application/manifest+json,{\"name\":\"Jules Micro IDE\",\"short_name\":\"Jules IDE\",\"start_url\":\"./jules_micro_ide.html\",\"display\":\"standalone\",\"background_color\":\"#0b0b0f\",\"theme_color\":\"#0b0b0f\"}" />
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --panel: #12121a;
+      --panel-2: #141424;
+      --text: #d6fbe6;
+      --muted: #8bd8b1;
+      --accent: #00ff88;
+      --accent-2: #ff6b9d;
+      --border: #1e1e2e;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: radial-gradient(1200px 800px at 100% -20%, rgba(255,107,157,.08), transparent),
+      radial-gradient(900px 700px at -10% 120%, rgba(0,255,136,.08), transparent), var(--bg);
+      color: var(--text); font-family: -apple-system, system-ui, sans-serif;
+      display: flex; flex-direction: column;
+    }
+    .hdr {
+      height: 44px; padding: 0 10px; display: flex; align-items: center; gap: 8px;
+      background: linear-gradient(180deg, rgba(255,107,157,.08), rgba(255,107,157,0) 70%);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: env(safe-area-inset-top); z-index: 10;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+    .title { font-weight: 700; letter-spacing: .3px; font-size: 14px; }
+    .spacer { flex: 1; }
+    .btn { border: 1px solid var(--border); background: rgba(0,0,0,.2); color: var(--text); height: 30px; padding: 0 10px; border-radius: 8px; font-size: 12px; }
+    .wrap { flex: 1; display: grid; grid-template-rows: 1fr 110px; }
+    .editor { padding: 8px; }
+    .card { height: 100%; border: 1px solid var(--border); border-radius: 12px; background:
+      linear-gradient(180deg, rgba(20,20,36,.6), rgba(18,18,26,.8)); overflow: hidden; display: flex; flex-direction: column; }
+    .tabs { display: flex; height: 34px; gap: 6px; padding: 6px; border-bottom: 1px solid var(--border); background: rgba(0,0,0,.15); }
+    .tab { flex: 0 0 auto; font-size: 11px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 7px; color: var(--muted); }
+    .tab.active { color: var(--text); border-color: rgba(0,255,136,.25); box-shadow: inset 0 0 0 1px rgba(0,255,136,.2); }
+    .codewrap { position: relative; flex: 1; }
+    textarea.code {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none; outline: none;
+      background: transparent; color: var(--text); font-family: var(--mono); font-size: 12px; line-height: 1.45; padding: 10px 12px; resize: none;
+    }
+    .ruler { position: absolute; left: 0; top: 0; bottom: 0; width: 36px; border-right: 1px solid var(--border); color: #6be6b1aa; font-family: var(--mono); font-size: 11px; padding: 10px 0; text-align: right; }
+    .ruler div { padding-right: 6px; height: 1.45em; }
+    .pad { padding: 8px; }
+    .row { display: flex; gap: 6px; }
+    .cbtn { flex: 1; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: linear-gradient(180deg, rgba(0,255,136,.15), rgba(0,255,136,.05)); color: var(--text); font-weight: 600; font-size: 13px; }
+    .cbtn.alt { background: linear-gradient(180deg, rgba(255,107,157,.15), rgba(255,107,157,.05)); }
+    .console { height: 110px; border-top: 1px solid var(--border); background: rgba(0,0,0,.25); }
+    .con { height: 100%; overflow: auto; font-family: var(--mono); font-size: 11.5px; padding: 8px 10px; }
+    .log { margin: 0; padding: 4px 0; white-space: pre-wrap; word-break: break-word; }
+    .ok { color: var(--accent); }
+    .err { color: #ff6b6b; }
+
+    /* Bottom micro-nav for thumb reach */
+    .nav { position: fixed; left: 0; right: 0; bottom: 0; height: calc(52px + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom);
+      border-top: 1px solid var(--border); background: rgba(10,10,16,.9); backdrop-filter: blur(6px); display: grid; grid-template-columns: repeat(4, 1fr); z-index: 20; }
+    .nav button { background: none; border: none; color: var(--muted); font-size: 11px; display: grid; place-items: center; gap: 4px; }
+    .nav .ic { width: 18px; height: 18px; border-radius: 4px; border: 1px solid var(--border); display: grid; place-items: center; }
+    .nav .active { color: var(--text); }
+
+    /* Mini toasts */
+    .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(60px + env(safe-area-inset-bottom)); background: rgba(0,0,0,.85); color: var(--text);
+      border: 1px solid var(--border); border-radius: 10px; font-size: 12px; padding: 8px 10px; display: none; z-index: 30; }
+  </style>
+</head>
+<body>
+  <div class="hdr">
+    <div class="dot" aria-hidden></div>
+    <div class="title">Jules Micro IDE · Psycho-Noir</div>
+    <div class="spacer"></div>
+    <button class="btn" id="installBtn" hidden>➕ Installer</button>
+  </div>
+
+  <div class="wrap">
+    <div class="editor">
+      <div class="card" role="region" aria-label="Kode-editor">
+        <div class="tabs">
+          <div class="tab active" id="tab-code">code.py</div>
+          <div class="tab" id="tab-out">output</div>
+          <div class="tab" id="tab-chat">chat</div>
+        </div>
+        <div class="codewrap" id="codewrap">
+          <div class="ruler" id="ruler"></div>
+          <textarea class="code" id="code" spellcheck="false"># 🤖💋 Jules Micro IDE
+# Miniscule iPhone editor. Psycho-Noir compliant. No deps.
+
+# HINTS:
+# - Tap Run ▶ to execute
+# - Tap Share 🔄 for cross-pollination
+# - Tap Noir 🎭 to inject thematic glitches
+
+from datetime import datetime
+
+def weave_causal_thread(event: str) -> str:
+    # ERROR: MEMETIC_HAZARD_DETECTED? keep it stylish.
+    t = datetime.now().isoformat(timespec='seconds')
+    return f"[{t}] Skyskraperen murmurs: {event} → Rustbeltet retaliates."
+
+print(weave_causal_thread("Astrid adjusts the dials"))
+</textarea>
+        </div>
+        <div class="pad">
+          <div class="row">
+            <button class="cbtn" id="runBtn">▶ Run</button>
+            <button class="cbtn alt" id="shareBtn">🔄 Share</button>
+            <button class="cbtn" id="noirBtn">🎭 Noir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="console" role="region" aria-label="Terminal">
+      <div class="con" id="con"></div>
+    </div>
+  </div>
+
+  <div class="nav" role="tablist" aria-label="Micro navigation">
+    <button id="navEdit" class="active" aria-selected="true"><div class="ic">⌨</div>Editor</button>
+    <button id="navOut"><div class="ic">🖨</div>Output</button>
+    <button id="navChat"><div class="ic">💬</div>Chat</button>
+    <button id="navTools"><div class="ic">🧰</div>Tools</button>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const code = document.getElementById('code');
+  const ruler = document.getElementById('ruler');
+  const con = document.getElementById('con');
+  const runBtn = document.getElementById('runBtn');
+  const shareBtn = document.getElementById('shareBtn');
+  const noirBtn = document.getElementById('noirBtn');
+  const toast = document.getElementById('toast');
+
+  // Basic line ruler for tiny editor
+  function paintRuler() {
+    const lines = code.value.split('\n').length;
+    const frag = document.createDocumentFragment();
+    for (let i = 1; i <= Math.max(lines, 8); i++) {
+      const d = document.createElement('div');
+      d.textContent = i.toString();
+      frag.appendChild(d);
+    }
+    ruler.innerHTML = '';
+    ruler.appendChild(frag);
+  }
+  code.addEventListener('input', paintRuler);
+  paintRuler();
+
+  // Tiny console helpers
+  function logOk(msg) { con.insertAdjacentHTML('beforeend', `<p class="log ok">${escapeHtml(msg)}</p>`); con.scrollTop = con.scrollHeight; }
+  function logErr(msg) { con.insertAdjacentHTML('beforeend', `<p class="log err">${escapeHtml(msg)}</p>`); con.scrollTop = con.scrollHeight; }
+  function log(msg) { con.insertAdjacentHTML('beforeend', `<p class="log">${escapeHtml(msg)}</p>`); con.scrollTop = con.scrollHeight; }
+  function clearCon() { con.innerHTML = ''; }
+  function escapeHtml(s){ return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c])); }
+
+  // Simulated run (client-side) — we "execute" Python-ish by pattern
+  function runPseudoPython(src) {
+    clearCon();
+    try {
+      // Extract lines with print( ... ) and render strings
+      const prints = [...src.matchAll(/print\(([^\n]+)\)/g)].map(m => m[1]);
+      if (prints.length === 0) {
+        log('⏳ Ingen utskrift—programmet kjørte uten print().');
+      } else {
+        prints.forEach(expr => {
+          let out = expr
+            .replace(/^f?"|"$/g,'')
+            .replace(/\{[^}]+\}/g,'∴')
+            .replace(/\\n/g,'\n');
+          logOk(out);
+        });
+      }
+      log('✅ Pseudo-execution complete (client-side).');
+    } catch (e) {
+      logErr('PANIC: REALITY_INTEGRITY_COMPROMISED_AT_0xDEADBEEF');
+      logErr(String(e));
+    }
+  }
+
+  // Noir injector — adds glitchy Psycho-Noir flavor
+  function injectNoir() {
+    const noir = [
+      "# ERROR: SOUL_NOT_FOUND — proceeding anyway",
+      "# WARNING: SYNAPTIC_DRIFT_DETECTED",
+      "# NOTE: Rustbeltet patched the power grid with chewing gum",
+      "# HINT: The Invisible Hand never types, it edits causality",
+    ];
+    const i = Math.floor(Math.random()*noir.length);
+    const cur = code.selectionStart;
+    const val = code.value;
+    code.value = val.slice(0, cur) + '\n' + noir[i] + '\n' + val.slice(cur);
+    paintRuler();
+    toastIt('🎭 Noir-injeksjon satt inn');
+  }
+
+  // Share / Cross-pollination — simulate a bridge
+  function share() {
+    const excerpt = code.value.slice(0, 120).replace(/\s+/g,' ').trim();
+    toastIt('🔄 Deler snippet til Jules (simulert)');
+    setTimeout(() => {
+      log('📤 Shared → "' + excerpt + '…"');
+      setTimeout(() => {
+        logOk('📥 Jules svar: Optimaliserte kontrollflyter + tematisk forsterkning (Psycho-Noir)');
+      }, 600);
+    }, 400);
+  }
+
+  // Micro navigation (panels are virtual; we keep single view, use console as second panel)
+  document.getElementById('navEdit').onclick = () => toastIt('⌨ Editor');
+  document.getElementById('navOut').onclick = () => { toastIt('🖨 Output'); con.scrollTop = con.scrollHeight; };
+  document.getElementById('navChat').onclick = () => toastIt('💬 Chat (lite)');
+  document.getElementById('navTools').onclick = () => toastIt('🧰 Tools');
+
+  // Buttons
+  runBtn.onclick = () => runPseudoPython(code.value);
+  shareBtn.onclick = share;
+  noirBtn.onclick = injectNoir;
+
+  // PWA install prompt
+  let deferred; const installBtn = document.getElementById('installBtn');
+  window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; installBtn.hidden = false; });
+  installBtn.onclick = async () => { if (!deferred) return; deferred.prompt(); const { outcome } = await deferred.userChoice; toastIt(outcome === 'accepted' ? '📲 Installert' : '🙅 Avbrutt'); deferred = null; installBtn.hidden = true; };
+
+  // Service worker (optional)
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  }
+
+  function toastIt(msg) {
+    toast.textContent = msg; toast.style.display = 'block';
+    clearTimeout(toast._t); toast._t = setTimeout(() => toast.style.display = 'none', 1200);
+  }
+})();
+</script>
+</body>
+</html>

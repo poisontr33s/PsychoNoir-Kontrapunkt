@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🎭💬 PsychoNoir Mobile Chat</title>
+    <meta name="theme-color" content="#ff6b6b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PsychoNoir Chat">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #c0c0c0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: rgba(255, 107, 107, 0.1);
+            border-bottom: 1px solid #ff6b6b;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .header h1 {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .header-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn {
+            background: rgba(70, 130, 180, 0.2);
+            border: 1px solid #4682b4;
+            border-radius: 6px;
+            color: #4682b4;
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: rgba(70, 130, 180, 0.3);
+            color: #c0c0c0;
+        }
+        
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            scroll-behavior: smooth;
+        }
+        
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 12px;
+            max-width: 85%;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.user {
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid #ff6b6b;
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .message.copilot {
+            background: rgba(70, 130, 180, 0.2);
+            border: 1px solid #4682b4;
+            margin-right: auto;
+        }
+        
+        .message.system {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid #4ade80;
+            margin: 0 auto;
+            text-align: center;
+            max-width: 90%;
+            font-size: 0.9rem;
+            color: #4ade80;
+        }
+        
+        .chat-input-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid #333;
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+        
+        .quick-action {
+            background: rgba(70, 130, 180, 0.2);
+            border: 1px solid #4682b4;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            color: #4682b4;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-action:hover {
+            background: rgba(70, 130, 180, 0.3);
+            color: #c0c0c0;
+        }
+        
+        .chat-input-form {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-end;
+        }
+        
+        .chat-input {
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid #4682b4;
+            border-radius: 20px;
+            padding: 0.75rem 1rem;
+            color: #c0c0c0;
+            font-size: 16px;
+            resize: none;
+            min-height: 44px;
+            max-height: 120px;
+            font-family: inherit;
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+        }
+        
+        .send-button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .send-button:hover {
+            background: #ff5252;
+        }
+        
+        .send-button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        
+        .status-bar {
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid #333;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #4ade80;
+        }
+        
+        .typing-indicator {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4682b4;
+            font-style: italic;
+            padding: 0.5rem 1rem;
+        }
+        
+        .typing-dots {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .typing-dot {
+            width: 4px;
+            height: 4px;
+            background: #4682b4;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        @keyframes typing {
+            0%, 80%, 100% { opacity: 0.2; }
+            40% { opacity: 1; }
+        }
+        
+        .connection-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            display: inline-block;
+        }
+        
+        .connection-indicator.offline {
+            background: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎭💬 PsychoNoir Chat</h1>
+        <div class="header-controls">
+            <a href="https://fictional-parakeet-wrggxgxq949w35gq4.app.github.dev" class="btn">🖥️ IDE</a>
+            <button onclick="toggleFullscreen()" class="btn">📱 Full</button>
+            <button onclick="forceReload()" class="btn">♻️ Reload</button>
+        </div>
+    </div>
+    
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+            <div class="message system">
+                🎭 Astrid Møllers Mobile Chat Interface
+                <br>Direct access to PsychoNoir Kontrapunkt context
+                <br><small>Hardcoded for permanent mobile access</small>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            <span>Copilot is typing</span>
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <div class="quick-actions">
+                <div class="quick-action" onclick="insertQuickMessage('Explain this code')">🔍 Explain</div>
+                <div class="quick-action" onclick="insertQuickMessage('Review changes')">📝 Review</div>
+                <div class="quick-action" onclick="insertQuickMessage('Generate tests')">🧪 Tests</div>
+                <div class="quick-action" onclick="insertQuickMessage('Fix error')">🔧 Fix</div>
+                <div class="quick-action" onclick="insertQuickMessage('Astrid Møller analysis')">🎭 Astrid</div>
+                <div class="quick-action" onclick="insertQuickMessage('Iron Maiden systems')">⚡ Iron</div>
+            </div>
+            
+            <form class="chat-input-form" onsubmit="sendMessage(event)">
+                <textarea 
+                    class="chat-input" 
+                    id="messageInput"
+                    placeholder="Ask about PsychoNoir Kontrapunkt code..."
+                    rows="1"
+                    autocomplete="off"
+                ></textarea>
+                <button type="submit" class="send-button" id="sendButton">➤</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="status-bar">
+        <div>
+            <span class="connection-indicator" id="connectionIndicator"></span>
+            <span id="statusText">Hardcoded Mobile Chat Active</span>
+        </div>
+        <div>Codespace: fictional-parakeet-wrggxgxq949w35gq4</div>
+    </div>
+    
+    <script>
+        // Enhanced mobile chat functionality
+        let messageHistory = [];
+        let isConnected = true;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setupMobileChat();
+            autoResizeTextarea();
+            
+            // Add welcome message
+            addMessage('copilot', 'Hei! 🎭 Jeg er tilgjengelig for PsychoNoir Kontrapunkt spørsmål. Dette er den hardkodede mobile chat-grensesnittet - alltid tilgjengelig på iPhone! Spør om Astrid Møller, Iron Maiden, Den Usynlige Hånd, eller kode-relaterte spørsmål.');
+        });
+        
+        function setupMobileChat() {
+            // Mobile-specific optimizations
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js').catch(e => console.log('SW not available'));
+            }
+            
+            // Prevent zoom on input focus (iOS)
+            document.addEventListener('touchstart', function() {}, true);
+            
+            // Handle viewport changes
+            window.addEventListener('resize', handleViewportChange);
+        }
+        
+        function handleViewportChange() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        
+        function autoResizeTextarea() {
+            const textarea = document.getElementById('messageInput');
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+            });
+            
+            textarea.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage(e);
+                }
+            });
+        }
+        
+        function sendMessage(event) {
+            event.preventDefault();
+            
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            addMessage('user', message);
+            messageHistory.push({role: 'user', content: message});
+            
+            input.value = '';
+            input.style.height = 'auto';
+            
+            showTypingIndicator();
+            simulateCopilotResponse(message);
+        }
+        
+        function addMessage(type, content) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            let formattedContent = content
+                .replace(/`([^`]+)`/g, '<code style="background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 3px;">$1</code>')
+                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n/g, '<br>');
+            
+            messageDiv.innerHTML = formattedContent;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'flex';
+            document.getElementById('sendButton').disabled = true;
+        }
+        
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'none';
+            document.getElementById('sendButton').disabled = false;
+        }
+        
+        function simulateCopilotResponse(userMessage) {
+            setTimeout(() => {
+                hideTypingIndicator();
+                const response = generatePsychoNoirResponse(userMessage);
+                addMessage('copilot', response);
+                messageHistory.push({role: 'assistant', content: response});
+            }, 1000 + Math.random() * 1500);
+        }
+        
+        function generatePsychoNoirResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('astrid') || lowerMessage.includes('møller')) {
+                return '🎭 **Astrid Møller** er Skyskraperens maktarkitekt! Hun opererer gjennom **Kausalitets-Arkitekten** - et ultra-sofistikert prediktivt system som designer fremtidsscenarioer. Hennes **Syntetiske Synapser** gir henne formidabel kontroll over Skyskraperens infrastruktur. Vil du utforske hennes systemer dypere?';
+            }
+            
+            if (lowerMessage.includes('iron maiden') || lowerMessage.includes('iron')) {
+                return '⚡ **The Iron Maiden** er Rustbeltets jernharde overlever! Hun mestrer **Improvisasjonens Kunst** og navigerer **Gatas Æreskodeks**. I motsetning til Astrids teknologiske kontroll, representerer Iron Maiden rå resiliens og gateplanets virkelighet. Hvilke aspekter av hennes domene interesserer deg?';
+            }
+            
+            if (lowerMessage.includes('usynlige hånd') || lowerMessage.includes('invisible hand')) {
+                return '👁️ **Den Usynlige Hånd** - den mystiske kraften som manipulerer begge domener! Manifesterer seg gjennom **Kompilerings-Spøkelser** (`ERROR: SOUL_NOT_FOUND`) og **Kildekode-Kadaver** i Rustbeltet. Dens innflytelse blir stadig mer sofistikert og _responsive_. Tør du grave dypere i dette mysteriet?';
+            }
+            
+            if (lowerMessage.includes('code') || lowerMessage.includes('kode')) {
+                return '💻 I PsychoNoir har all kode **tematisk estetikk** - den reflekterer den dystopiske, glitchy naturen! Eksempler: `ERROR: MEMETIC_HAZARD_DETECTED`, `PANIC: REALITY_INTEGRITY_COMPROMISED_AT_0xDEADBEEF`. Koden bruker engelsk for autentisk "tech-speak" blandet med norsk for poetiske feilmeldinger. Hvilken kode vil du utforske?';
+            }
+            
+            if (lowerMessage.includes('mobile') || lowerMessage.includes('iphone')) {
+                return '📱 Du bruker den **hardkodede mobile chat-grensesnittet** akkurat nå! Dette er designet spesifikt for iPhone - ultra-lett, touch-optimalisert, og alltid tilgjengelig. Du kan også aktivere middleware-overlay i hovedsessionen med Ctrl+Shift+C. Perfect for mobile PsychoNoir utvikling! 🎭';
+            }
+            
+            const responses = [
+                '🎭 Interessant perspektiv! I PsychoNoir kontekst representerer dette konflikten mellom Skyskraperens kontroll og Rustbeltets kaos. Hvordan vil du utforske dette videre?',
+                '⚡ Som Copilot i denne psycho-noir settingen kan jeg hjelpe med både tekniske implementasjoner og narrative aspekter. Hva trenger du mest hjelp med?',
+                '💭 Dette berører kjernene i vårt konseptuelle rammeverk. Skal vi dykke inn i de **kognitive**, **fysiske**, eller **narrative** aspektene?',
+                '🔍 Utmerket spørsmål! La oss utforske hvordan dette relaterer seg til de etablerte systemene og karakterene i PsychoNoir Kontrapunkt.'
+            ];
+            
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+        
+        function insertQuickMessage(message) {
+            document.getElementById('messageInput').value = message;
+            document.getElementById('messageInput').focus();
+        }
+        
+        function toggleFullscreen() {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                document.documentElement.requestFullscreen();
+            }
+        }
+        
+        function forceReload(){
+            if('serviceWorker' in navigator){
+                navigator.serviceWorker.getRegistrations().then(regs => {
+                    return Promise.all(regs.map(r => r.unregister())).then(()=>location.reload(true));
+                });
+            } else {
+                location.reload(true);
+            }
+        }
+        
+        // Connection status simulation
+        setInterval(() => {
+            const indicator = document.getElementById('connectionIndicator');
+            const statusText = document.getElementById('statusText');
+            
+            if (navigator.onLine) {
+                indicator.classList.remove('offline');
+                statusText.textContent = 'Hardcoded Mobile Chat Active';
+            } else {
+                indicator.classList.add('offline');
+                statusText.textContent = 'Offline Mode - Cached Responses';
+            }
+        }, 5000);
+        
+        // iOS viewport height fix
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
+    </script>
+</body>
+</html>

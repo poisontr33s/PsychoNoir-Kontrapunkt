@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>🧪💻 IMPA iPhone IDE · Jules</title>
+  <meta name="theme-color" content="#0a0c12" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="IMPA IDE" />
+  <link rel="manifest" href="data:application/manifest+json,{\"name\":\"IMPA iPhone IDE\",\"short_name\":\"IMPA IDE\",\"start_url\":\"./impa_iphone_ide.html\",\"display\":\"standalone\",\"background_color\":\"#0a0c12\",\"theme_color\":\"#0a0c12\"}" />
+  <style>
+    :root{
+      --bg:#0a0c12;--panel:#0f111a;--panel2:#111323;--ink:#e8fff1;--muted:#8be0b9;--acc:#00ff88;--acc2:#ff6b9d;--bd:#1a1e2e;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    }
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html,body{height:100%}
+    body{margin:0;background:
+      radial-gradient(1200px 800px at 110% -20%, rgba(255,107,157,.08), transparent),
+      radial-gradient(900px 700px at -10% 120%, rgba(0,255,136,.08), transparent), var(--bg);
+      font-family:-apple-system,system-ui,sans-serif;color:var(--ink);display:flex;flex-direction:column}
+    /* Titlebar (Electron vibes) */
+    .titlebar{height:46px;display:flex;align-items:center;gap:8px;padding:0 10px;border-bottom:1px solid var(--bd);
+      background:linear-gradient(180deg, rgba(255,107,157,.08), rgba(255,107,157,0) 65%)}
+    .dot{width:10px;height:10px;border-radius:50%;box-shadow:0 0 8px rgba(0,255,136,.6)}
+    .dot.red{background:#ff5f56}.dot.yellow{background:#ffbd2e}.dot.green{background:#27c93f}
+    .title{font-weight:700;letter-spacing:.2px}
+    .spacer{flex:1}
+    .mini{height:30px;border:1px solid var(--bd);background:rgba(0,0,0,.25);color:var(--ink);
+      padding:0 10px;border-radius:8px;font-size:12px}
+    /* Layout */
+    .wrap{flex:1;display:grid;grid-template-columns:56px 1fr;grid-template-rows:1fr 120px}
+    .side{border-right:1px solid var(--bd);background:rgba(0,0,0,.15);display:flex;flex-direction:column;align-items:center;padding:6px 4px;gap:6px}
+    .side button{width:44px;height:44px;border-radius:12px;border:1px solid var(--bd);background:linear-gradient(180deg, rgba(17,19,35,.8), rgba(15,17,26,.9));color:var(--muted);font-size:16px}
+    .side button.active{color:var(--ink);box-shadow:inset 0 0 0 1px rgba(0,255,136,.25)}
+    .main{display:flex;flex-direction:column}
+    .tabs{height:36px;display:flex;gap:6px;padding:6px;border-bottom:1px solid var(--bd);background:rgba(0,0,0,.15)}
+    .tab{font-size:11px;padding:6px 10px;border:1px solid var(--bd);border-radius:7px;color:var(--muted)}
+    .tab.active{color:var(--ink);border-color:rgba(0,255,136,.25);box-shadow:inset 0 0 0 1px rgba(0,255,136,.18)}
+    .editor{flex:1;display:grid;grid-template-rows:auto 1fr auto}
+    .toolbar{display:flex;gap:6px;padding:8px;border-bottom:1px solid var(--bd);background:linear-gradient(180deg, rgba(0,255,136,.08), rgba(0,255,136,0) 80%)}
+    .btn{height:36px;border-radius:10px;border:1px solid var(--bd);padding:0 12px;background:linear-gradient(180deg, rgba(17,19,35,.8), rgba(15,17,26,.9));color:var(--ink);font-weight:600}
+    .btn.alt{background:linear-gradient(180deg, rgba(255,107,157,.15), rgba(255,107,157,.05))}
+    .codewrap{position:relative;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);background:linear-gradient(180deg, rgba(17,19,35,.6), rgba(15,17,26,.9))}
+    .ruler{position:absolute;left:0;top:0;bottom:0;width:36px;border-right:1px solid var(--bd);color:#76f1bd;opacity:.9;font-family:var(--mono);font-size:11px;padding:10px 0;text-align:right}
+    .ruler div{padding-right:6px;height:1.45em}
+    textarea.code{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:transparent;border:none;outline:none;color:var(--ink);font-family:var(--mono);font-size:12px;line-height:1.45;padding:10px 12px 10px 48px;resize:none}
+    .status{display:flex;gap:8px;padding:8px;color:var(--muted);font-size:12px}
+    .console{grid-column:1 / span 2;border-top:1px solid var(--bd);background:rgba(0,0,0,.2)}
+    .con{height:100%;overflow:auto;font-family:var(--mono);font-size:11.5px;padding:8px 10px}
+    .log{margin:0;padding:4px 0;white-space:pre-wrap;word-break:break-word}
+    .ok{color:var(--acc)}.err{color:#ff6b6b}
+    /* Bottom micro-nav */
+    .nav{position:fixed;left:0;right:0;bottom:0;height:calc(52px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);border-top:1px solid var(--bd);background:rgba(10,12,18,.9);backdrop-filter:blur(6px);display:grid;grid-template-columns:repeat(4,1fr);z-index:20}
+    .nav button{background:none;border:none;color:var(--muted);font-size:11px;display:grid;place-items:center;gap:4px}
+    .nav .ic{width:18px;height:18px;border-radius:4px;border:1px solid var(--bd);display:grid;place-items:center}
+    .nav .active{color:var(--ink)}
+    /* Toast */
+    .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(60px + env(safe-area-inset-bottom));background:rgba(0,0,0,.85);color:var(--ink);border:1px solid var(--bd);border-radius:10px;font-size:12px;padding:8px 10px;display:none;z-index:30}
+  </style>
+</head>
+<body>
+  <div class="titlebar">
+    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+    <div class="title">IMPA iPhone IDE · Jules</div>
+    <div class="spacer"></div>
+    <button id="installBtn" class="mini" hidden>➕ Installer</button>
+  </div>
+
+  <div class="wrap">
+    <div class="side" aria-label="Dock">
+      <button id="dockFiles" class="active" title="Explorer">📁</button>
+      <button id="dockEdit" title="Editor">⌨</button>
+      <button id="dockTerm" title="Terminal">🖨</button>
+      <button id="dockBridge" title="Bridge">🌉</button>
+    </div>
+
+    <div class="main">
+      <div class="tabs"><div class="tab active" id="tab-code">code.py</div><div class="tab" id="tab-ts">snippet.ts</div><div class="tab" id="tab-out">output</div></div>
+      <div class="editor">
+        <div class="toolbar">
+          <button class="btn" id="runBtn">▶ Run</button>
+          <button class="btn alt" id="shareBtn">🔄 Share</button>
+          <button class="btn" id="noirBtn">🎭 Noir</button>
+          <button class="btn" id="tsBtn">TS↔PY</button>
+        </div>
+        <div class="codewrap">
+          <div class="ruler" id="ruler"></div>
+          <textarea id="code" class="code" spellcheck="false"># 🧪 IMPA iPhone IDE — repurposed from desktop vibes
+# Miniscule, touch-first. Psycho-Noir friendly. No deps.
+
+from datetime import datetime
+
+def scavenge_usable_data_shards(pulse: str) -> str:
+    t = datetime.now().isoformat(timespec='seconds')
+    return f"[{t}] Overvåkningspuls: {pulse} » Den Usynlige Hånd forstyrrer signalet."
+
+print(scavenge_usable_data_shards("Astrid triangulerer kausaliteten"))
+</textarea>
+        </div>
+        <div class="status" id="status">Lang: Python · Theme: Skyskraperen · Bridge: Sim</div>
+      </div>
+    </div>
+
+    <div class="console"><div class="con" id="con"></div></div>
+  </div>
+
+  <div class="nav" role="tablist" aria-label="Micro navigation">
+    <button id="navEdit" class="active" aria-selected="true"><div class="ic">⌨</div>Editor</button>
+    <button id="navOut"><div class="ic">🖨</div>Output</button>
+    <button id="navChat"><div class="ic">💬</div>Chat</button>
+    <button id="navTools"><div class="ic">🧰</div>Tools</button>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const code = document.getElementById('code');
+  const ruler = document.getElementById('ruler');
+  const con = document.getElementById('con');
+  const status = document.getElementById('status');
+  const runBtn = document.getElementById('runBtn');
+  const shareBtn = document.getElementById('shareBtn');
+  const noirBtn = document.getElementById('noirBtn');
+  const tsBtn = document.getElementById('tsBtn');
+  const toast = document.getElementById('toast');
+
+  let mode = 'py';
+
+  function paintRuler(){
+    const lines = code.value.split('\n').length;
+    const frag = document.createDocumentFragment();
+    for(let i=1;i<=Math.max(lines,8);i++){ const d=document.createElement('div'); d.textContent=String(i); frag.appendChild(d); }
+    ruler.innerHTML=''; ruler.appendChild(frag);
+  }
+  code.addEventListener('input', paintRuler); paintRuler();
+
+  function logOk(m){ con.insertAdjacentHTML('beforeend', `<p class='log ok'>${escape(m)}</p>`); con.scrollTop=con.scrollHeight; }
+  function logErr(m){ con.insertAdjacentHTML('beforeend', `<p class='log err'>${escape(m)}</p>`); con.scrollTop=con.scrollHeight; }
+  function log(m){ con.insertAdjacentHTML('beforeend', `<p class='log'>${escape(m)}</p>`); con.scrollTop=con.scrollHeight; }
+  function clearCon(){ con.innerHTML=''; }
+  function escape(s){ return s.replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c])); }
+
+  function runPseudoPy(src){
+    clearCon();
+    try{
+      const prints=[...src.matchAll(/print\(([^\n]+)\)/g)].map(m=>m[1]);
+      if(!prints.length){ log('⏳ Ingen print()—kjørte uten utskrift.'); }
+      else prints.forEach(expr=>{ let out=expr.replace(/^f?"|"$/g,'').replace(/\{[^}]+\}/g,'∴').replace(/\\n/g,'\n'); logOk(out); });
+      log('✅ PY pseudo-execution complete.');
+    }catch(e){ logErr('PANIC: REALITY_MISMATCH_AT_BYTE_0xDEADBEEF'); logErr(String(e)); }
+  }
+
+  function runPseudoTS(src){
+    clearCon();
+    try{
+      const logs=[...src.matchAll(/console\.log\(([^\n]+)\)/g)].map(m=>m[1]);
+      if(!logs.length){ log('⏳ No console.log — program ran silently.'); }
+      else logs.forEach(expr=>{ let out=expr.replace(/^`|`$/g,'').replace(/\${[^}]+}/g,'∴'); logOk(out); });
+      log('✅ TS pseudo-execution complete.');
+    }catch(e){ logErr('ERROR: SYNAPTIC_DRIFT_DETECTED'); logErr(String(e)); }
+  }
+
+  function setTS(){
+    mode='ts';
+    document.getElementById('tab-code').classList.remove('active');
+    document.getElementById('tab-ts').classList.add('active');
+    status.textContent='Lang: TypeScript · Theme: Skyskraperen · Bridge: Sim';
+    code.value=`// IMPA iPhone IDE — TS mode\n// Desktop electron vibes, shrunk for iPhone\n\nfunction weaveCausalThread(event: string): string {\n  const t = new Date().toISOString();\n  return \\[${'`'}\\${'${t}'}\\${'`'}] Skyskraperen murmurs: \\" + event + " → Rustbeltet retaliates.";\n}\n\nconsole.log(\\"Ready: \\" + weaveCausalThread('Astrid adjusts the dials'))`;
+    paintRuler();
+  }
+  function setPY(){
+    mode='py';
+    document.getElementById('tab-ts').classList.remove('active');
+    document.getElementById('tab-code').classList.add('active');
+    status.textContent='Lang: Python · Theme: Skyskraperen · Bridge: Sim';
+    code.value=`from datetime import datetime\n\ndef weave_causal_thread(event: str) -> str:\n    t = datetime.now().isoformat(timespec='seconds')\n    return f\\"[\\{t\\}] Skyskraperen murmurs: {event} → Rustbeltet retaliates.\\"\n\nprint(weave_causal_thread('Astrid adjusts the dials'))`;
+    paintRuler();
+  }
+
+  tsBtn.onclick=()=> (mode==='py'?setTS():setPY());
+  runBtn.onclick=()=> (mode==='py'?runPseudoPy(code.value):runPseudoTS(code.value));
+
+  noirBtn.onclick=()=>{
+    const noir=[
+      '# ERROR: SOUL_NOT_FOUND — continuing regardless',
+      '# NOTE: Kildekode-Kadaver detected in vicinity',
+      '# HINT: De Syntetiske Synapsene whisper back',
+      '// WARNING: Entanglement with Invisible Hand probable',
+    ];
+    const i=Math.floor(Math.random()*noir.length);
+    const pos=code.selectionStart; const v=code.value;
+    code.value=v.slice(0,pos)+'\n'+noir[i]+'\n'+v.slice(pos); paintRuler(); toastIt('🎭 Noir-injeksjon');
+  }
+
+  shareBtn.onclick=()=>{
+    const excerpt=code.value.slice(0,160).replace(/\s+/g,' ').trim();
+    toastIt('🔄 Deler til Jules (sim)');
+    setTimeout(()=>{ log('📤 Shared → "'+excerpt+'…"'); setTimeout(()=>{ logOk('📥 Jules: Forsterket med Psycho-Noir + flyt-optimalisering'); },600); },400);
+  }
+
+  // Dock buttons (visual only for now)
+  document.getElementById('dockFiles').onclick=()=>toastIt('📁 Explorer');
+  document.getElementById('dockEdit').onclick=()=>toastIt('⌨ Editor');
+  document.getElementById('dockTerm').onclick=()=>{ toastIt('🖨 Output'); con.scrollTop=con.scrollHeight };
+  document.getElementById('dockBridge').onclick=()=>toastIt('🌉 Bridge (sim)');
+
+  // Bottom nav (micro)
+  document.getElementById('navEdit').onclick=()=>toastIt('⌨ Editor');
+  document.getElementById('navOut').onclick=()=>{ toastIt('🖨 Output'); con.scrollTop=con.scrollHeight };
+  document.getElementById('navChat').onclick=()=>toastIt('💬 Chat');
+  document.getElementById('navTools').onclick=()=>toastIt('🧰 Tools');
+
+  // PWA install prompt
+  let deferred; const installBtn=document.getElementById('installBtn');
+  window.addEventListener('beforeinstallprompt', (e)=>{ e.preventDefault(); deferred=e; installBtn.hidden=false; });
+  installBtn.onclick=async ()=>{ if(!deferred) return; deferred.prompt(); const { outcome } = await deferred.userChoice; toastIt(outcome==='accepted'?'📲 Installert':'🙅 Avbrutt'); deferred=null; installBtn.hidden=true };
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('./sw.js').catch(()=>{}); }
+
+  function toastIt(m){ toast.textContent=m; toast.style.display='block'; clearTimeout(toast._t); toast._t=setTimeout(()=>toast.style.display='none',1200) }
+})();
+</script>
+</body>
+</html>
