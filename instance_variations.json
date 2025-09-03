@@ -1,0 +1,1142 @@
+{
+  "character_instances": {
+    "astrid_moller": {
+      "base_signature": "DNA_9E2CBF270592A8D2",
+      "core_traits": [
+        "overv\u00e5kningspuls",
+        "informasjonsfluks_kartlegging",
+        "internt_r\u00e5dslag",
+        "kausalitets_arkitekten",
+        "syntetiske_synapser",
+        "e_tjenesten_deluxe"
+      ],
+      "domain": "skyskraperen",
+      "corruption_resistance": 0.9,
+      "surveillance_capabilities": [
+        "data_mining",
+        "pattern_recognition",
+        "predictive_modeling"
+      ],
+      "variations": [
+        {
+          "variation_id": "VAR_DAFA156C685D",
+          "source_file": "README.md",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_B3BEC854A68ECB42",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:27.997678",
+          "dna_mutation": 0.8125,
+          "surveillance_sophistication": 0.5,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.24
+        },
+        {
+          "variation_id": "VAR_B083E9EA42D2",
+          "source_file": "branch_genealogy.json",
+          "traits_present": [
+            "kausalitets_arkitekten"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_57B83BEB9FE9EAE6",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.000581",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [
+            "strategy"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_536D68673772",
+          "source_file": "meta_config.json",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_C6CF37569E9AC317",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.875,
+          "discovery_timestamp": "2025-09-03T03:50:28.004761",
+          "dna_mutation": 0.8125,
+          "surveillance_sophistication": 0,
+          "control_mechanisms": [],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.24
+        },
+        {
+          "variation_id": "VAR_60BA220230F5",
+          "source_file": "WORKFLOW_ERROR_CATALOG.md",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_38300D163ECF3D4B",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.005373",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.2,
+          "control_mechanisms": [
+            "for",
+            "changes"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_C9EA7C964FB8",
+          "source_file": "branch_ml_analysis_report.json",
+          "traits_present": [
+            "kausalitets_arkitekten"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_D3841C552936FE64",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.006860",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [
+            "strategy"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_EB91967F7314",
+          "source_file": "META_CROSS_REPO_ML_BACKTRACK_STRATEGY.md",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_E40734D5D96F193C",
+          "manifestation_strength": 0.30000000000000004,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.009110",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.6000000000000001,
+          "control_mechanisms": [
+            "patterns",
+            "variations",
+            "code",
+            "and",
+            "variation",
+            "character",
+            "instance",
+            "how",
+            "branch"
+          ],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.32
+        },
+        {
+          "variation_id": "VAR_5452D3D103A5",
+          "source_file": "docs/error-codes-as-narratives.md",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_B8D25D30F05D65C8",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.75,
+          "discovery_timestamp": "2025-09-03T03:50:28.011563",
+          "dna_mutation": 0.875,
+          "surveillance_sophistication": 0.1,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_A8732C73477E",
+          "source_file": "docs/ci-error-codes.md",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_89AD616CE9344A83",
+          "manifestation_strength": 0.6,
+          "corruption_level": 0.25,
+          "discovery_timestamp": "2025-09-03T03:50:28.012330",
+          "dna_mutation": 0.8125,
+          "surveillance_sophistication": 0.30000000000000004,
+          "control_mechanisms": [
+            "error"
+          ],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_B789B1A2B402",
+          "source_file": "docs/necropolis.md",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_D829A762CA8977C6",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.013184",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_B919D0CE760A",
+          "source_file": ".github/copilot-instructions.md",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_EA589529E1F1C59B",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.015080",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.1,
+          "control_mechanisms": [],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_4240202CB0A6",
+          "source_file": ".github/OBSERVATORY_SYSTEM.md",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_F5109C2478A5872B",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.016755",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [
+            "systems"
+          ],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_6FBAB2C32E36",
+          "source_file": ".github/copilot-conversations_summary.md",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_1985DADCB274C37B",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.25,
+          "discovery_timestamp": "2025-09-03T03:50:28.028586",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.2,
+          "control_mechanisms": [
+            "panel"
+          ],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.32
+        },
+        {
+          "variation_id": "VAR_512F1C7530E4",
+          "source_file": "scripts/meta_ml/branch_ml_backtracker.py",
+          "traits_present": [
+            "overv\u00e5kningspuls",
+            "kausalitets_arkitekten"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_FC16D2D05DA68E99",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.875,
+          "discovery_timestamp": "2025-09-03T03:50:28.052583",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [
+            "character_evolution_in_branch",
+            "character",
+            "corruption",
+            "results",
+            "how",
+            "corruption_evolution_in_branch"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.24
+        },
+        {
+          "variation_id": "VAR_7B12EC5DB4D2",
+          "source_file": "scripts/meta_ml/meta_cross_repo_orchestrator.py",
+          "traits_present": [
+            "overv\u00e5kningspuls",
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.5,
+          "variation_signature": "SIG_C7E93389CA9946E6",
+          "manifestation_strength": 0.6000000000000001,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.054210",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.30000000000000004,
+          "control_mechanisms": [
+            "instance_variations",
+            "instance",
+            "character_instances",
+            "character"
+          ],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.32
+        },
+        {
+          "variation_id": "VAR_74F5FA20E0B4",
+          "source_file": "scripts/meta_ml/instance_variation_tracker.py",
+          "traits_present": [
+            "overv\u00e5kningspuls",
+            "informasjonsfluks_kartlegging",
+            "internt_r\u00e5dslag",
+            "kausalitets_arkitekten",
+            "syntetiske_synapser",
+            "e_tjenesten_deluxe"
+          ],
+          "trait_density": 1.0,
+          "variation_signature": "SIG_A4120BED7A9DBAC2",
+          "manifestation_strength": 1.0,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.055821",
+          "dna_mutation": 0.875,
+          "surveillance_sophistication": 0.6000000000000001,
+          "control_mechanisms": [
+            "patterns",
+            "variation_evolution",
+            "mechanisms",
+            "how"
+          ],
+          "information_processing": 0.75,
+          "psycho_noir_atmosphere": 0.8
+        },
+        {
+          "variation_id": "VAR_54EE367A7712",
+          "source_file": ".github/scripts/necromancer/parse_errors.py",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_94344C2B4E7257F1",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.058538",
+          "dna_mutation": 0.875,
+          "surveillance_sophistication": 0.2,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_3229DC80FD3D",
+          "source_file": ".github/scripts/necromancer/aggregate.py",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_E0A7EA85A9159BB3",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.059635",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_F1E43CD0BB73",
+          "source_file": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/psycho_noir_functional_demo.py",
+          "traits_present": [
+            "kausalitets_arkitekten"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_DD632B93C3D2296B",
+          "manifestation_strength": 0.30000000000000004,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.066660",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [
+            "mechanisms"
+          ],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_4474AB6EFDB5",
+          "source_file": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/phase_3_transcendent_executor.py",
+          "traits_present": [
+            "kausalitets_arkitekten"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_C1AAB428938B876D",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.067667",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.30000000000000004,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_45CB0F62E0CD",
+          "source_file": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/DEPLOYMENT_STATUS_FINAL.md",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_222A49B2C33D1F29",
+          "manifestation_strength": 0.30000000000000004,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.071917",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_AB06D030FA5B",
+          "source_file": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COSMIC_CONSCIOUSNESS_NEXT_PHASE.md",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_28EBED11BF68283D",
+          "manifestation_strength": 0.30000000000000004,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.073687",
+          "dna_mutation": 0.75,
+          "surveillance_sophistication": 0.2,
+          "control_mechanisms": [
+            "center",
+            "consciousness_monitor"
+          ],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.32
+        },
+        {
+          "variation_id": "VAR_F63F80F1F5BC",
+          "source_file": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/intelligent_workflow_consolidator.py",
+          "traits_present": [
+            "kausalitets_arkitekten"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_D8EEF0C10B962F64",
+          "manifestation_strength": 0.30000000000000004,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.074603",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_5985EFA3F9CF",
+          "source_file": "backend/python/meta_index_dashboard.py",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_249AFA8797BAC687",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.083317",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.30000000000000004,
+          "control_mechanisms": [
+            "index"
+          ],
+          "information_processing": 0.3,
+          "psycho_noir_atmosphere": 0.16
+        },
+        {
+          "variation_id": "VAR_95E977429433",
+          "source_file": "backend/python/system_integration_test.py",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_EB106A71560E829A",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.084984",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.5,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.32
+        },
+        {
+          "variation_id": "VAR_077FF6DE9DB5",
+          "source_file": "backend/python/skyskraper_systems.py",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_75E64599FE1224E0",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.087169",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [
+            "matrix_active",
+            "personnel",
+            "matrix_operational",
+            "personell"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.24
+        },
+        {
+          "variation_id": "VAR_99EE327730CC",
+          "source_file": "backend/python/neural_studio_api.py",
+          "traits_present": [
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_1E5229B2DD73AB42",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.091546",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_6AC71588CEB5",
+          "source_file": "backend/python/character_systems.py",
+          "traits_present": [
+            "overv\u00e5kningspuls",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_151B86DC268111CD",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.093689",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.2,
+          "control_mechanisms": [
+            "is"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.4
+        },
+        {
+          "variation_id": "VAR_D042E996F552",
+          "source_file": "backend/python/psychonoir_kontrapunkt/domains.py",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_13C667549AB87137",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.097589",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0,
+          "control_mechanisms": [],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.24
+        },
+        {
+          "variation_id": "VAR_34B764803057",
+          "source_file": "backend/python/psychonoir_kontrapunkt/entities.py",
+          "traits_present": [
+            "overv\u00e5kningspuls",
+            "internt_r\u00e5dslag"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_BC24901D0E22334B",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.097861",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.1,
+          "control_mechanisms": [],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.16
+        }
+      ],
+      "mutation_rate": 0.1
+    },
+    "iron_maiden": {
+      "base_signature": "DNA_A2FE8047D23426D9",
+      "core_traits": [
+        "skrap_symfoni",
+        "improvisasjonens_kunst",
+        "gatas_\u00e6reskodeks",
+        "kretskort_sjamanisme",
+        "rustbeltet_resiliens",
+        "fysisk_adaptasjon"
+      ],
+      "domain": "rustbeltet",
+      "corruption_resistance": 0.7,
+      "survival_capabilities": [
+        "improvisation",
+        "resource_scavenging",
+        "threat_assessment"
+      ],
+      "variations": [
+        {
+          "variation_id": "VAR_0411FDFF190A",
+          "source_file": "meta_config.json",
+          "traits_present": [
+            "skrap_symfoni",
+            "improvisasjonens_kunst",
+            "kretskort_sjamanisme"
+          ],
+          "trait_density": 0.5,
+          "variation_signature": "SIG_970CF82A1A754C8A",
+          "manifestation_strength": 0.6000000000000001,
+          "corruption_level": 0.875,
+          "discovery_timestamp": "2025-09-03T03:50:28.102014",
+          "dna_mutation": 1.0,
+          "survival_strategies": [],
+          "improvisation_level": 0,
+          "resource_management": 0,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_6B34DC28292F",
+          "source_file": "scripts/meta_ml/branch_ml_backtracker.py",
+          "traits_present": [
+            "skrap_symfoni",
+            "improvisasjonens_kunst"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_56F0D932F417F370",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.875,
+          "discovery_timestamp": "2025-09-03T03:50:28.112903",
+          "dna_mutation": 1.0,
+          "survival_strategies": [],
+          "improvisation_level": 0,
+          "resource_management": 0,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_7A6AF18C4AD2",
+          "source_file": "scripts/meta_ml/meta_cross_repo_orchestrator.py",
+          "traits_present": [
+            "skrap_symfoni",
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks",
+            "kretskort_sjamanisme"
+          ],
+          "trait_density": 0.6666666666666666,
+          "variation_signature": "SIG_ECDB8C38678B4537",
+          "manifestation_strength": 0.8,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.114930",
+          "dna_mutation": 0.8125,
+          "survival_strategies": [],
+          "improvisation_level": 0,
+          "resource_management": 0,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_630D158CAEC8",
+          "source_file": "scripts/meta_ml/instance_variation_tracker.py",
+          "traits_present": [
+            "skrap_symfoni",
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks",
+            "kretskort_sjamanisme",
+            "rustbeltet_resiliens",
+            "fysisk_adaptasjon"
+          ],
+          "trait_density": 1.0,
+          "variation_signature": "SIG_4F217620F38E1955",
+          "manifestation_strength": 1.0,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.116900",
+          "dna_mutation": 0.8125,
+          "survival_strategies": [],
+          "improvisation_level": 0.72,
+          "resource_management": 0.6000000000000001,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_320AA5A85864",
+          "source_file": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/HIERARKISK_INFRASTRUKTUR_PLAN.md",
+          "traits_present": [
+            "skrap_symfoni",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_E93E9EE3632A1C30",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.123192",
+          "dna_mutation": 0.9375,
+          "survival_strategies": [],
+          "improvisation_level": 0,
+          "resource_management": 0.1,
+          "resilience_patterns": [
+            "data"
+          ]
+        },
+        {
+          "variation_id": "VAR_9F6B0A4B023D",
+          "source_file": "backend/python/character_systems.py",
+          "traits_present": [
+            "skrap_symfoni",
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.5,
+          "variation_signature": "SIG_E454B35254F9B874",
+          "manifestation_strength": 0.7000000000000001,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.145857",
+          "dna_mutation": 0.9375,
+          "survival_strategies": [],
+          "improvisation_level": 0.12,
+          "resource_management": 0.1,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_BCD477B22160",
+          "source_file": "backend/python/rustbelt_systems.py",
+          "traits_present": [
+            "skrap_symfoni",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_03736C70292FE273",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.149118",
+          "dna_mutation": 1.0,
+          "survival_strategies": [
+            "solution"
+          ],
+          "improvisation_level": 0.12,
+          "resource_management": 0.2,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_E07FB5F8E39D",
+          "source_file": "backend/python/psychonoir_kontrapunkt/domains.py",
+          "traits_present": [
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_A68737E24EED5CFC",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.152316",
+          "dna_mutation": 0.9375,
+          "survival_strategies": [],
+          "improvisation_level": 0.12,
+          "resource_management": 0,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_5219839DCBDA",
+          "source_file": "backend/python/psychonoir_kontrapunkt/entities.py",
+          "traits_present": [
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_6FE79AC0765C2408",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.152606",
+          "dna_mutation": 0.875,
+          "survival_strategies": [],
+          "improvisation_level": 0.12,
+          "resource_management": 0,
+          "resilience_patterns": []
+        }
+      ],
+      "mutation_rate": 0.3
+    },
+    "usynlige_hand": {
+      "base_signature": "DNA_BEA52A46FEA03830",
+      "core_traits": [
+        "kausal_manipulasjon",
+        "glitch_manifestasjon",
+        "skjulte_noder",
+        "kompilerings_sp\u00f8kelser",
+        "kildekode_kadaver",
+        "digital_forbannelser"
+      ],
+      "domain": "cross_dimensional",
+      "corruption_signature": "source_entity",
+      "manifestation_capabilities": [
+        "reality_glitching",
+        "code_corruption",
+        "causal_manipulation"
+      ],
+      "variations": [
+        {
+          "variation_id": "VAR_98BF3C2B6CC0",
+          "source_file": "branch_genealogy.json",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_409A7F46C6620ED6",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.156775",
+          "dna_mutation": 0.8125,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "SOUL_NOT_FOUND",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.12
+        },
+        {
+          "variation_id": "VAR_4DF3CF1D6B18",
+          "source_file": "meta_config.json",
+          "traits_present": [
+            "skjulte_noder",
+            "kildekode_kadaver",
+            "digital_forbannelser"
+          ],
+          "trait_density": 0.5,
+          "variation_signature": "SIG_71D9C79E2F8852F0",
+          "manifestation_strength": 0.6000000000000001,
+          "corruption_level": 0.875,
+          "discovery_timestamp": "2025-09-03T03:50:28.166210",
+          "dna_mutation": 0.875,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "DEADBEEF",
+            "530FE493E8FE17D8",
+            "9388A0A17EC0DC2D",
+            "SOUL_NOT_FOUND",
+            "9333E921974B2D72",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.24
+        },
+        {
+          "variation_id": "VAR_E38F467AB51E",
+          "source_file": "branch_ml_analysis_report.json",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_FE7B17088BB92890",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.167868",
+          "dna_mutation": 0.9375,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "SOUL_NOT_FOUND",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.12
+        },
+        {
+          "variation_id": "VAR_CE3651A3772A",
+          "source_file": "meta_scan_results.json",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_BBD1BC24F1476266",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.173513",
+          "dna_mutation": 0.875,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "00000000"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0
+        },
+        {
+          "variation_id": "VAR_FC6CF86CCDB3",
+          "source_file": "docs/error-codes-as-narratives.md",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_31756FE32E5593F8",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.75,
+          "discovery_timestamp": "2025-09-03T03:50:28.177910",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "DEADBEEF",
+            "CAFE",
+            "4B9E",
+            "2A7F",
+            "1C8D",
+            "SOUL_NOT_FOUND",
+            "FFFF",
+            "REALITY_MISMATCH",
+            "1337",
+            "F00D",
+            "DEAD",
+            "BEEF"
+          ],
+          "causal_interference": 0.44999999999999996,
+          "reality_distortion": 0.24
+        },
+        {
+          "variation_id": "VAR_979C8E0FE994",
+          "source_file": "scripts/meta_ml/branch_ml_backtracker.py",
+          "traits_present": [
+            "kompilerings_sp\u00f8kelser",
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_F6278BA867C6F2E1",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.875,
+          "discovery_timestamp": "2025-09-03T03:50:28.185481",
+          "dna_mutation": 0.9375,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "DEADBEEF",
+            "SOUL_NOT_FOUND",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.24
+        },
+        {
+          "variation_id": "VAR_7656E7A18945",
+          "source_file": "scripts/meta_ml/meta_cross_repo_orchestrator.py",
+          "traits_present": [
+            "skjulte_noder",
+            "kompilerings_sp\u00f8kelser",
+            "kildekode_kadaver",
+            "digital_forbannelser"
+          ],
+          "trait_density": 0.6666666666666666,
+          "variation_signature": "SIG_74A824D9D3AE1899",
+          "manifestation_strength": 0.8,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.187782",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "00000000",
+            "DEADBEEF",
+            "SOUL_NOT_FOUND",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.24
+        },
+        {
+          "variation_id": "VAR_C67C14544B6A",
+          "source_file": "scripts/meta_ml/instance_variation_tracker.py",
+          "traits_present": [
+            "kausal_manipulasjon",
+            "glitch_manifestasjon",
+            "skjulte_noder",
+            "kompilerings_sp\u00f8kelser",
+            "kildekode_kadaver",
+            "digital_forbannelser"
+          ],
+          "trait_density": 1.0,
+          "variation_signature": "SIG_B3FE20CE73AB536D",
+          "manifestation_strength": 1.0,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.189993",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [
+            "patterns",
+            "mechanisms"
+          ],
+          "glitch_signatures": [
+            "DEADBEEF",
+            "SOUL_NOT_FOUND",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0.8999999999999999,
+          "reality_distortion": 0.72
+        },
+        {
+          "variation_id": "VAR_E5EA179598C1",
+          "source_file": "backend/python/neural_studio_api.py",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_76342A7577499C31",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.217558",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [
+            "nodes_active"
+          ],
+          "glitch_signatures": [
+            "E"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0
+        },
+        {
+          "variation_id": "VAR_0F2CE33CE5E0",
+          "source_file": "backend/python/rustbelt_systems.py",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_8846145A0221768C",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.220864",
+          "dna_mutation": 0.9375,
+          "manipulation_techniques": [],
+          "glitch_signatures": [],
+          "causal_interference": 0.15,
+          "reality_distortion": 0.12
+        },
+        {
+          "variation_id": "VAR_83FD9710A1C1",
+          "source_file": "backend/python/psychonoir_kontrapunkt/entities.py",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_3A1CFC31842D5CDF",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.224406",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [
+            "node",
+            "nodes"
+          ],
+          "glitch_signatures": [
+            "FFFFFFFF"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.24
+        }
+      ],
+      "mutation_rate": 0.5
+    }
+  },
+  "code_pattern_variations": {
+    "skyskraperen_patterns": {
+      "base_signature": "PAT_23B3B065D49370E8",
+      "characteristics": [
+        "clean_architecture",
+        "surveillance_hooks",
+        "predictive_analytics"
+      ],
+      "language_preferences": [
+        "python",
+        "javascript",
+        "sql"
+      ],
+      "variations": [],
+      "evolution_rate": 0.2
+    },
+    "rustbeltet_patterns": {
+      "base_signature": "PAT_1AEDC7CEC4C9EA88",
+      "characteristics": [
+        "improvised_solutions",
+        "resource_optimization",
+        "legacy_integration"
+      ],
+      "language_preferences": [
+        "python",
+        "bash",
+        "c"
+      ],
+      "variations": [],
+      "evolution_rate": 0.4
+    },
+    "corruption_patterns": {
+      "base_signature": "PAT_4A3C7C029224774B",
+      "characteristics": [
+        "intentional_errors",
+        "reality_mismatches",
+        "impossible_states"
+      ],
+      "manifestations": [
+        "0xDEADBEEF",
+        "SOUL_NOT_FOUND",
+        "REALITY_MISMATCH"
+      ],
+      "variations": [],
+      "evolution_rate": 0.6
+    }
+  },
+  "system_behavior_variants": {
+    "surveillance_behaviors": {
+      "base_signature": "BEH_0A7C7E0C51FB7DF8",
+      "patterns": [
+        "data_collection",
+        "pattern_analysis",
+        "threat_assessment"
+      ],
+      "variations": [],
+      "adaptation_rate": 0.1
+    },
+    "survival_behaviors": {
+      "base_signature": "BEH_AE3A7EFC98B43929",
+      "patterns": [
+        "resource_conservation",
+        "threat_avoidance",
+        "adaptation"
+      ],
+      "variations": [],
+      "adaptation_rate": 0.3
+    },
+    "corruption_behaviors": {
+      "base_signature": "BEH_ABFD4CE976BA223A",
+      "patterns": [
+        "reality_distortion",
+        "causal_manipulation",
+        "system_subversion"
+      ],
+      "variations": [],
+      "adaptation_rate": 0.5
+    }
+  },
+  "dna_fingerprints": {},
+  "variation_genealogy": {},
+  "last_updated": "2025-09-03T03:50:28.227946"
+}

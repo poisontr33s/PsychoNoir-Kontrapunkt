@@ -1,0 +1,3001 @@
+{
+  "generation_timestamp": "2025-09-03T03:50:27.433111",
+  "total_branches": 1,
+  "branch_analysis": {
+    "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7": {
+      "branch": "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7",
+      "current_state": {
+        "ml_artifacts": [
+          {
+            "path": "jest.config.js",
+            "size": 367,
+            "type": ".js",
+            "ml_potential": 0.051000000000000004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.17,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "README.md",
+            "size": 7919,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.715
+          },
+          {
+            "path": "automation_requirements.txt",
+            "size": 927,
+            "type": ".txt",
+            "ml_potential": 0.0388,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.097
+          },
+          {
+            "path": "STARTUP_GUIDE.md",
+            "size": 3366,
+            "type": ".md",
+            "ml_potential": 0.18480000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.462
+          },
+          {
+            "path": "FINAL_DEPLOYMENT_INSTRUCTIONS.md",
+            "size": 5246,
+            "type": ".md",
+            "ml_potential": 0.2436,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.609
+          },
+          {
+            "path": "draft-copilot-instructions.md",
+            "size": 18027,
+            "type": ".md",
+            "ml_potential": 0.8216000000000001,
+            "character_signatures": [
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.554
+          },
+          {
+            "path": "adaptive_workflow_engine.js",
+            "size": 3773,
+            "type": ".js",
+            "ml_potential": 0.664,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.88,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "ethical_programming_demo.py",
+            "size": 26326,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 5.15,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "github_comm_layer_validator.py",
+            "size": 9351,
+            "type": ".py",
+            "ml_potential": 0.561,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.87,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "meta_config.json",
+            "size": 2123,
+            "type": ".json",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH",
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "generate_codespaces_iphone_qr.py",
+            "size": 4489,
+            "type": ".py",
+            "ml_potential": 0.33899999999999997,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.13,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "noir.txt",
+            "size": 66,
+            "type": ".txt",
+            "ml_potential": 0.004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.01
+          },
+          {
+            "path": "kausalitets_arkitekten.py",
+            "size": 8178,
+            "type": ".py",
+            "ml_potential": 0.477,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.59,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "ML_SIPHONING_STRATEGY.md",
+            "size": 11712,
+            "type": ".md",
+            "ml_potential": 0.984,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.46
+          },
+          {
+            "path": "WORKFLOW_ERROR_CATALOG.md",
+            "size": 4640,
+            "type": ".md",
+            "ml_potential": 0.5012000000000001,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.503
+          },
+          {
+            "path": "cross_repo_redundancy_eliminator.py",
+            "size": 5847,
+            "type": ".py",
+            "ml_potential": 0.34199999999999997,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.14,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "IMPLEMENTATION_COMPLETE.md",
+            "size": 6668,
+            "type": ".md",
+            "ml_potential": 0.8916000000000002,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.729
+          },
+          {
+            "path": "analyze_current_state.py",
+            "size": 3805,
+            "type": ".py",
+            "ml_potential": 0.27,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.9,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "meta_scan_results.json",
+            "size": 52250,
+            "type": ".json",
+            "ml_potential": 0.6,
+            "character_signatures": [
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "META_CROSS_REPO_ML_BACKTRACK_STRATEGY.md",
+            "size": 9933,
+            "type": ".md",
+            "ml_potential": 0.8364,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.091
+          },
+          {
+            "path": "generate_iphone_qr.py",
+            "size": 2214,
+            "type": ".py",
+            "ml_potential": 0.265,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.55,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "scripts/ecosystem_status.py",
+            "size": 3550,
+            "type": ".py",
+            "ml_potential": 0.385,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.95,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "docs/cosmic-github-bridge.js",
+            "size": 14160,
+            "type": ".js",
+            "ml_potential": 0.985,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.95,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "docs/actions_trigger.txt",
+            "size": 62,
+            "type": ".txt",
+            "ml_potential": 0.0044,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.011
+          },
+          {
+            "path": "docs/README.md",
+            "size": 5273,
+            "type": ".md",
+            "ml_potential": 0.26520000000000005,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.663
+          },
+          {
+            "path": "docs/cosmic-upcycling-interface.js",
+            "size": 28798,
+            "type": ".js",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 4.54,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "docs/NEURAL_STUDIO_BLUEPRINT.md",
+            "size": 7325,
+            "type": ".md",
+            "ml_potential": 0.7096,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.774
+          },
+          {
+            "path": "docs/cross-validation-interface.js",
+            "size": 35327,
+            "type": ".js",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 5.63,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "docs/deployment_trigger.txt",
+            "size": 71,
+            "type": ".txt",
+            "ml_potential": 0.0048000000000000004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.012
+          },
+          {
+            "path": "docs/INTERACTIVE_UNIVERSE_DESIGN.md",
+            "size": 10424,
+            "type": ".md",
+            "ml_potential": 0.9380000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.345
+          },
+          {
+            "path": "docs/PSYCHO_NOIR_WORLD_SYNTHESIS.md",
+            "size": 8102,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 1.017
+          },
+          {
+            "path": "docs/ULTIMATE_NEURAL_STUDIO_SUMMARY.md",
+            "size": 5581,
+            "type": ".md",
+            "ml_potential": 0.6648000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.662
+          },
+          {
+            "path": "docs/error-codes-as-narratives.md",
+            "size": 5259,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH",
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.542
+          },
+          {
+            "path": "docs/cosmic-api.js",
+            "size": 9375,
+            "type": ".js",
+            "ml_potential": 0.73,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.1,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "docs/ci-error-codes.md",
+            "size": 9818,
+            "type": ".md",
+            "ml_potential": 0.8996000000000001,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 1.249
+          },
+          {
+            "path": "docs/necropolis.md",
+            "size": 8174,
+            "type": ".md",
+            "ml_potential": 0.6968000000000001,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.992
+          },
+          {
+            "path": "LVL2_Core_Architecture/antropomorfologisme_engine.py",
+            "size": 34173,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 5.99,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "LVL2_Core_Architecture/meta_entity_framework.py",
+            "size": 20804,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.7,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".github/IMPLEMENTATION_SUMMARY.md",
+            "size": 6685,
+            "type": ".md",
+            "ml_potential": 0.7196,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.799
+          },
+          {
+            "path": ".github/Psycho-Noir-Kontrapunkt-Essens.md",
+            "size": 2419,
+            "type": ".md",
+            "ml_potential": 0.7248000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.312
+          },
+          {
+            "path": ".github/copilot-instructions.md",
+            "size": 16399,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 2.039
+          },
+          {
+            "path": ".github/test_workflow_standards.py",
+            "size": 6406,
+            "type": ".py",
+            "ml_potential": 0.384,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.28,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".github/WORKFLOWS_README.md",
+            "size": 4818,
+            "type": ".md",
+            "ml_potential": 0.3272,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.568
+          },
+          {
+            "path": ".github/PULL_REQUEST_TEMPLATE.md",
+            "size": 6322,
+            "type": ".md",
+            "ml_potential": 0.758,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.895
+          },
+          {
+            "path": ".github/ARTIFACT_WORKFLOW_STANDARD.md",
+            "size": 6197,
+            "type": ".md",
+            "ml_potential": 0.38880000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.722
+          },
+          {
+            "path": ".github/Psycho-Noir-Kontrapunt-Gjenbruk.md",
+            "size": 1834,
+            "type": ".md",
+            "ml_potential": 0.10320000000000001,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.258
+          },
+          {
+            "path": ".github/OBSERVATORY_SYSTEM.md",
+            "size": 8214,
+            "type": ".md",
+            "ml_potential": 0.7744000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.936
+          },
+          {
+            "path": ".github/copilot-conversations_summary.md",
+            "size": 460094,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "SOUL_NOT_FOUND"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 53.415
+          },
+          {
+            "path": ".github/ARTIFACT_IMPLEMENTATION_SUMMARY.md",
+            "size": 5280,
+            "type": ".md",
+            "ml_potential": 0.2372,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.593
+          },
+          {
+            "path": ".github/copilot-session.md",
+            "size": 23107,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 2.652
+          },
+          {
+            "path": ".graveyard/README.md",
+            "size": 1891,
+            "type": ".md",
+            "ml_potential": 0.10360000000000001,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.259
+          },
+          {
+            "path": "backend/requirements.txt",
+            "size": 978,
+            "type": ".txt",
+            "ml_potential": 0.05280000000000001,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.132
+          },
+          {
+            "path": ".vscode/tasks.json",
+            "size": 6451,
+            "type": ".json",
+            "ml_potential": 0.8,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "SOUL_NOT_FOUND"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "scripts/meta_ml/branch_ml_backtracker.py",
+            "size": 22728,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH",
+              "kompilerings_sp\u00f8kelser",
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 4.27,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "scripts/meta_ml/meta_cross_repo_orchestrator.py",
+            "size": 20468,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH",
+              "kompilerings_sp\u00f8kelser",
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 4.14,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "scripts/meta_ml/instance_variation_tracker.py",
+            "size": 26672,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH",
+              "kompilerings_sp\u00f8kelser",
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 4.83,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".github/scripts/adaptive_scanner_selector.py",
+            "size": 6341,
+            "type": ".py",
+            "ml_potential": 0.438,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.46,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".github/jules/README.md",
+            "size": 5571,
+            "type": ".md",
+            "ml_potential": 0.46880000000000005,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.672
+          },
+          {
+            "path": ".github/jules/CACHE_STRATEGY.md",
+            "size": 5730,
+            "type": ".md",
+            "ml_potential": 0.4888,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.722
+          },
+          {
+            "path": ".github/scripts/necromancer/parse_errors.py",
+            "size": 11958,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.74,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".github/scripts/necromancer/aggregate.py",
+            "size": 15559,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 2.89,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".github/jules/scripts/test-jules-integration.py",
+            "size": 6723,
+            "type": ".py",
+            "ml_potential": 0.565,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 1.55,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".github/jules/scripts/jules-cache-analyzer.py",
+            "size": 11138,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.4,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/node_modules_necromancy/BURIAL_INDEX.md",
+            "size": 2764,
+            "type": ".md",
+            "ml_potential": 0.5316000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.329
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_OAUTH_SETUP_GUIDE.md",
+            "size": 5788,
+            "type": ".md",
+            "ml_potential": 0.41480000000000006,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.787
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/SYMBIOTIC_AI_PARTNERSHIP_FRAMEWORK.md",
+            "size": 15561,
+            "type": ".md",
+            "ml_potential": 0.5236,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.309
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/jules-cache-analysis.md",
+            "size": 1715,
+            "type": ".md",
+            "ml_potential": 0.2752,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.188
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/STRUKTURERT_KAOS_HANDLINGSPLAN.md",
+            "size": 4417,
+            "type": ".md",
+            "ml_potential": 0.22000000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.55
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/iPhone_ACCESS_GUIDE.md",
+            "size": 5008,
+            "type": ".md",
+            "ml_potential": 0.26320000000000005,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.658
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/SYMBIOTIC_PARTNERSHIP_ACHIEVEMENT.md",
+            "size": 10233,
+            "type": ".md",
+            "ml_potential": 0.8568,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.142
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/live_deployment_monitor.py",
+            "size": 4643,
+            "type": ".py",
+            "ml_potential": 0.33,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.1,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/Trusted Domains.txt",
+            "size": 1816,
+            "type": ".txt",
+            "ml_potential": 0.0912,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.228
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NECROMANCY_DEPLOYMENT_STATUS.md",
+            "size": 3436,
+            "type": ".md",
+            "ml_potential": 0.1776,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.444
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/deployment_method_analysis_20250829_125653.json",
+            "size": 3356,
+            "type": ".json",
+            "ml_potential": 0.2,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/MCP_NECROMANCY_SALVAGE.md",
+            "size": 2648,
+            "type": ".md",
+            "ml_potential": 0.13040000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.326
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/automation_requirements.txt",
+            "size": 870,
+            "type": ".txt",
+            "ml_potential": 0.0356,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.089
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COPILOT_METODENFORNATN_COMPLETE.md",
+            "size": 10084,
+            "type": ".md",
+            "ml_potential": 0.8252,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.063
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/ecosystem_health_monitor.py",
+            "size": 9059,
+            "type": ".py",
+            "ml_potential": 0.9400000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 1.8,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/hierarchical_cross_validation_engine.py",
+            "size": 31799,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 6.23,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/quantum_evolution_continuation_engine.py",
+            "size": 7371,
+            "type": ".py",
+            "ml_potential": 0.396,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.32,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/DYNAMISK_SJANGER_BEVEGELSE_SYSTEM.md",
+            "size": 9756,
+            "type": ".md",
+            "ml_potential": 0.418,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.045
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/PRODUCTION_SECURITY_SETUP.md",
+            "size": 8656,
+            "type": ".md",
+            "ml_potential": 0.4404,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.101
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NEURAL_ARCHAEOLOGY_DEMO.md",
+            "size": 1638,
+            "type": ".md",
+            "ml_potential": 0.09040000000000001,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.226
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/test_optimization.md",
+            "size": 444,
+            "type": ".md",
+            "ml_potential": 0.0244,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.061
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/cosmic_consciousness_bidirectional_upcycler.py",
+            "size": 32380,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 5.45,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/HIERARKISK_INFRASTRUKTUR_PLAN.md",
+            "size": 8469,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.824
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COPILOT_INTEGRATION_GUIDE.md",
+            "size": 9475,
+            "type": ".md",
+            "ml_potential": 0.7708,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.927
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COSMIC_META_INDEX_README.md",
+            "size": 3977,
+            "type": ".md",
+            "ml_potential": 0.17920000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.448
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/cosmic_consciousness_automation_middleware.py",
+            "size": 14376,
+            "type": ".py",
+            "ml_potential": 0.981,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.27,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/symbiotic_partnership_demo.py",
+            "size": 21231,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.72,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/quantum_prediction_engines.py",
+            "size": 27722,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 4.54,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/ULTIMATE_TRANSCENDENCE_ACHIEVEMENT.md",
+            "size": 6176,
+            "type": ".md",
+            "ml_potential": 0.3044,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.761
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/expanded_milf_ecosystem_implementation.py",
+            "size": 44196,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 6.53,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/jules-validation-report.md",
+            "size": 1420,
+            "type": ".md",
+            "ml_potential": 0.2616,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.154
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NEXT_OPTIMAL_STEPS.md",
+            "size": 4129,
+            "type": ".md",
+            "ml_potential": 0.2116,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.529
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/HIERARCHICAL_CROSS_VALIDATION_REPORT.md",
+            "size": 13093,
+            "type": ".md",
+            "ml_potential": 0.5848,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.462
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/quantum_consciousness_framework.py",
+            "size": 15619,
+            "type": ".py",
+            "ml_potential": 0.693,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 2.31,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/MCP_NECROMANCY_IMPLEMENTATION.md",
+            "size": 2386,
+            "type": ".md",
+            "ml_potential": 0.126,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.315
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/test.txt",
+            "size": 6,
+            "type": ".txt",
+            "ml_potential": 0.0004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.001
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/emergency_pages_activator.py",
+            "size": 6074,
+            "type": ".py",
+            "ml_potential": 0.405,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.35,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/LEVEL_2_UPCYCLING_COMPLETE.md",
+            "size": 8803,
+            "type": ".md",
+            "ml_potential": 0.39840000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.996
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_COPILOT_CONNECTOR_SUCCESS.md",
+            "size": 6187,
+            "type": ".md",
+            "ml_potential": 0.31360000000000005,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.784
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/CODESPACES_TROUBLESHOOTING.md",
+            "size": 4324,
+            "type": ".md",
+            "ml_potential": 0.21400000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.535
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/phase_1_verification_system.py",
+            "size": 5880,
+            "type": ".py",
+            "ml_potential": 0.312,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.04,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_PAGES_SETUP_GUIDE.md",
+            "size": 5900,
+            "type": ".md",
+            "ml_potential": 0.30400000000000005,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.76
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/LVL2_LIVE_DEPLOYMENT_SUCCESS.md",
+            "size": 4313,
+            "type": ".md",
+            "ml_potential": 0.6056,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.514
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/PROFILE_README_DRAFT.md",
+            "size": 2851,
+            "type": ".md",
+            "ml_potential": 0.10360000000000001,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.259
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COPILOT_MODEL_VALIDATION_REPORT.md",
+            "size": 5210,
+            "type": ".md",
+            "ml_potential": 0.27280000000000004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.682
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/MCP_CLEANUP_STRATEGY.md",
+            "size": 3339,
+            "type": ".md",
+            "ml_potential": 0.1952,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.488
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_OAUTH_VALIDATION_REPORT.md",
+            "size": 7202,
+            "type": ".md",
+            "ml_potential": 0.36800000000000005,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.92
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_ACTIONS_ACTIVATION_GUIDE.md",
+            "size": 3879,
+            "type": ".md",
+            "ml_potential": 0.1948,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.487
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NECROMANCY_IMPLEMENTATION_COMPLETE.md",
+            "size": 4668,
+            "type": ".md",
+            "ml_potential": 0.22040000000000004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.551
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_PAGES_QUICK_REFERENCE.md",
+            "size": 1139,
+            "type": ".md",
+            "ml_potential": 0.0588,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.147
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/POISONTR33S_ECOSYSTEM_OPTIMIZATION.md",
+            "size": 3426,
+            "type": ".md",
+            "ml_potential": 0.1744,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.436
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/psycho_noir_functional_demo.py",
+            "size": 10175,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 2.01,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/phase_3_transcendent_executor.py",
+            "size": 15319,
+            "type": ".py",
+            "ml_potential": 0.881,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 2.27,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/EXECUTIVE_ACHIEVEMENT_SUMMARY.md",
+            "size": 7431,
+            "type": ".md",
+            "ml_potential": 0.3428,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.857
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/autonomous_ecosystem_manager.py",
+            "size": 5073,
+            "type": ".py",
+            "ml_potential": 0.243,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.81,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NEUROMANCY_CROSS_REPO_RECONSTRUCTION.md",
+            "size": 4200,
+            "type": ".md",
+            "ml_potential": 0.20800000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.52
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/ARCHITECTURAL_HONESTY_REPORT.md",
+            "size": 4759,
+            "type": ".md",
+            "ml_potential": 0.2464,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.616
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/IMMEDIATE_CLEANUP_PLAN.md",
+            "size": 2591,
+            "type": ".md",
+            "ml_potential": 0.13160000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.329
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/PSYCHO_SENSUAL_SEXUAL_GENRE_KULMINERING.md",
+            "size": 16388,
+            "type": ".md",
+            "ml_potential": 0.6972,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.743
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NEUROMANCY_ECOSYSTEM_ANALYSIS.md",
+            "size": 6031,
+            "type": ".md",
+            "ml_potential": 0.3308,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.827
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/neural_archaeology_demo.py",
+            "size": 3717,
+            "type": ".py",
+            "ml_potential": 0.21,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.7,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/cosmic_consciousness_webhook_automator.py",
+            "size": 13777,
+            "type": ".py",
+            "ml_potential": 0.991,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.97,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/MISSION_ACCOMPLISHED.md",
+            "size": 4876,
+            "type": ".md",
+            "ml_potential": 0.21800000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.545
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/noir_test.txt",
+            "size": 43,
+            "type": ".txt",
+            "ml_potential": 0.0024000000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.006
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/psycho_sensual_sexual_genre_implementation.py",
+            "size": 23519,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.44,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/BURIAL_MANIFEST.md",
+            "size": 1191,
+            "type": ".md",
+            "ml_potential": 0.055200000000000006,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.138
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/STRATEGISK_PERSON_BASERT_PERSONA_PLAN.md",
+            "size": 12497,
+            "type": ".md",
+            "ml_potential": 0.5212,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.303
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/phase_1_functional_executor.py",
+            "size": 10292,
+            "type": ".py",
+            "ml_potential": 0.54,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.8,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/forrige sesjonslogg.md",
+            "size": 17373,
+            "type": ".md",
+            "ml_potential": 0.9560000000000001,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 2.39
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/INTELLIGENT_AUTOMATION_EVOLUTION.md",
+            "size": 9517,
+            "type": ".md",
+            "ml_potential": 0.7000000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.75
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/IRON_MAIDEN_SESSION_ACHIEVEMENTS.md",
+            "size": 7230,
+            "type": ".md",
+            "ml_potential": 0.35040000000000004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.876
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/ETISK_PROGRAMMERING_RAMMEVERK.md",
+            "size": 13290,
+            "type": ".md",
+            "ml_potential": 0.49760000000000004,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.244
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/DEPLOYMENT_SUCCESS.md",
+            "size": 2668,
+            "type": ".md",
+            "ml_potential": 0.33440000000000003,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.336
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COMPREHENSIVE_AUTOMATION_DEPLOYMENT_MATRIX.md",
+            "size": 9247,
+            "type": ".md",
+            "ml_potential": 0.434,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.085
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NECROMANCY_SALVAGE_ANALYSIS.md",
+            "size": 6776,
+            "type": ".md",
+            "ml_potential": 0.8044,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.761
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NECROMANCY_MISSION_COMPLETE.md",
+            "size": 3325,
+            "type": ".md",
+            "ml_potential": 0.166,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.415
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/mcp_emergency_cleanup_executor.py",
+            "size": 9545,
+            "type": ".py",
+            "ml_potential": 0.483,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.61,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/SESSION_SAFE_IPHONE_PREVIEW.md",
+            "size": 4419,
+            "type": ".md",
+            "ml_potential": 0.22519999999999998,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.563
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/MISSION_ACCOMPLISHED_COPILOT_METODENFORNATN.md",
+            "size": 8572,
+            "type": ".md",
+            "ml_potential": 0.8016000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.004
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/ultimate_genre_fusion_libidinoeus_milf_matriarchy.py",
+            "size": 24268,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.34,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/PSYCHO_NOIR_EVOLUTION_STATUS.md",
+            "size": 2610,
+            "type": ".md",
+            "ml_potential": 0.12,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.3
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/deployment_method_analyzer.py",
+            "size": 7381,
+            "type": ".py",
+            "ml_potential": 0.698,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 1.66,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/ULTIMATE_GENRE_FUSION_STATUS_RAPPORT.md",
+            "size": 7711,
+            "type": ".md",
+            "ml_potential": 0.33840000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.846
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/DEPLOYMENT_STATUS_FINAL.md",
+            "size": 6380,
+            "type": ".md",
+            "ml_potential": 0.5004,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.751
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/IRON_MAIDEN_DEMOCRATIC_UPCYCLING.md",
+            "size": 35350,
+            "type": ".md",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 2.82
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/DEPLOYMENT_MISSION_COMPLETE.md",
+            "size": 4998,
+            "type": ".md",
+            "ml_potential": 0.2584,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.646
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/psycho_noir_ai_personality_integration.py",
+            "size": 9067,
+            "type": ".py",
+            "ml_potential": 0.45899999999999996,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.53,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/NEURAL_ARCHAEOLOGY_RESULTS.md",
+            "size": 2818,
+            "type": ".md",
+            "ml_potential": 0.1416,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.354
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/QUICK_REFERENCE_CLEANUP_CHECKLIST.md",
+            "size": 3771,
+            "type": ".md",
+            "ml_potential": 0.19440000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.486
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COSMIC_CONSCIOUSNESS_UPCYCLING_REPORT.md",
+            "size": 8086,
+            "type": ".md",
+            "ml_potential": 0.38,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.95
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/SECURITY_OVERLAP_ANALYSIS.md",
+            "size": 3680,
+            "type": ".md",
+            "ml_potential": 0.3924,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.481
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/phase_2_functional_executor.py",
+            "size": 13389,
+            "type": ".py",
+            "ml_potential": 0.66,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 2.2,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/DISTRIKT_KANDIDAT_ENTITET_ANALYSE.md",
+            "size": 7100,
+            "type": ".md",
+            "ml_potential": 0.31000000000000005,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.775
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/EXPANDED_MILF_CHARACTER_ECOSYSTEM.md",
+            "size": 19958,
+            "type": ".md",
+            "ml_potential": 0.7716000000000001,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 1.679
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/COSMIC_CONSCIOUSNESS_NEXT_PHASE.md",
+            "size": 5672,
+            "type": ".md",
+            "ml_potential": 0.47080000000000005,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.677
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_OAUTH_FINAL_VALIDATION.md",
+            "size": 7367,
+            "type": ".md",
+            "ml_potential": 0.33240000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.831
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/VALIDATION_COMPLETE_SUMMARY.md",
+            "size": 4583,
+            "type": ".md",
+            "ml_potential": 0.238,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.595
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/intelligent_workflow_consolidator.py",
+            "size": 14826,
+            "type": ".py",
+            "ml_potential": 0.95,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 2.5,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/SALVAGE_IMPLEMENTATION_PLAN.md",
+            "size": 4939,
+            "type": ".md",
+            "ml_potential": 0.21920000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.548
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/HIERARKISK_SUKSESS_RAPPORT.md",
+            "size": 4859,
+            "type": ".md",
+            "ml_potential": 0.2392,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.598
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/iron_maiden_democratic_upcycling.py",
+            "size": 43993,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 6.82,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/IMMEDIATE_MANUAL_NECROMANCY_GUIDE.md",
+            "size": 3085,
+            "type": ".md",
+            "ml_potential": 0.1744,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.436
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/LVL2_IMPLEMENTATION_STATUS.md",
+            "size": 2691,
+            "type": ".md",
+            "ml_potential": 0.1288,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.322
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/LVL2_KOMPLETT_REKONSTRUKSJON.md",
+            "size": 15987,
+            "type": ".md",
+            "ml_potential": 0.534,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.335
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/REPO_ECOSYSTEM_ANALYSIS.md",
+            "size": 4159,
+            "type": ".md",
+            "ml_potential": 0.21200000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.53
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/IPHONE_MULTI_OS_ACCESS.md",
+            "size": 4947,
+            "type": ".md",
+            "ml_potential": 0.25880000000000003,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.647
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/GITHUB_OAUTH_MISSION_ACCOMPLISHED.md",
+            "size": 6288,
+            "type": ".md",
+            "ml_potential": 0.3292,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.823
+          },
+          {
+            "path": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/orchestrina-codex.md",
+            "size": 1225,
+            "type": ".md",
+            "ml_potential": 0.068,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.17
+          },
+          {
+            "path": "arkiv_gamle_ruby_prosjekter/dealogue-fayde-21-04-21/README.md",
+            "size": 3644,
+            "type": ".md",
+            "ml_potential": 0.24280000000000002,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.607
+          },
+          {
+            "path": ".cache/npm/_logs/2025-08-21T00_06_25_996Z-debug-0.log",
+            "size": 19345,
+            "type": ".log",
+            "ml_potential": 0.1,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".cache/npm/_logs/2025-08-21T00_06_36_103Z-debug-0.log",
+            "size": 39031,
+            "type": ".log",
+            "ml_potential": 0.1,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.0,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/failure_archaeology.py",
+            "size": 17655,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND"
+            ],
+            "code_complexity": 3.47,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/live_integration_orchestrator.py",
+            "size": 30194,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 5.88,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/session_archaeology_engine.py",
+            "size": 26068,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 5.14,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/cicd_failure_analyzer.py",
+            "size": 16273,
+            "type": ".py",
+            "ml_potential": 0.9329999999999999,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.11,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/generate_current_session_disk.py",
+            "size": 5775,
+            "type": ".py",
+            "ml_potential": 0.351,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 1.17,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/copilot_integration_api.py",
+            "size": 19399,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 5.14,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/meta_index_dashboard.py",
+            "size": 14973,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 2.86,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/bidirectional_learning_orchestrator.py",
+            "size": 24930,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 4.45,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/dialogue_data_enhancer_pnc.py",
+            "size": 5069,
+            "type": ".py",
+            "ml_potential": 0.397,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 0.99,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/session_manager_api.py",
+            "size": 13526,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.07,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/flask_backend_server.py",
+            "size": 13125,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:"
+            ],
+            "code_complexity": 3.11,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/system_integration_test.py",
+            "size": 10564,
+            "type": ".py",
+            "ml_potential": 0.839,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 2.13,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/github_oauth_copilot_auth.py",
+            "size": 22113,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 5.42,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/failed_runs_harvester.py",
+            "size": 10597,
+            "type": ".py",
+            "ml_potential": 0.6089999999999999,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 2.03,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/database_maintenance.py",
+            "size": 19573,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.9,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/domain_bridge.py",
+            "size": 25300,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 5.14,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/failure_analysis_visualizer.py",
+            "size": 5097,
+            "type": ".py",
+            "ml_potential": 0.42700000000000005,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 1.09,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psycho_noir_core.py",
+            "size": 12940,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.91,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psycho_noir_api.py",
+            "size": 14107,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.59,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/github_copilot_connector_api.py",
+            "size": 14209,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.59,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/skyskraper_systems.py",
+            "size": 16156,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 3.36,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/system_monitor.py",
+            "size": 19842,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 4.24,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/copilot_model_validation_demo.py",
+            "size": 20949,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.84,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/automated_status_reporter.py",
+            "size": 12311,
+            "type": ".py",
+            "ml_potential": 0.754,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.18,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/usynlige_hand_detector.py",
+            "size": 22802,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 4.62,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/bidirectional_intelligence_engine.py",
+            "size": 16585,
+            "type": ".py",
+            "ml_potential": 0.957,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.19,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/cicd_resource_optimizer.py",
+            "size": 16630,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.16,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/hyper_analytical_github_integrator.py",
+            "size": 18166,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.35,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/actionable_prevention_plan.py",
+            "size": 10674,
+            "type": ".py",
+            "ml_potential": 0.768,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 2.56,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/session_disk_browser.py",
+            "size": 10750,
+            "type": ".py",
+            "ml_potential": 0.6689999999999999,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 2.23,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/failed_runs_harvester_pnc.py",
+            "size": 10388,
+            "type": ".py",
+            "ml_potential": 0.7209999999999999,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.07,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/neural_archaeology_orchestrator.py",
+            "size": 20413,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 4.27,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/extract_dialogue.py",
+            "size": 4967,
+            "type": ".py",
+            "ml_potential": 0.469,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 1.23,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/copilot_client_demo.py",
+            "size": 14832,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.09,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/backup_service.py",
+            "size": 14308,
+            "type": ".py",
+            "ml_potential": 0.888,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 2.96,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/failure_archaeology_system.py",
+            "size": 14105,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:",
+              "REALITY_MISMATCH"
+            ],
+            "code_complexity": 2.74,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/offline_session_manager.py",
+            "size": 15130,
+            "type": ".py",
+            "ml_potential": 0.994,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.98,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/github_copilot_integration.py",
+            "size": 31499,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 6.28,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/dialogue_analyzer_pnc.py",
+            "size": 16774,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.95,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/neural_studio_api.py",
+            "size": 19124,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 4.69,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/transmutator_de_lingua.py",
+            "size": 6702,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 1.4,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psycho_noir_cli.py",
+            "size": 13107,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.02,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/cors_config.py",
+            "size": 401,
+            "type": ".py",
+            "ml_potential": 0.03,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.1,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/aggressive_failure_harvester.py",
+            "size": 20881,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 4.38,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/character_systems.py",
+            "size": 32266,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 6.21,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/copilot_orchestration_launcher.py",
+            "size": 15723,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.88,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/simple_flask_test.py",
+            "size": 1258,
+            "type": ".py",
+            "ml_potential": 0.11399999999999999,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.38,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/comprehensive_system_test.py",
+            "size": 15652,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.35,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/rustbelt_systems.py",
+            "size": 23611,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 4.63,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psycho_noir_portal_integration.py",
+            "size": 14413,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 3.37,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/cross_repository_network.py",
+            "size": 15824,
+            "type": ".py",
+            "ml_potential": 0.951,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 3.17,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/github_oauth_copilot_auth_secure.py",
+            "size": 30778,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 7.15,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/neural_archaeology_scanner.py",
+            "size": 11638,
+            "type": ".py",
+            "ml_potential": 0.742,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 2.14,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/failure_archaeology_demo.py",
+            "size": 9747,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "ERROR:",
+              "PANIC:",
+              "SOUL_NOT_FOUND"
+            ],
+            "code_complexity": 1.88,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/github_copilot_integration_updated.py",
+            "size": 40994,
+            "type": ".py",
+            "ml_potential": 1.0,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 7.53,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/docker/gunicorn.conf.py",
+            "size": 4326,
+            "type": ".py",
+            "ml_potential": 0.44499999999999995,
+            "character_signatures": [],
+            "corruption_signatures": [
+              "ERROR:"
+            ],
+            "code_complexity": 1.15,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/docker/healthcheck.py",
+            "size": 11212,
+            "type": ".py",
+            "ml_potential": 0.837,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 2.79,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psychonoir_kontrapunkt/domains.py",
+            "size": 1919,
+            "type": ".py",
+            "ml_potential": 0.541,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.47,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psychonoir_kontrapunkt/entities.py",
+            "size": 3092,
+            "type": ".py",
+            "ml_potential": 0.9430000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [
+              "kildekode_kadaver"
+            ],
+            "code_complexity": 0.81,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psychonoir_kontrapunkt/__init__.py",
+            "size": 733,
+            "type": ".py",
+            "ml_potential": 0.6660000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.22,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "backend/python/psychonoir_kontrapunkt/core.py",
+            "size": 3067,
+            "type": ".py",
+            "ml_potential": 0.8130000000000001,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden",
+              "usynlige_hand"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.71,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "data/rapporter/neural_archaeology_report_20250823_134236.md",
+            "size": 1954,
+            "type": ".md",
+            "ml_potential": 0.2936,
+            "character_signatures": [
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.234
+          },
+          {
+            "path": "data/generert/failure_archaeology_report.md",
+            "size": 749,
+            "type": ".md",
+            "ml_potential": 0.0296,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 0.074
+          },
+          {
+            "path": "LVL2_Frontend_Evolution/scripts/mobile_interface.js",
+            "size": 29941,
+            "type": ".js",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 6.77,
+            "narrative_density": 0.0
+          },
+          {
+            "path": ".specstory/history/2025-05-10_22-35-hei,-kan-vi-fortsette-der-vi-ble-avbrutt-i-tille.md",
+            "size": 14311,
+            "type": ".md",
+            "ml_potential": 0.7456,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.0,
+            "narrative_density": 1.864
+          },
+          {
+            "path": "frontend/scripts/script.test.js",
+            "size": 238,
+            "type": ".js",
+            "ml_potential": 0.027,
+            "character_signatures": [],
+            "corruption_signatures": [],
+            "code_complexity": 0.09,
+            "narrative_density": 0.0
+          },
+          {
+            "path": "frontend/scripts/script.js",
+            "size": 21795,
+            "type": ".js",
+            "ml_potential": 1.0,
+            "character_signatures": [
+              "astrid_moller",
+              "iron_maiden"
+            ],
+            "corruption_signatures": [],
+            "code_complexity": 4.84,
+            "narrative_density": 0.0
+          }
+        ],
+        "total_files": 241,
+        "high_potential_files": 109,
+        "scan_timestamp": "2025-09-03T03:50:27.739160"
+      },
+      "commit_evolution": [
+        {
+          "sha": "a6d763ada1fd4303c4499a3a1edd6e71340ddfc4",
+          "message": "\ud83d\udd27 Resolve all dependency conflicts with granular sub-resolution\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>",
+          "timestamp": "2025-09-03T03:40:39+00:00",
+          "author": "copilot-swe-agent[bot]",
+          "character_mentions": [],
+          "corruption_indicators": [],
+          "ml_relevance_score": 0.2
+        },
+        {
+          "sha": "1f17933974c8ea9be6169e595c76a8b0e1fffbfa",
+          "message": "\ud83c\udfad Add GitHub Codespace + ML siphoning infrastructure for failing runners\n\n- Added comprehensive .devcontainer configuration for immediate development\n- Created ML siphoning strategy for graveyard data extraction\n- Fixed missing jest-junit dependency causing Node.js test failures\n- Added proper Python package structure for backend builds\n- Created runner fix scripts to resolve GitHub Actions issues\n- Removed problematic git submodule causing checkout failures\n- Enhanced .gitignore for ML artifacts and build outputs\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>",
+          "timestamp": "2025-08-31T19:57:28+00:00",
+          "author": "copilot-swe-agent[bot]",
+          "character_mentions": [],
+          "corruption_indicators": [
+            "fix"
+          ],
+          "ml_relevance_score": 0.6
+        },
+        {
+          "sha": "5d6984fc5a7dd8623407ff0edf224cd0fe345928",
+          "message": "Restore functional application with startup scripts and missing dependencies\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>",
+          "timestamp": "2025-08-31T19:38:19+00:00",
+          "author": "copilot-swe-agent[bot]",
+          "character_mentions": [],
+          "corruption_indicators": [],
+          "ml_relevance_score": 0.2
+        },
+        {
+          "sha": "f8e59709786c5f2954abd5ea3eaadb77f10c5e3c",
+          "message": "Initial plan",
+          "timestamp": "2025-08-31T19:28:54+00:00",
+          "author": "copilot-swe-agent[bot]",
+          "character_mentions": [],
+          "corruption_indicators": [],
+          "ml_relevance_score": 0.0
+        },
+        {
+          "sha": "bf7cfd1b54ac9588159954abb69c282c8caf3f77",
+          "message": "Bump the pip group across 1 directory with 6 updates (#21)\n\n---\nupdated-dependencies:\n- dependency-name: aiohttp\n  dependency-version: 3.12.14\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: requests\n  dependency-version: 2.32.4\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: cryptography\n  dependency-version: 44.0.1\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: black\n  dependency-version: 24.3.0\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: scikit-learn\n  dependency-version: 1.5.0\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: gitpython\n  dependency-version: 3.1.41\n  dependency-type: direct:production\n  dependency-group: pip\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-08-31T21:03:34+02:00",
+          "author": "dependabot[bot]",
+          "character_mentions": [],
+          "corruption_indicators": [],
+          "ml_relevance_score": 0.1
+        },
+        {
+          "sha": "926a392a0c873ed8238b9182841d119666a9af41",
+          "message": "\ud83c\udfad\u2728 Complete GitHub Pages Deployment Optimization and CI Pipeline Fixes\n\nThis PR completes the final optimization and validation steps required for\nproduction-ready GitHub Pages deployment of the Cosmic Consciousness Portal\nsystem, while also fixing critical CI pipeline issues.\n\n\ud83d\ude80 Key Optimizations Implemented:\n\n### QR Code System Fixed for Production\n- Updated mobile portal URL from localhost to GitHub Pages URL\n- Improved file path handling with os.path.join for cross-platform compatibility\n- Mobile portal now accessible at: https://poisontr33s.github.io/PsychoNoir-Kontrapunkt/mobile.html\n\n### CI Pipeline Fixes\n- Fixed GitHub Actions retention-days to hardcoded value of 14\n- Added qrcode[pil]==8.2 to automation_requirements.txt\n- Created functional Jest test suite in frontend/scripts/script.test.js\n- Streamlined backend dependencies to essential: flask, flask-cors, pytest, pytest-cov\n\n### Final Deployment Documentation\n- Added comprehensive FINAL_DEPLOYMENT_INSTRUCTIONS.md\n- Step-by-step GitHub Pages activation guide\n- Troubleshooting instructions and success confirmation criteria\n\n\ud83c\udf0c System Ready for Production Deployment!",
+          "timestamp": "2025-08-31T16:39:04+00:00",
+          "author": "E.s.Abbr.",
+          "character_mentions": [
+            "usynlige_hand"
+          ],
+          "corruption_indicators": [
+            "fix"
+          ],
+          "ml_relevance_score": 0.9
+        },
+        {
+          "sha": "0cb3deec17a6d0296ebfa4fb3d72dde7a2e17f20",
+          "message": "Bump the pip group across 2 directories with 8 updates (#19)\n\n---\nupdated-dependencies:\n- dependency-name: aiohttp\n  dependency-version: 3.12.14\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: requests\n  dependency-version: 2.32.4\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: cryptography\n  dependency-version: 44.0.1\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: black\n  dependency-version: 24.3.0\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: scikit-learn\n  dependency-version: 1.5.0\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: gitpython\n  dependency-version: 3.1.41\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: flask-cors\n  dependency-version: 6.0.0\n  dependency-type: direct:production\n  dependency-group: pip\n- dependency-name: gunicorn\n  dependency-version: 23.0.0\n  dependency-type: direct:production\n  dependency-group: pip\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-08-31T17:47:37+02:00",
+          "author": "dependabot[bot]",
+          "character_mentions": [],
+          "corruption_indicators": [],
+          "ml_relevance_score": 0.2
+        },
+        {
+          "sha": "298cdcf0dd50173ba0b0bb2af4526c4b7f76fab9",
+          "message": "\ud83c\udfad Meta-Index Katalogisering & Digital Ark\u00e6ologi Integration: Neural Interface Terminal (#14)\n\n* Initial plan\n\n* \ud83c\udfad COMPLETE: Meta-Index Katalogisering & Digital Ark\u00e6ologi Integration\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>\n\n---------\n\nCo-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>",
+          "timestamp": "2025-08-31T17:39:22+02:00",
+          "author": "Copilot",
+          "character_mentions": [],
+          "corruption_indicators": [],
+          "ml_relevance_score": 0.5
+        },
+        {
+          "sha": "61befeeaf205a39024a3a3db116ed0282998f7d7",
+          "message": "\ud83c\udffa Complete Digital Necromancy Repository Cleanup & GitHub Actions Infrastructure Overhaul (#18)\n\n* Initial plan\n\n* Implement Digital Necromancy Observatory System core infrastructure\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>\n\n* Complete Digital Necromancy Observatory System with workflows and enhanced actions\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>\n\n* Fix deprecated GitHub Actions and workflow syntax errors\n\n- Update actions/upload-artifact@v3 \u2192 @v4 in neural_archaeology_pipeline.yml and psychonoir-ci-cd.yml\n- Update actions/download-artifact@v3 \u2192 @v4 in neural_archaeology_pipeline.yml\n- Update actions/cache@v3 \u2192 @v4 in multiple workflow files\n- Update actions/upload-pages-artifact@v3 \u2192 @v4 in deploy-pages.yml\n- Fix YAML syntax error in neural_archaeology_continuous.yml (template literal parsing issue)\n- Add comprehensive workflow error catalog with Psycho-Noir themed analysis\n- All 17 workflow files now pass YAML validation\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>\n\n* \ud83c\udffa Execute Digital Necromancy graveyard cleanup & fix all workflow runners\n\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>\n\n---------\n\nCo-authored-by: copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>\nCo-authored-by: poisontr33s <183937703+poisontr33s@users.noreply.github.com>",
+          "timestamp": "2025-08-31T16:11:36+02:00",
+          "author": "Copilot",
+          "character_mentions": [],
+          "corruption_indicators": [
+            "error",
+            "fix"
+          ],
+          "ml_relevance_score": 0.7
+        },
+        {
+          "sha": "7c89b9e286678a210a28ef80c86c55079a4499ba",
+          "message": "feat: Initial commit of Psycho-Noir Session Weaver extension with core functionality for session archaeology, neural pattern scanning, and GitHub Copilot integration.",
+          "timestamp": "2025-08-30T01:57:07+00:00",
+          "author": "E.s.Abbr.",
+          "character_mentions": [],
+          "corruption_indicators": [],
+          "ml_relevance_score": 0.0
+        }
+      ],
+      "character_evolution": {
+        "astrid_moller": {
+          "first_appearance": null,
+          "total_mentions": 0,
+          "evolution_timeline": [],
+          "dominant_themes": [],
+          "corruption_correlation": 0.0
+        },
+        "iron_maiden": {
+          "first_appearance": null,
+          "total_mentions": 0,
+          "evolution_timeline": [],
+          "dominant_themes": [],
+          "corruption_correlation": 0.0
+        },
+        "usynlige_hand": {
+          "first_appearance": "2025-08-31T16:39:04+00:00",
+          "total_mentions": 1,
+          "evolution_timeline": [
+            {
+              "timestamp": "2025-08-31T16:39:04+00:00",
+              "commit": "926a392a0c873ed8238b9182841d119666a9af41",
+              "context": "\ud83c\udfad\u2728 Complete GitHub Pages Deployment Optimization and CI Pipeline Fixes\n\nThis PR completes the final optimization and validation steps required for\nproduction-ready GitHub Pages deployment of the Cosmic Consciousness Portal\nsystem, while also fixing critical CI pipeline issues.\n\n\ud83d\ude80 Key Optimizations Implemented:\n\n### QR Code System Fixed for Production\n- Updated mobile portal URL from localhost to GitHub Pages URL\n- Improved file path handling with os.path.join for cross-platform compatibility\n- Mobile portal now accessible at: https://poisontr33s.github.io/PsychoNoir-Kontrapunkt/mobile.html\n\n### CI Pipeline Fixes\n- Fixed GitHub Actions retention-days to hardcoded value of 14\n- Added qrcode[pil]==8.2 to automation_requirements.txt\n- Created functional Jest test suite in frontend/scripts/script.test.js\n- Streamlined backend dependencies to essential: flask, flask-cors, pytest, pytest-cov\n\n### Final Deployment Documentation\n- Added comprehensive FINAL_DEPLOYMENT_INSTRUCTIONS.md\n- Step-by-step GitHub Pages activation guide\n- Troubleshooting instructions and success confirmation criteria\n\n\ud83c\udf0c System Ready for Production Deployment!"
+            }
+          ],
+          "dominant_themes": [],
+          "corruption_correlation": 0.0
+        }
+      },
+      "corruption_evolution": [],
+      "ml_potential": 1.0
+    }
+  },
+  "cross_branch_patterns": {
+    "character_distribution": {
+      "astrid_moller": {
+        "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7": 0
+      },
+      "iron_maiden": {
+        "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7": 0
+      },
+      "usynlige_hand": {
+        "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7": 0
+      }
+    },
+    "corruption_correlation": {
+      "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7": 0
+    },
+    "ml_artifact_migration": [],
+    "branch_divergence_points": []
+  },
+  "ml_potential_ranking": [
+    [
+      "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7",
+      1.0
+    ]
+  ],
+  "corruption_hotspots": [
+    [
+      "copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7",
+      0
+    ]
+  ],
+  "character_strongholds": {}
+}

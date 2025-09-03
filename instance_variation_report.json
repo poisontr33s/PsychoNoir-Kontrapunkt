@@ -1,0 +1,1151 @@
+{
+  "generation_timestamp": "2025-09-03T03:50:28.226749",
+  "total_characters": 3,
+  "character_reports": {
+    "astrid_moller": {
+      "base_signature": "DNA_9E2CBF270592A8D2",
+      "total_variations": 29,
+      "average_manifestation": 0.3793103448275862,
+      "average_corruption": 0.3017241379310345,
+      "evolution_analysis": {
+        "total_variations": 29,
+        "evolution_timeline": [
+          {
+            "sequence": 1,
+            "timestamp": "2025-09-03T03:50:27.997678",
+            "variation_id": "VAR_DAFA156C685D",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 2,
+            "timestamp": "2025-09-03T03:50:28.000581",
+            "variation_id": "VAR_B083E9EA42D2",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 3,
+            "timestamp": "2025-09-03T03:50:28.004761",
+            "variation_id": "VAR_536D68673772",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.875
+          },
+          {
+            "sequence": 4,
+            "timestamp": "2025-09-03T03:50:28.005373",
+            "variation_id": "VAR_60BA220230F5",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.125
+          },
+          {
+            "sequence": 5,
+            "timestamp": "2025-09-03T03:50:28.006860",
+            "variation_id": "VAR_C9EA7C964FB8",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 6,
+            "timestamp": "2025-09-03T03:50:28.009110",
+            "variation_id": "VAR_EB91967F7314",
+            "manifestation_strength": 0.30000000000000004,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 7,
+            "timestamp": "2025-09-03T03:50:28.011563",
+            "variation_id": "VAR_5452D3D103A5",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.75
+          },
+          {
+            "sequence": 8,
+            "timestamp": "2025-09-03T03:50:28.012330",
+            "variation_id": "VAR_A8732C73477E",
+            "manifestation_strength": 0.6,
+            "corruption_level": 0.25
+          },
+          {
+            "sequence": 9,
+            "timestamp": "2025-09-03T03:50:28.013184",
+            "variation_id": "VAR_B789B1A2B402",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.125
+          },
+          {
+            "sequence": 10,
+            "timestamp": "2025-09-03T03:50:28.015080",
+            "variation_id": "VAR_B919D0CE760A",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 11,
+            "timestamp": "2025-09-03T03:50:28.016755",
+            "variation_id": "VAR_4240202CB0A6",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 12,
+            "timestamp": "2025-09-03T03:50:28.028586",
+            "variation_id": "VAR_6FBAB2C32E36",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.25
+          },
+          {
+            "sequence": 13,
+            "timestamp": "2025-09-03T03:50:28.052583",
+            "variation_id": "VAR_512F1C7530E4",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.875
+          },
+          {
+            "sequence": 14,
+            "timestamp": "2025-09-03T03:50:28.054210",
+            "variation_id": "VAR_7B12EC5DB4D2",
+            "manifestation_strength": 0.6000000000000001,
+            "corruption_level": 1.0
+          },
+          {
+            "sequence": 15,
+            "timestamp": "2025-09-03T03:50:28.055821",
+            "variation_id": "VAR_74F5FA20E0B4",
+            "manifestation_strength": 1.0,
+            "corruption_level": 1.0
+          },
+          {
+            "sequence": 16,
+            "timestamp": "2025-09-03T03:50:28.058538",
+            "variation_id": "VAR_54EE367A7712",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.125
+          },
+          {
+            "sequence": 17,
+            "timestamp": "2025-09-03T03:50:28.059635",
+            "variation_id": "VAR_3229DC80FD3D",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 18,
+            "timestamp": "2025-09-03T03:50:28.066660",
+            "variation_id": "VAR_F1E43CD0BB73",
+            "manifestation_strength": 0.30000000000000004,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 19,
+            "timestamp": "2025-09-03T03:50:28.067667",
+            "variation_id": "VAR_4474AB6EFDB5",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 20,
+            "timestamp": "2025-09-03T03:50:28.071917",
+            "variation_id": "VAR_45CB0F62E0CD",
+            "manifestation_strength": 0.30000000000000004,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 21,
+            "timestamp": "2025-09-03T03:50:28.073687",
+            "variation_id": "VAR_AB06D030FA5B",
+            "manifestation_strength": 0.30000000000000004,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 22,
+            "timestamp": "2025-09-03T03:50:28.074603",
+            "variation_id": "VAR_F63F80F1F5BC",
+            "manifestation_strength": 0.30000000000000004,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 23,
+            "timestamp": "2025-09-03T03:50:28.083317",
+            "variation_id": "VAR_5985EFA3F9CF",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 24,
+            "timestamp": "2025-09-03T03:50:28.084984",
+            "variation_id": "VAR_95E977429433",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 25,
+            "timestamp": "2025-09-03T03:50:28.087169",
+            "variation_id": "VAR_077FF6DE9DB5",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 26,
+            "timestamp": "2025-09-03T03:50:28.091546",
+            "variation_id": "VAR_99EE327730CC",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.125
+          },
+          {
+            "sequence": 27,
+            "timestamp": "2025-09-03T03:50:28.093689",
+            "variation_id": "VAR_6AC71588CEB5",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 28,
+            "timestamp": "2025-09-03T03:50:28.097589",
+            "variation_id": "VAR_D042E996F552",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 29,
+            "timestamp": "2025-09-03T03:50:28.097861",
+            "variation_id": "VAR_34B764803057",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.125
+          }
+        ],
+        "trait_evolution": {
+          "overv\u00e5kningspuls": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "informasjonsfluks_kartlegging": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "internt_r\u00e5dslag": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "kausalitets_arkitekten": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "syntetiske_synapser": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "e_tjenesten_deluxe": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "corruption_progression": [
+          0.625,
+          0.625,
+          0.875,
+          0.125,
+          0.625,
+          0.0,
+          0.75,
+          0.25,
+          0.125,
+          0.625,
+          0.0,
+          0.25,
+          0.875,
+          1.0,
+          1.0,
+          0.125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.625,
+          0.0,
+          0.0,
+          0.125,
+          0.0,
+          0.0,
+          0.125
+        ],
+        "dna_mutation_progression": [
+          0.8125,
+          1.0,
+          0.8125,
+          0.9375,
+          0.9375,
+          1.0,
+          0.875,
+          0.8125,
+          0.9375,
+          0.9375,
+          0.9375,
+          1.0,
+          0.9375,
+          1.0,
+          0.875,
+          0.875,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.75,
+          1.0,
+          0.9375,
+          0.9375,
+          1.0,
+          0.9375,
+          1.0,
+          0.9375,
+          0.9375
+        ]
+      },
+      "latest_variations": [
+        {
+          "variation_id": "VAR_077FF6DE9DB5",
+          "source_file": "backend/python/skyskraper_systems.py",
+          "traits_present": [
+            "kausalitets_arkitekten",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_75E64599FE1224E0",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.087169",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [
+            "matrix_active",
+            "personnel",
+            "matrix_operational",
+            "personell"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.24
+        },
+        {
+          "variation_id": "VAR_99EE327730CC",
+          "source_file": "backend/python/neural_studio_api.py",
+          "traits_present": [
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_1E5229B2DD73AB42",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.091546",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.4,
+          "control_mechanisms": [],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.08
+        },
+        {
+          "variation_id": "VAR_6AC71588CEB5",
+          "source_file": "backend/python/character_systems.py",
+          "traits_present": [
+            "overv\u00e5kningspuls",
+            "syntetiske_synapser"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_151B86DC268111CD",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.093689",
+          "dna_mutation": 1.0,
+          "surveillance_sophistication": 0.2,
+          "control_mechanisms": [
+            "is"
+          ],
+          "information_processing": 0.15,
+          "psycho_noir_atmosphere": 0.4
+        },
+        {
+          "variation_id": "VAR_D042E996F552",
+          "source_file": "backend/python/psychonoir_kontrapunkt/domains.py",
+          "traits_present": [
+            "overv\u00e5kningspuls"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_13C667549AB87137",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.097589",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0,
+          "control_mechanisms": [],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.24
+        },
+        {
+          "variation_id": "VAR_34B764803057",
+          "source_file": "backend/python/psychonoir_kontrapunkt/entities.py",
+          "traits_present": [
+            "overv\u00e5kningspuls",
+            "internt_r\u00e5dslag"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_BC24901D0E22334B",
+          "manifestation_strength": 0.4,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.097861",
+          "dna_mutation": 0.9375,
+          "surveillance_sophistication": 0.1,
+          "control_mechanisms": [],
+          "information_processing": 0,
+          "psycho_noir_atmosphere": 0.16
+        }
+      ]
+    },
+    "iron_maiden": {
+      "base_signature": "DNA_A2FE8047D23426D9",
+      "total_variations": 9,
+      "average_manifestation": 0.6111111111111112,
+      "average_corruption": 0.5138888888888888,
+      "evolution_analysis": {
+        "total_variations": 9,
+        "evolution_timeline": [
+          {
+            "sequence": 1,
+            "timestamp": "2025-09-03T03:50:28.102014",
+            "variation_id": "VAR_0411FDFF190A",
+            "manifestation_strength": 0.6000000000000001,
+            "corruption_level": 0.875
+          },
+          {
+            "sequence": 2,
+            "timestamp": "2025-09-03T03:50:28.112903",
+            "variation_id": "VAR_6B34DC28292F",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.875
+          },
+          {
+            "sequence": 3,
+            "timestamp": "2025-09-03T03:50:28.114930",
+            "variation_id": "VAR_7A6AF18C4AD2",
+            "manifestation_strength": 0.8,
+            "corruption_level": 1.0
+          },
+          {
+            "sequence": 4,
+            "timestamp": "2025-09-03T03:50:28.116900",
+            "variation_id": "VAR_630D158CAEC8",
+            "manifestation_strength": 1.0,
+            "corruption_level": 1.0
+          },
+          {
+            "sequence": 5,
+            "timestamp": "2025-09-03T03:50:28.123192",
+            "variation_id": "VAR_320AA5A85864",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 6,
+            "timestamp": "2025-09-03T03:50:28.145857",
+            "variation_id": "VAR_9F6B0A4B023D",
+            "manifestation_strength": 0.7000000000000001,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 7,
+            "timestamp": "2025-09-03T03:50:28.149118",
+            "variation_id": "VAR_BCD477B22160",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.125
+          },
+          {
+            "sequence": 8,
+            "timestamp": "2025-09-03T03:50:28.152316",
+            "variation_id": "VAR_E07FB5F8E39D",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.0
+          },
+          {
+            "sequence": 9,
+            "timestamp": "2025-09-03T03:50:28.152606",
+            "variation_id": "VAR_5219839DCBDA",
+            "manifestation_strength": 0.5,
+            "corruption_level": 0.125
+          }
+        ],
+        "trait_evolution": {
+          "skrap_symfoni": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "improvisasjonens_kunst": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "gatas_\u00e6reskodeks": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "kretskort_sjamanisme": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "rustbeltet_resiliens": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fysisk_adaptasjon": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "corruption_progression": [
+          0.875,
+          0.875,
+          1.0,
+          1.0,
+          0.625,
+          0.0,
+          0.125,
+          0.0,
+          0.125
+        ],
+        "dna_mutation_progression": [
+          1.0,
+          1.0,
+          0.8125,
+          0.8125,
+          0.9375,
+          0.9375,
+          1.0,
+          0.9375,
+          0.875
+        ]
+      },
+      "latest_variations": [
+        {
+          "variation_id": "VAR_320AA5A85864",
+          "source_file": ".graveyard/sessions/20250831_140022_gargantuan_cleanup/HIERARKISK_INFRASTRUKTUR_PLAN.md",
+          "traits_present": [
+            "skrap_symfoni",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_E93E9EE3632A1C30",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.625,
+          "discovery_timestamp": "2025-09-03T03:50:28.123192",
+          "dna_mutation": 0.9375,
+          "survival_strategies": [],
+          "improvisation_level": 0,
+          "resource_management": 0.1,
+          "resilience_patterns": [
+            "data"
+          ]
+        },
+        {
+          "variation_id": "VAR_9F6B0A4B023D",
+          "source_file": "backend/python/character_systems.py",
+          "traits_present": [
+            "skrap_symfoni",
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.5,
+          "variation_signature": "SIG_E454B35254F9B874",
+          "manifestation_strength": 0.7000000000000001,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.145857",
+          "dna_mutation": 0.9375,
+          "survival_strategies": [],
+          "improvisation_level": 0.12,
+          "resource_management": 0.1,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_BCD477B22160",
+          "source_file": "backend/python/rustbelt_systems.py",
+          "traits_present": [
+            "skrap_symfoni",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_03736C70292FE273",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.149118",
+          "dna_mutation": 1.0,
+          "survival_strategies": [
+            "solution"
+          ],
+          "improvisation_level": 0.12,
+          "resource_management": 0.2,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_E07FB5F8E39D",
+          "source_file": "backend/python/psychonoir_kontrapunkt/domains.py",
+          "traits_present": [
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_A68737E24EED5CFC",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.152316",
+          "dna_mutation": 0.9375,
+          "survival_strategies": [],
+          "improvisation_level": 0.12,
+          "resource_management": 0,
+          "resilience_patterns": []
+        },
+        {
+          "variation_id": "VAR_5219839DCBDA",
+          "source_file": "backend/python/psychonoir_kontrapunkt/entities.py",
+          "traits_present": [
+            "improvisasjonens_kunst",
+            "gatas_\u00e6reskodeks"
+          ],
+          "trait_density": 0.3333333333333333,
+          "variation_signature": "SIG_6FE79AC0765C2408",
+          "manifestation_strength": 0.5,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.152606",
+          "dna_mutation": 0.875,
+          "survival_strategies": [],
+          "improvisation_level": 0.12,
+          "resource_management": 0,
+          "resilience_patterns": []
+        }
+      ]
+    },
+    "usynlige_hand": {
+      "base_signature": "DNA_BEA52A46FEA03830",
+      "total_variations": 11,
+      "average_manifestation": 0.38181818181818183,
+      "average_corruption": 0.6136363636363636,
+      "evolution_analysis": {
+        "total_variations": 11,
+        "evolution_timeline": [
+          {
+            "sequence": 1,
+            "timestamp": "2025-09-03T03:50:28.156775",
+            "variation_id": "VAR_98BF3C2B6CC0",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 2,
+            "timestamp": "2025-09-03T03:50:28.166210",
+            "variation_id": "VAR_4DF3CF1D6B18",
+            "manifestation_strength": 0.6000000000000001,
+            "corruption_level": 0.875
+          },
+          {
+            "sequence": 3,
+            "timestamp": "2025-09-03T03:50:28.167868",
+            "variation_id": "VAR_E38F467AB51E",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 4,
+            "timestamp": "2025-09-03T03:50:28.173513",
+            "variation_id": "VAR_CE3651A3772A",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.625
+          },
+          {
+            "sequence": 5,
+            "timestamp": "2025-09-03T03:50:28.177910",
+            "variation_id": "VAR_FC6CF86CCDB3",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.75
+          },
+          {
+            "sequence": 6,
+            "timestamp": "2025-09-03T03:50:28.185481",
+            "variation_id": "VAR_979C8E0FE994",
+            "manifestation_strength": 0.4,
+            "corruption_level": 0.875
+          },
+          {
+            "sequence": 7,
+            "timestamp": "2025-09-03T03:50:28.187782",
+            "variation_id": "VAR_7656E7A18945",
+            "manifestation_strength": 0.8,
+            "corruption_level": 1.0
+          },
+          {
+            "sequence": 8,
+            "timestamp": "2025-09-03T03:50:28.189993",
+            "variation_id": "VAR_C67C14544B6A",
+            "manifestation_strength": 1.0,
+            "corruption_level": 1.0
+          },
+          {
+            "sequence": 9,
+            "timestamp": "2025-09-03T03:50:28.217558",
+            "variation_id": "VAR_E5EA179598C1",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.125
+          },
+          {
+            "sequence": 10,
+            "timestamp": "2025-09-03T03:50:28.220864",
+            "variation_id": "VAR_0F2CE33CE5E0",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.125
+          },
+          {
+            "sequence": 11,
+            "timestamp": "2025-09-03T03:50:28.224406",
+            "variation_id": "VAR_83FD9710A1C1",
+            "manifestation_strength": 0.2,
+            "corruption_level": 0.125
+          }
+        ],
+        "trait_evolution": {
+          "kausal_manipulasjon": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "glitch_manifestasjon": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "skjulte_noder": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "kompilerings_sp\u00f8kelser": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "kildekode_kadaver": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "digital_forbannelser": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "corruption_progression": [
+          0.625,
+          0.875,
+          0.625,
+          0.625,
+          0.75,
+          0.875,
+          1.0,
+          1.0,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "dna_mutation_progression": [
+          0.8125,
+          0.875,
+          0.9375,
+          0.875,
+          1.0,
+          0.9375,
+          1.0,
+          1.0,
+          1.0,
+          0.9375,
+          1.0
+        ]
+      },
+      "latest_variations": [
+        {
+          "variation_id": "VAR_7656E7A18945",
+          "source_file": "scripts/meta_ml/meta_cross_repo_orchestrator.py",
+          "traits_present": [
+            "skjulte_noder",
+            "kompilerings_sp\u00f8kelser",
+            "kildekode_kadaver",
+            "digital_forbannelser"
+          ],
+          "trait_density": 0.6666666666666666,
+          "variation_signature": "SIG_74A824D9D3AE1899",
+          "manifestation_strength": 0.8,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.187782",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [],
+          "glitch_signatures": [
+            "00000000",
+            "DEADBEEF",
+            "SOUL_NOT_FOUND",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.24
+        },
+        {
+          "variation_id": "VAR_C67C14544B6A",
+          "source_file": "scripts/meta_ml/instance_variation_tracker.py",
+          "traits_present": [
+            "kausal_manipulasjon",
+            "glitch_manifestasjon",
+            "skjulte_noder",
+            "kompilerings_sp\u00f8kelser",
+            "kildekode_kadaver",
+            "digital_forbannelser"
+          ],
+          "trait_density": 1.0,
+          "variation_signature": "SIG_B3FE20CE73AB536D",
+          "manifestation_strength": 1.0,
+          "corruption_level": 1.0,
+          "discovery_timestamp": "2025-09-03T03:50:28.189993",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [
+            "patterns",
+            "mechanisms"
+          ],
+          "glitch_signatures": [
+            "DEADBEEF",
+            "SOUL_NOT_FOUND",
+            "REALITY_MISMATCH"
+          ],
+          "causal_interference": 0.8999999999999999,
+          "reality_distortion": 0.72
+        },
+        {
+          "variation_id": "VAR_E5EA179598C1",
+          "source_file": "backend/python/neural_studio_api.py",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_76342A7577499C31",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.217558",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [
+            "nodes_active"
+          ],
+          "glitch_signatures": [
+            "E"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0
+        },
+        {
+          "variation_id": "VAR_0F2CE33CE5E0",
+          "source_file": "backend/python/rustbelt_systems.py",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_8846145A0221768C",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.220864",
+          "dna_mutation": 0.9375,
+          "manipulation_techniques": [],
+          "glitch_signatures": [],
+          "causal_interference": 0.15,
+          "reality_distortion": 0.12
+        },
+        {
+          "variation_id": "VAR_83FD9710A1C1",
+          "source_file": "backend/python/psychonoir_kontrapunkt/entities.py",
+          "traits_present": [
+            "kildekode_kadaver"
+          ],
+          "trait_density": 0.16666666666666666,
+          "variation_signature": "SIG_3A1CFC31842D5CDF",
+          "manifestation_strength": 0.2,
+          "corruption_level": 0.125,
+          "discovery_timestamp": "2025-09-03T03:50:28.224406",
+          "dna_mutation": 1.0,
+          "manipulation_techniques": [
+            "node",
+            "nodes"
+          ],
+          "glitch_signatures": [
+            "FFFFFFFF"
+          ],
+          "causal_interference": 0,
+          "reality_distortion": 0.24
+        }
+      ]
+    }
+  },
+  "cross_character_patterns": {
+    "corruption_correlation": {
+      "astrid_moller_vs_iron_maiden": 0.40780651340996166,
+      "astrid_moller_vs_usynlige_hand": 0.45768025078369906,
+      "iron_maiden_vs_usynlige_hand": 0.5637626262626263
+    },
+    "manifestation_correlation": {},
+    "trait_overlap": {},
+    "evolution_synchronization": {}
+  },
+  "mutation_hotspots": [],
+  "corruption_analysis": {},
+  "evolution_summary": {}
+}

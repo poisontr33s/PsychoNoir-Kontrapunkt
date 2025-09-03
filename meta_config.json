@@ -1,0 +1,84 @@
+{
+  "repo_network": {
+    "primary": {
+      "name": "PsychoNoir-Kontrapunkt",
+      "path": ".",
+      "role": "central_nexus",
+      "surveillance_level": "maximum",
+      "character_domains": [
+        "astrid_moller",
+        "iron_maiden",
+        "usynlige_hand"
+      ]
+    },
+    "satellites": {
+      "arkiv_gamle_ruby_prosjekter": {
+        "path": "./arkiv_gamle_ruby_prosjekter",
+        "role": "archaeological_archive",
+        "surveillance_level": "moderate",
+        "character_domains": [
+          "historical_echoes"
+        ]
+      },
+      "graveyard_sessions": {
+        "path": "./.graveyard/sessions",
+        "role": "digital_necromancy_vault",
+        "surveillance_level": "deep_scan",
+        "character_domains": [
+          "archived_consciousness"
+        ]
+      }
+    },
+    "shadow_repos": {
+      "detection_signatures": [
+        "0xDEADBEEF",
+        "ERROR: SOUL_NOT_FOUND",
+        "PANIC: REALITY_MISMATCH",
+        "psycho_noir_kontrapunkt"
+      ]
+    }
+  },
+  "branch_genealogy": {},
+  "instance_registry": {
+    "astrid_moller": {
+      "base_signature": "0x9333E921974B2D72",
+      "variations": [],
+      "surveillance_keywords": [
+        "overv\u00e5kningspuls",
+        "informasjonsfluks",
+        "kausalitets_arkitekten",
+        "syntetiske_synapser",
+        "e_tjenesten",
+        "skyskraperen"
+      ],
+      "corruption_resistance": 0.9
+    },
+    "iron_maiden": {
+      "base_signature": "0x530FE493E8FE17D8",
+      "variations": [],
+      "survival_keywords": [
+        "skrap_symfoni",
+        "improvisasjonens_kunst",
+        "gatas_\u00e6reskodeks",
+        "rustbeltet",
+        "resiliens",
+        "kretskort_sjamanisme"
+      ],
+      "corruption_resistance": 0.7
+    },
+    "usynlige_hand": {
+      "base_signature": "0x9388A0A17EC0DC2D",
+      "variations": [],
+      "manifestation_keywords": [
+        "glitcher",
+        "kildekode_kadaver",
+        "kompilerings_sp\u00f8kelser",
+        "kausal_kjedet",
+        "skjulte_noder",
+        "digital_forbannelser"
+      ],
+      "corruption_signature": "source"
+    }
+  },
+  "correlation_matrix": {}
+}
