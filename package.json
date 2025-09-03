@@ -1,5 +1,5 @@
 {
-  "name": "laere-html-helper",
+  "name": "psychonoir-kontrapunkt",
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
@@ -8,11 +8,12 @@
   "author": "Your Name or Organization",
   "license": "ISC",
   "keywords": [
-    "html",
-    "helper",
-    "learning",
-    "web-development",
-    "education"
+    "psychonoir",
+    "kontrapunkt", 
+    "digital-necromancy",
+    "github-copilot",
+    "ml-siphoning",
+    "web-development"
   ],
   "devDependencies": {
     "jest": "^29.7.0",
@@ -205,5 +206,5 @@
     "yargs-parser": "^21.1.1",
     "yocto-queue": "^0.1.0"
   },
-  "description": "A helper project for learning HTML with useful tools and scripts."
+  "description": "🎭 PsychoNoir Kontrapunkt Digital Necromancy Observatory System with GitHub Codespace infrastructure and ML siphoning capabilities."
 }
