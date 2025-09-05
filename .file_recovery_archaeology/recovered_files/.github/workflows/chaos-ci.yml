@@ -186,8 +186,8 @@ jobs:
           echo "=== CHAOS-ENHANCED NPM INSTALL START ==="
           echo "Browser: ${{ matrix.browser }}, Node: ${{ matrix.node-version }}"
           
-          # Introduce controlled chaos before npm install
-          python3 -c "
+          # Introduce controlled chaos before npm install  
+          cat > chaos_script.py << 'SCRIPT'
 import sys
 sys.path.append('./.github/runner-logging/failure-orchestrator')
 from chaos_engineering import ChaosOrchestrator
@@ -199,7 +199,8 @@ scenario = orchestrator.assess_chaos_opportunity('npm_install', context)
 if scenario:
     chaos_execution = orchestrator.introduce_chaos(scenario, context)
     print(f'🔥 Chaos introduced: {scenario.name}')
-"
+SCRIPT
+          python3 chaos_script.py && rm chaos_script.py
           
           # Proceed with npm install (may fail due to chaos)
           npm ci 2>&1 || {
