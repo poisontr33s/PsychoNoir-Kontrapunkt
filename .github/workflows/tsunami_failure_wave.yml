@@ -1,5 +1,5 @@
 name: "\U0001F30A TSUNAMI FAILURE WAVE - Continuous Data Generation"
-true:
+on:
   schedule:
   - cron: 0 */2 * * *
   - cron: 30 */3 * * *

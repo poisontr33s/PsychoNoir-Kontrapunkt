@@ -1,0 +1,43 @@
+name: 📋 PR Health Monitor
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  schedule:
+    - cron: '0 12 * * *'  # Daily at noon
+
+jobs:
+  pr_health:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🎭 Checkout code
+      uses: actions/checkout@v4
+
+    - name: 🧠 Analyze PR Health
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "🔍 Analyzing PR ecosystem health..."
+
+        # Get PR statistics
+        total_prs=$(gh pr list --json number | jq length)
+        draft_prs=$(gh pr list --draft --json number | jq length)
+
+        # Check for old PRs
+        old_prs=$(gh pr list --json number,createdAt --jq '.[] | select((.createdAt | fromdateiso8601) < (now - 604800)) | .number' | wc -l)
+
+        echo "📊 PR Health Report:"
+        echo "- Total open PRs: $total_prs"
+        echo "- Draft PRs: $draft_prs"
+        echo "- PRs older than 1 week: $old_prs"
+
+        # Alert if too many PRs
+        if [ $total_prs -gt 10 ]; then
+          echo "⚠️ High PR count detected - consider review marathon"
+          # Could add Slack notification here
+        fi
+
+        if [ $old_prs -gt 3 ]; then
+          echo "🚨 Multiple stale PRs detected - needs attention"
+        fi

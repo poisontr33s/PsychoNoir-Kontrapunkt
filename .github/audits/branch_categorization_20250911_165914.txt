@@ -1,0 +1,6 @@
+Branch Analysis:
+=================
+Copilot auto-generated: 14
+Dependabot branches: 3
+Feature branches: 0
+Other branches: 5

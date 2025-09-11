@@ -1,0 +1,4 @@
+Remote branches:
+24
+Local branches:
+1

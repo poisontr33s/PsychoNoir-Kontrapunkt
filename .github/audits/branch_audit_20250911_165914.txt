@@ -1,0 +1,25 @@
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/copilot/fix-13863827-88c2-4fdd-a2c8-2eb1b0052ad5
+  remotes/origin/copilot/fix-16
+  remotes/origin/copilot/fix-1c023290-f70a-42dd-a517-7927ccb050f9
+  remotes/origin/copilot/fix-2
+  remotes/origin/copilot/fix-5e76dcfe-64ba-4948-9ab3-2e5e73939b14
+  remotes/origin/copilot/fix-834fdf90-927a-4030-8487-174d8e1943cc
+  remotes/origin/copilot/fix-9ae1e934-a3d4-4e89-ab5f-edc4d558081e
+  remotes/origin/copilot/fix-9b432e91-1489-47f2-b0e2-23148972691f
+  remotes/origin/copilot/fix-b6885d7e-33ee-4fb2-ba79-101b27a4abca
+  remotes/origin/copilot/fix-b811b604-1dac-4202-82f0-8770393b82d7
+  remotes/origin/copilot/fix-bf756532-46f8-4607-9a7b-da274a709bb8
+  remotes/origin/copilot/fix-c85183a9-f339-4190-95cd-a6b5a6e6194d
+  remotes/origin/copilot/fix-d0e578a4-92db-40ca-a381-e563384f046a
+  remotes/origin/copilot/fix-dea46a25-0a44-4894-8b9c-50fc847065d3
+  remotes/origin/dependabot/npm_and_yarn/npm_and_yarn-6ea9762674
+  remotes/origin/dependabot/pip/backend/python/pip-4aeaedb19d
+  remotes/origin/dependabot/pip/pip-90980ad53b
+  remotes/origin/iphone-preview
+  remotes/origin/main
+  remotes/origin/neuromancy-cross-repo-cleanup
+  remotes/origin/supreme-artistic-transcendence
+  remotes/origin/systematic-graf-cleanup-20250906
+  remotes/origin/test/neural-archaeology-demonstration

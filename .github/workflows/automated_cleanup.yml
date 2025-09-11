@@ -1,0 +1,149 @@
+name: 🧹 Automated Repository Cleanup
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2 AM UTC
+  workflow_dispatch:     # Manual trigger
+    inputs:
+      cleanup_level:
+        description: 'Cleanup Level'
+        required: true
+        default: 'conservative'
+        type: choice
+        options:
+        - conservative
+        - aggressive
+
+jobs:
+  automated_cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🎭 Checkout Psycho-Noir Kontrapunkt
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 💋 Configure Git (Astrid Møller)
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "Astrid Møller (MILF Automation)"
+
+    - name: 🧠 Analyze Repository State
+      id: analyze
+      run: |
+        echo "🔍 Analyzing repository chaos levels..."
+
+        # Count branches
+        copilot_branches=$(git branch -r | grep "copilot/" | wc -l)
+        dependabot_branches=$(git branch -r | grep "dependabot/" | wc -l)
+        total_branches=$(git branch -r | wc -l)
+
+        echo "copilot_count=$copilot_branches" >> $GITHUB_OUTPUT
+        echo "dependabot_count=$dependabot_branches" >> $GITHUB_OUTPUT
+        echo "total_count=$total_branches" >> $GITHUB_OUTPUT
+
+        # Calculate chaos score
+        chaos_score=$((copilot_branches + dependabot_branches))
+        echo "chaos_score=$chaos_score" >> $GITHUB_OUTPUT
+
+        if [ $chaos_score -gt 10 ]; then
+          echo "status=CRITICAL_CHAOS" >> $GITHUB_OUTPUT
+        elif [ $chaos_score -gt 5 ]; then
+          echo "status=MODERATE_CHAOS" >> $GITHUB_OUTPUT
+        else
+          echo "status=CONTROLLED" >> $GITHUB_OUTPUT
+        fi
+
+    - name: ⚔️ Clean Merged Branches (Iron Maiden Protocol)
+      if: steps.analyze.outputs.status != 'CONTROLLED' || github.event.inputs.cleanup_level == 'aggressive'
+      run: |
+        echo "🗡️ Iron Maiden resistance protocol activated..."
+
+        # Switch to main for safety
+        git checkout main
+        git pull origin main
+
+        # Clean merged local branches
+        merged_branches=$(git branch --merged main | grep -v "main" | grep -v "^*" || true)
+        if [ -n "$merged_branches" ]; then
+          echo "Deleting merged branches: $merged_branches"
+          echo "$merged_branches" | xargs -r git branch -d
+        fi
+
+        # Prune remote tracking branches
+        git remote prune origin
+
+        echo "✅ Branch cleanup completed"
+
+    - name: 🤖 Copilot Branch Management
+      if: steps.analyze.outputs.copilot_count > 5
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "🤖 Managing Copilot auto-generated branches..."
+
+        # List Copilot branches and check for associated PRs
+        git branch -r | grep "copilot/" | while read -r branch; do
+          branch_name=${branch#origin/}
+          echo "Analyzing: $branch_name"
+
+          # Check if branch has active PR
+          pr_exists=$(gh pr list --head "$branch_name" --json number --jq length)
+
+          if [ "$pr_exists" -eq 0 ]; then
+            echo "⚠️ Copilot branch $branch_name has no active PR"
+            # For now, just report - can add deletion logic later
+          else
+            echo "✅ Copilot branch $branch_name has active PR"
+          fi
+        done
+
+    - name: 📊 Generate Cleanup Report
+      run: |
+        echo "📊 Generating cleanup report..."
+
+        cat > cleanup_report.md << EOF
+        # 🎭 Automated Cleanup Report
+
+        **Date:** $(date)
+        **Chaos Level:** ${{ steps.analyze.outputs.status }}
+
+        ## Branch Statistics
+        - Copilot branches: ${{ steps.analyze.outputs.copilot_count }}
+        - Dependabot branches: ${{ steps.analyze.outputs.dependabot_count }}
+        - Total remote branches: ${{ steps.analyze.outputs.total_count }}
+        - Chaos Score: ${{ steps.analyze.outputs.chaos_score }}
+
+        ## Actions Taken
+        - ✅ Merged branch cleanup completed
+        - ✅ Remote tracking branches pruned
+        - ✅ Repository health assessed
+
+        ## Recommendations
+        $(if [ ${{ steps.analyze.outputs.chaos_score }} -gt 10 ]; then echo "🚨 Consider manual review of old branches"; else echo "✅ Repository health is acceptable"; fi)
+        EOF
+
+        echo "📋 Cleanup report generated"
+
+    - name: 💬 Comment on Recent PRs (if chaos level is high)
+      if: steps.analyze.outputs.status == 'CRITICAL_CHAOS'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "💬 Notifying about repository health..."
+
+        # Find recent PRs and add helpful comments
+        recent_prs=$(gh pr list --limit 3 --json number --jq '.[].number')
+
+        for pr in $recent_prs; do
+          gh pr comment $pr --body "🎭 **Automated Repository Health Notice**
+
+          Our neural interface has detected elevated chaos levels in the repository. Consider:
+          - Reviewing and merging ready PRs
+          - Cleaning up old branches
+          - Using meaningful branch names for new features
+
+          *This message was generated by Astrid Møller's automated MILF maintenance protocols* 💋"
+        done
