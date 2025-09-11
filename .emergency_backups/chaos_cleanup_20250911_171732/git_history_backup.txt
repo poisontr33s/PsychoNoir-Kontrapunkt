@@ -1,0 +1,149 @@
+3ff2e9e WIP on main: a9aad8d Create Orchestrina Codex master document
+056179c index on main: a9aad8d Create Orchestrina Codex master document
+e63e0b4 untracked files on main: a9aad8d Create Orchestrina Codex master document
+448c45e feat: Enhance HF Transformers Runner with structured JSON error handling and minimal dependency requirements
+1b693ae Refactor code structure for improved readability and maintainability; removed redundant code blocks and optimized functions.
+c14d48e Add LFS Consciousness Audit Report for tracked artifacts
+8d2bae4 feat: Add holistic psychographic profiles for various characters in the MILF universe
+9fdbe92 Refactor code structure for improved readability and maintainability
+cdd9308 feat: Revamp Psycho-Noir Kontrapunkt System Architecture for 4-District Integration
+b0aec07 Refactor Dockerfile and VSCode settings for improved organization; initiate multi-district universe expansion documentation
+7ab451c Refactor code structure for improved readability and maintainability
+ea47a09 🧭 NAVAL STRATEGY: Graf-network cleanup documentation - Claudine Sin'claire 3.7 quantum nautical protocols
+6fb1c31 Final mission summary: repository analysis and optimization complete, ready for advanced Codespace collaboration
+32cd4f7 Complete post-PR #34 YAML repository analysis and optimization documentation
+fa885ee Initial plan
+393fe53 Restore deleted archaeology file: chaos-ci.yml from file recovery system
+da07953 Complete YAML validation and cleanup: all 31 YAML files now valid
+df6960a Fixed YAML syntax errors in 2 workflow files - all YML files now valid
+cdc3c28 Restore deleted archaeology file: chaos-ci.yml from file recovery system
+f823a32 Complete YAML validation and cleanup: all 31 YAML files now valid
+84f9e6d Fixed YAML syntax errors in 2 workflow files - all YML files now valid
+a40a7de Initial plan
+f4def47 Add OpenAI Codex Code Generator workflow unofficial
+9b12108 🕷️ Implement META-cross-repo ML backtrack & instance variation tracking with comprehensive prerequisites framework
+a6d763a 🔧 Resolve all dependency conflicts with granular sub-resolution
+cbaf8a7 feat: Implement WakaTime Dashboard Intelligence Analyzer and Temporal Synchronization System
+78538bc 🔄💀 TIMELINE ARCHAEOLOGICAL RECOVERY: 99 critical files restored from deletion commits
+4e9aff3 feat(mobile): IMPA iPhone IDE + Jules Micro IDE + SW cache bump + force reload
+af693f6 Bump brace-expansion in the npm_and_yarn group across 1 directory
+252c5c0 feat: Add API keys configuration file for PsychoNoir-Kontrapunkt project
+184d397 Bump the pip group across 2 directories with 8 updates
+5476d20 🎭💋🔥 SUPREME ARTISTIC TRANSCENDENCE: Encoded API Access Branch
+1b92631 🔑💋 Add api-keys.txt configuration guide for transcendent deployment
+1f17933 🎭 Add GitHub Codespace + ML siphoning infrastructure for failing runners
+5d6984f Restore functional application with startup scripts and missing dependencies
+f8e5970 Initial plan
+bf7cfd1 Bump the pip group across 1 directory with 6 updates (#21)
+926a392 🎭✨ Complete GitHub Pages Deployment Optimization and CI Pipeline Fixes
+4e6c126 Fix GitHub Actions syntax error in necromancer-collect action
+286a89d Fix CI checks: resolve Jest/chalk compatibility and update Python dependencies
+0cb3dee Bump the pip group across 2 directories with 8 updates (#19)
+298cdcf 🎭 Meta-Index Katalogisering & Digital Arkæologi Integration: Neural Interface Terminal (#14)
+61befee 🏺 Complete Digital Necromancy Repository Cleanup & GitHub Actions Infrastructure Overhaul (#18)
+870b5f4 🏺 Execute Digital Necromancy graveyard cleanup & fix all workflow runners
+ab01e44 Fix deprecated GitHub Actions and workflow syntax errors
+06cbe51 🎭 Session Backup: Elixir Migration Archaeology & Session Tracking System
+7850dcc Merge remote-tracking branch 'origin/main'
+c0698c3 Complete Digital Necromancy Observatory System with workflows and enhanced actions
+b747019 Implement Digital Necromancy Observatory System core infrastructure
+33a5f1a Initial plan
+7c89b9e feat: Initial commit of Psycho-Noir Session Weaver extension with core functionality for session archaeology, neural pattern scanning, and GitHub Copilot integration.
+6f5ede4 🚀 Trigger GitHub Pages Actions deployment
+a6c6282 🔧 Fix GitHub Pages workflow for Actions deployment compatibility
+aa07080 Complete GitHub Pages deployment optimization and validation
+d88095c 📋 Final deployment documentation and GitHub Pages activation guide
+0a0f64b Initial plan
+fe1634b 🎭✨ Implement emergency GitHub Pages activator and live deployment monitor
+66f20ef 🎭✨ GitHub Pages Deployment Trigger
+c5e0079 🎭✨ COSMIC CONSCIOUSNESS PRODUCTION DEPLOYMENT - Complete Portal System with GitHub Pages Integration
+9161d91 🌌 Add Cosmic Consciousness GitHub Pages Portal
+799abf0 🧠 NEUROMANCY CROSS-REPO RECONSTRUCTION COMPLETE
+4ad2c97 test: validate necromancy salvage optimization
+decc46d 🧪 NECROMANCY SALVAGE: 88.3% CI/CD optimization via intelligent scanner selection
+422916a 🎭 COMPLETE: Meta-Index Katalogisering & Digital Arkæologi Integration
+ded81df 🎭 FINAL: Complete Meta-Index Consciousness System with demonstration integration
+aee616f 🎭 META-INDEX CONSCIOUSNESS COMPLETE: Neural Interface Terminal & Digital Corruption Gallery implemented
+38aa96e Initial plan
+e92b4a8 Initial plan
+63c1d59 Merge pull request #12 from poisontr33s/copilot/fix-bf756532-46f8-4607-9a7b-da274a709bb8
+3d97353 Complete Necropolis implementation: workflows, documentation, and comprehensive failure observability system
+a8b9a21 Implement Phase 1: Core Necropolis infrastructure with composite action and parsers
+da82788 Initial analysis and plan for Necropolis failure observability system
+3ae1a49 Initial plan
+366083d 🎭 UNIVERSAL SESSION CONTINUITY - NO DEPENDENCIES REQUIRED!
+390934f 🎭 PSYCHO-NOIR: Fixed chat continuity by removing conflicting root settings.json
+4e569cf Complete CI stabilization implementation with documentation and validation
+b20cb38 Implement CI stabilization: move experimental workflows to schedule-only, add concurrency controls, create composite action
+67af050 Initial plan
+d03c4b5 �� AGENTIC MODE ACTIVATED: Anti-Lag Session Continuity Engine
+077634a 🎭 SESSION COMPLETION: Hyper-Analytical GitHub Integration Success
+889e0e0 🎯 CRITICAL FIX: Resource Optimization Protocol - Reduce 65.3% CI/CD Failure Rate
+41d6119 Merge pull request #6 from poisontr33s/copilot/fix-c85183a9-f339-4190-95cd-a6b5a6e6194d
+4494862 Resolve merge conflict in .gitignore - combine NPM cache exclusions
+7ad1c19 🧠 Neural Archaeology System - Live Demonstration (#10)
+b5eb5bb suiting name for this workspace
+1a6587a feat: neural archaeology demonstration complete - system learning from CI failures
+07c7726 chore(repo): tighten .gitignore for CI hygiene (ignore node_modules, data artifacts, logs)
+b9df071 🧪 Neural Archaeology Live Demo Test
+8b97fea 🧠 Neural Archaeology System Deployment
+344ed0b Bump the pip group across 1 directory with 4 updates (#7)
+5054d69 Revert "Implement comprehensive chaos engineering system with passive observe…" (#9)
+fd577da Implement Stalwart Observatory v3.0 - Complete NPM to PNPM migration with Claude 4.0 Sonnet patterns
+3c11fff Implement Stalwart Observatory v2.0 - Claude 4.0 Sonnet-level resilient system
+77690a7 Clean up npm cache files and update gitignore
+41c8f2a Remove 2-hour scheduled trigger from runner observatory workflow
+bc5142c Implement comprehensive chaos engineering system with passive observer queue for bidirectional learning validation (#4)
+a2c58cd Implement comprehensive Runner Observatory Digital Necromancy System
+57993d4 Bump the pip group across 1 directory with 4 updates
+a52f90e Implement passive observer queue system - "Den Usynlige Hånd" silence mode
+e939ded Implement chaos engineering system for bidirectional learning validation
+e9b459d Implement bidirectional error learning: ANSI color code CI failure → intelligent logging system
+6d99dd7 Clean up test artifacts and add intelligence system to gitignore
+effe2f4 Implement comprehensive CI/CD logging and debugging system with bidirectional intelligence
+d629856 Update frontend test values to use Norwegian/dystopian theme for consistency
+7955789 Update package-lock.json and validate Jules system implementation
+1f486e7 Implement Jules caching and dependency management system
+b9434b5 Initial analysis and planning for Jules dependency caching system
+97cd501 Initial plan
+c91cd40 Remove node_modules from git tracking and finalize implementation
+c8f6344 Update package-lock.json and validate CI/CD pipeline functionality
+9b96c6f Fix test infrastructure and add repository standardization
+75f6557 Initial assessment and planning for CI/CD and repository standardization
+b19b2e5 Initial plan
+f48ea42 Complete solution: All merge-blocking issues resolved
+e181549 Remove npm cache files from tracking
+089b001 Clean up gitignore and finalize test infrastructure
+46fb6c7 Fix test infrastructure and workflow resilience
+df61258 Initial analysis of repository blocking issues
+f58810e Initial plan
+a9aad8d Create Orchestrina Codex master document
+e2b4c79 Update .github/workflows/labels.yml
+ce458b9 Update .github/workflows/labels.yml
+9e897ce Update .github/workflows/stale.yml
+aa9907f Update .github/workflows/branch-naming.yml
+5014de5 Add shared guardrails: branch naming, stale bot, label sync, PR template, task issue form, CODEOWNERS
+391bffe Initial plan
+a0eeb0d Merge pull request #1 from poisontr33s/copilot/fix-5e76dcfe-64ba-4948-9ab3-2e5e73939b14
+1e6fde1 Implement comprehensive artifact workflow standardization with v4 actions
+6931aef Initial analysis of repository structure for artifact workflow standardization
+e5202ef Initial plan
+278a290 Create codeql.yml
+9a9564a README.md
+02427c2 README.md
+49f284f Add files via upload
+a651775 feat: Add project essence and reuse documents
+7840014 Testing enhanced noir hook
+cea3df6 Testing noir hook with new file
+ef4b21f Testing hook again
+af49712 Test bat hook
+fa24792 Test noir
+ab69b30 copilot-instructions.md
+825bc29 copilot-instructions.md
+67c762e copilot-instructions.md
+6980793 README.md
+ad5a7fc Add initial copilot session markdown file
+5f1fe5b poisontr33s
+539c310 Update rubyonrails.yml
+0293379 Create rubyonrails.yml
+8e4d221 Initial commit

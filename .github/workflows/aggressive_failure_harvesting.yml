@@ -1,5 +1,5 @@
 name: "\U0001F525 AGGRESSIVE FAILURE HARVESTING - Data Mining Operation"
-true:
+on:
   push:
     branches:
     - main
