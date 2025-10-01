@@ -1,0 +1,42 @@
+# 🎭 Psycho-Noir Kontrapunkt Repository Configuration
+# Advanced automation and prevention systems
+
+repository:
+  name: "PsychoNoir-Kontrapunkt"
+  description: "🎭 Advanced Psycho-Noir universe with quantum consciousness integration"
+
+  settings:
+    # Branch protection
+    default_branch: "main"
+    allow_squash_merge: true
+    allow_merge_commit: false
+    allow_rebase_merge: true
+    delete_branch_on_merge: true
+
+    # Automated cleanup
+    auto_delete_head_branches: true
+
+  branch_protection:
+    main:
+      required_status_checks:
+        strict: true
+        contexts: ["ci/psycho-noir-ci"]
+      enforce_admins: false
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+      restrictions: null
+
+# Copilot configuration optimization
+copilot:
+  suggestions:
+    enabled: true
+    languages: ["typescript", "python", "javascript", "markdown"]
+
+  auto_pr:
+    max_concurrent: 3
+    auto_merge_threshold: 7  # days before suggesting cleanup
+
+  branch_naming:
+    preferred_prefix: "feature/"
+    discouraged_patterns: ["fix-*-*-*", "copilot/fix-*"]

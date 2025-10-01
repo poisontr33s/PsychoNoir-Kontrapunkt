@@ -1,0 +1,8 @@
+PR Analysis:
+============
+PR #22: 🕷️ Add META-cross-repo ML backtracking, instance variation tracking & advanced digital necromancy infrastructure (10 days old) - ✅ READY
+PR #13: 🎭 META-INDEX CONSCIOUSNESS COMPLETE: Neural Interface Terminal & Digital Arkæologi Integration (14 days old) - ✅ READY
+PR #11: 🎭 CI Stabilization: Implement bidirectional failure reporting and optimize workflow performance (18 days old) - ⚠️ STALE
+PR #8: Bump brace-expansion from 1.1.11 to 1.1.12 in the npm_and_yarn group across 1 directory (20 days old) - ⚠️ STALE
+PR #5: Implement Stalwart Observatory v3.0 - Claude 4.0 Sonnet-level PNPM migration with adaptive CI/CD resilience (21 days old) - ⚠️ STALE
+PR #3: Add shared guardrails for repository standardization (Bølge 1) (33 days old) - 🚨 ANCIENT

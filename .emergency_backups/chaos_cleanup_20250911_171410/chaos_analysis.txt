@@ -1,0 +1,16 @@
+PSYCHO-NOIR KONTRAPUNKT CHAOS ANALYSIS
+=====================================
+Generated: Thu Sep 11 17:14:11 UTC 2025
+
+BRANCH CHAOS:
+- Copilot branches: 14
+- Dependabot branches: 3
+- Stale branches: 0
+- Total remote branches: 24
+
+PR CHAOS:
+- Open PRs: 7
+- Draft PRs: 1
+
+COMPLEXITY SCORE: 24
+STATUS: CRITICAL CHAOS

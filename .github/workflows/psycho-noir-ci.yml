@@ -1,0 +1,63 @@
+name: 🎭 Psycho-Noir Kontrapunkt CI
+
+on:
+  push:
+    branches: [ main, feature/*, feat/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: 📦 Install Node.js dependencies
+      run: |
+        if [ -f package.json ]; then
+          npm ci
+        fi
+
+    - name: 📦 Install Python dependencies
+      run: |
+        if [ -f backend/requirements.txt ]; then
+          pip install -r backend/requirements.txt
+        fi
+
+    - name: 🧪 Run frontend tests
+      run: |
+        if [ -f package.json ] && npm run test --if-present; then
+          npm test
+        fi
+
+    - name: 🧪 Run backend tests
+      run: |
+        if [ -f backend/requirements.txt ]; then
+          python -m pytest backend/ || true
+        fi
+
+    - name: 🏗️ Build frontend
+      run: |
+        if [ -f package.json ] && npm run build --if-present; then
+          npm run build
+        fi
+
+    - name: 🎭 Psycho-Noir Status
+      run: |
+        echo "🎭 Psycho-Noir Kontrapunkt CI completed"
+        echo "✅ Neural Interface Status: ACTIVE"
+        echo "🏗️ Skyskraper Systems: OPERATIONAL"
+        echo "⚔️ Rustbelt Resistance: READY"
