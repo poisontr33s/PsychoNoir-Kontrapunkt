@@ -51,6 +51,8 @@ echo "Creating annotated tag: ${ARCH_TAG}"
 git tag -a "${ARCH_TAG}" -m "Archive backup for ${BRANCH} @ ${TS}" || true
 
 echo "Creating bundle: ${BUNDLE}"
+# ensure parent dir exists (branch may contain slashes)
+mkdir -p "$(dirname "${BUNDLE}")"
 git bundle create "${BUNDLE}" --all || true
 
 # compute bundle sha256 if possible
@@ -115,26 +117,9 @@ if [ "${GIT_PUSH_SAFE}" -eq 1 ] && [ "${DRY_RUN}" -eq 0 ]; then
   fi
 fi
 
-# Update summary with push attempts
-python3 - <<PY || true
-import json
-path = '${SUMMARY_PATH}'
-try:
-    with open(path, 'r') as f:
-        d = json.load(f)
-except Exception:
-    d = {}
-d.update({
-    'attempted_push': ${ATTEMPTED_PUSH:=false},
-    'push_error': '${PUSH_ERROR}'
-})
-with open(path, 'w') as f:
-    json.dump(d, f, indent=2)
-print('Wrote summary to', path)
-PY
 
 echo "Artifacts:"
-ls -la archive || true
+ls -la "$(dirname "${BUNDLE}")" || ls -la archive || true
 echo "Summary path: ${SUMMARY_PATH}"
 echo "NOT deleting Codespace. Mark ready-for-deletion: false"
 
