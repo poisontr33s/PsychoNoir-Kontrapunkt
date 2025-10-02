@@ -101,14 +101,12 @@ for BRANCH in $BRANCHES; do
         ./disable_workflows_vacation_mode.sh
     else
         echo "⚠️  Disable script not found, manually disabling..."
-        cd .github/workflows
-        for workflow in *.yml *.yaml; do
+        for workflow in .github/workflows/*.yml .github/workflows/*.yaml; do
             if [ -f "$workflow" ] && [[ "$workflow" != *.disabled ]]; then
                 mv "$workflow" "${workflow}.disabled"
-                echo "🔒 Disabled: $workflow"
+                echo "🔒 Disabled: $(basename "$workflow")"
             fi
         done
-        cd ../..
     fi
     
     # Commit changes
