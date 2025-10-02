@@ -8,5 +8,9 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "npm.packageManager": "npm",
-    "npm.scriptRunner": "npm"
+    "npm.scriptRunner": "npm",
+    "chat.todoListTool.enabled": true,
+    "chat.todoListTool.writeOnly": true,
+    "editor.fontFamily": "Courier, Times New Roman",
+    "chat.mcp.autostart": "newAndOutdated"
 }
