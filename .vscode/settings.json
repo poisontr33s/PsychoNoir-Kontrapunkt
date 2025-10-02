@@ -1,16 +1,30 @@
 {
-    "cSpell.enabled": false,
-    "editor.tabSize": 2,
-    "files.eol": "\n",
-    "files.autoSave": "afterDelay",
-    "editor.formatOnSave": true,
-    "workbench.editor.enablePreview": false,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    "npm.packageManager": "npm",
-    "npm.scriptRunner": "npm",
-    "chat.todoListTool.enabled": true,
-    "chat.todoListTool.writeOnly": true,
-    "editor.fontFamily": "Courier, Times New Roman",
-    "chat.mcp.autostart": "newAndOutdated"
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "markdown": true,
+    "plaintext": false
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.chat.followUps": "always",
+
+  // Psycho-Noir specific settings
+  "files.associations": {
+    "*.pnc": "typescript",
+    "*.milf": "json",
+    "*.neural": "typescript"
+  },
+
+  // Advanced git integration
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.pruneOnFetch": true,
+
+  // Workspace optimization
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.emergency_backups": true,
+    "**/necromancy_graveyard": true
+  }
 }

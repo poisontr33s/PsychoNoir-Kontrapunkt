@@ -1,15 +1,15 @@
-name: "\U0001F9E0 Neural Archaeology Pipeline - Psycho-Noir Kontrapunkt"
-true:
+name: "🧠 Neural Archaeology Pipeline - Psycho-Noir Kontrapunkt"
+on: # This should be 'on:', not 'true:'
   pull_request:
     types:
-    - opened
-    - synchronize
-    - reopened
+      - opened
+      - synchronize
+      - reopened
     branches:
-    - main
+      - main
   push:
     branches:
-    - main
+      - main
   workflow_dispatch:
     inputs:
       analysis_mode:
@@ -18,10 +18,10 @@ true:
         default: full
         type: choice
         options:
-        - full
-        - harvest
-        - test
-        - quick
+          - full
+          - harvest
+          - test
+          - quick
 env:
   PYTHONPATH: ${{ github.workspace }}/backend/python
 jobs:
@@ -34,105 +34,144 @@ jobs:
       pull-requests: write
       actions: read
     steps:
-    - name: "\U0001F4E5 Checkout Repository"
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: "\U0001F40D Set up Python"
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
-        cache: pip
-    - name: Cache Python dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: ${{ runner.os }}-pip-
-    - name: "\U0001F4E6 Install Dependencies"
-      run: 'python -m pip install --upgrade pip
+      - name: "\U0001F4E5 Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: "\U0001F40D Set up Python"
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Cache Python dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+      - name: "📦 Install Dependencies"
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
 
-        pip install -r backend/requirements.txt
+          # Remove these - sqlite3 and asyncio are built-in, pathlib and dataclasses are built-in in Python 3.12
+          # pip install sqlite3 asyncio pathlib dataclasses
 
+          # Add actual dependencies if needed
+          pip install numpy pandas matplotlib seaborn
+      - name: "🏗️ Create Data Directories"
+        run: |
+          mkdir -p data/generert
+          mkdir -p data/rapporter
+          mkdir -p backend/python
 
-        # Install additional dependencies for neural archaeology
+          # Make script executable if it exists
+          if [ -f launch_neural_archaeology.sh ]; then
+            chmod +x launch_neural_archaeology.sh
+          fi
+      - name: "🧪 Test Core System Components"
+        run: |
+          echo "🔍 Testing Failure Archaeology System..."
+          cd backend/python
+          python failure_archaeology_system.py
 
-        pip install sqlite3 asyncio pathlib dataclasses
+          echo "🧠 Testing Bidirectional Intelligence Engine..."
+          python bidirectional_intelligence_engine.py
 
-        '
-    - name: "\U0001F3D7\uFE0F Create Data Directories"
-      run: 'mkdir -p data/generert
+      - name: "📡 Harvest Failed Runs"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "📡 Harvesting failed runs from repository history..."
+          cd backend/python
+          python failed_runs_harvester.py || {
+            echo "⚠️ Harvesting completed with warnings"
+            exit 0
+          }
+        continue-on-error: true
+      - name: "🧠 Execute Neural Archaeology Pipeline"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🧠 Executing full Neural Archaeology pipeline..."
+          cd backend/python
+          python neural_archaeology_orchestrator.py --mode full || echo "Pipeline completed with warnings"
 
-        mkdir -p data/rapporter
+      - name: "📊 Generate Visual Analysis"
+        run: |
+          echo "📊 Generating visual failure analysis..."
+          cd backend/python
+          python failure_analysis_visualizer.py
+      - name: "📋 Upload Archaeology Database"
+        uses: actions/upload-artifact@v3
+        with:
+          name: failure-archaeology-database
+          path: |
+            data/generert/failure_archaeology.db
+            data/generert/*.log
+          retention-days: 30
+      - name: "📊 Upload Analysis Reports"
+        uses: actions/upload-artifact@v3
+        with:
+          name: neural-archaeology-reports
+          path: |
+            data/rapporter/*.json
+            data/rapporter/*.md
+          retention-days: 30
+      - name: "🎯 Comment PR with Neural Archaeology Results"
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
 
-        chmod +x launch_neural_archaeology.sh
+            // Try to read the latest report
+            let reportContent = '';
+            try {
+              const reportDir = path.join(process.cwd(), 'data', 'rapporter');
+              if (fs.existsSync(reportDir)) {
+                const files = fs.readdirSync(reportDir).filter(f => f.endsWith('.md'));
+                
+                if (files.length > 0) {
+                  const latestReport = files.sort().pop();
+                  reportContent = fs.readFileSync(path.join(reportDir, latestReport), 'utf8');
+                }
+              }
+            } catch (error) {
+              console.log('Could not read report:', error.message);
+            }
 
-        '
-    - name: "\U0001F9EA Test Core System Components"
-      run: "echo \"\U0001F50D Testing Failure Archaeology System...\"\ncd backend/python\n\
-        python failure_archaeology_system.py\n\necho \"\U0001F9E0 Testing Bidirectional\
-        \ Intelligence Engine...\"\npython bidirectional_intelligence_engine.py\n"
-    - name: "\U0001F4E1 Harvest Failed Runs"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: "echo \"\U0001F4E1 Harvesting failed runs from repository history...\"\n\
-        cd backend/python\npython failed_runs_harvester.py || echo \"Harvesting completed\
-        \ with warnings\"\n"
-    - name: "\U0001F9E0 Execute Neural Archaeology Pipeline"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: "echo \"\U0001F9E0 Executing full Neural Archaeology pipeline...\"\ncd\
-        \ backend/python\npython neural_archaeology_orchestrator.py --mode full ||\
-        \ echo \"Pipeline completed with warnings\"\n"
-    - name: "\U0001F4CA Generate Visual Analysis"
-      run: "echo \"\U0001F4CA Generating visual failure analysis...\"\ncd backend/python\n\
-        python failure_analysis_visualizer.py\n"
-    - name: "\U0001F4CB Upload Archaeology Database"
-      uses: actions/upload-artifact@v3
-      with:
-        name: failure-archaeology-database
-        path: 'data/generert/failure_archaeology.db
+            const comment = `
+            ## 🧠 Neural Archaeology Analysis Results
 
-          data/generert/*.log
+            **Psycho-Noir Kontrapunkt** har analysert denne PR-en gjennom Neural Archaeology-systemet!
 
-          '
-        retention-days: 30
-    - name: "\U0001F4CA Upload Analysis Reports"
-      uses: actions/upload-artifact@v3
-      with:
-        name: neural-archaeology-reports
-        path: 'data/rapporter/*.json
+            ### 🔍 Analyse Status
+            - ✅ Failure Archaeology System: Operativ
+            - ✅ Bidirectional Intelligence Engine: Operativ  
+            - ✅ Failed Runs Harvest: Utført
+            - ✅ Predictive Analysis: Generert
 
-          data/rapporter/*.md
+            ### 📊 Resultater
+            ${reportContent ? '**Detaljert rapport generert** - Se artifacts for komplett analyse' : 'Grunnleggende analyse utført'}
 
-          '
-        retention-days: 30
-    - name: "\U0001F3AF Comment PR with Neural Archaeology Results"
-      if: github.event_name == 'pull_request'
-      uses: actions/github-script@v7
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: "const fs = require('fs');\nconst path = require('path');\n\n// Try\
-          \ to read the latest report\nlet reportContent = '';\ntry {\n  const reportDir\
-          \ = path.join(process.cwd(), 'data', 'rapporter');\n  const files = fs.readdirSync(reportDir).filter(f\
-          \ => f.endsWith('.md'));\n  \n  if (files.length > 0) {\n    const latestReport\
-          \ = files.sort().pop();\n    reportContent = fs.readFileSync(path.join(reportDir,\
-          \ latestReport), 'utf8');\n  }\n} catch (error) {\n  console.log('Could\
-          \ not read report:', error.message);\n}\n\nconst comment = `\n## \U0001F9E0\
-          \ Neural Archaeology Analysis Results\n\n**Psycho-Noir Kontrapunkt** har\
-          \ analysert denne PR-en gjennom Neural Archaeology-systemet!\n\n### \U0001F50D\
-          \ Analyse Status\n- \u2705 Failure Archaeology System: Operativ\n- \u2705\
-          \ Bidirectional Intelligence Engine: Operativ  \n- \u2705 Failed Runs Harvest:\
-          \ Utf\xF8rt\n- \u2705 Predictive Analysis: Generert\n\n### \U0001F4CA Resultater\n\
-          ${reportContent ? '**Detaljert rapport generert** - Se artifacts for komplett\
-          \ analyse' : 'Grunnleggende analyse utf\xF8rt'}\n\n### \U0001F3AF System\
-          \ Status\nNeural Archaeology-systemet har katalogisert feil, ekstrahert\
-          \ l\xE6ringsm\xF8nstre og generert prediktive alerter for \xE5 forbedre\
-          \ systemresiliens.\n\n**Den Usynlige H\xE5nd**: *Kaos transformert til visdom*\
-          \ \U0001F504\n\n---\n*Generert av Neural Archaeology Pipeline - ${new Date().toISOString()}*\n\
-          `;\n\ngithub.rest.issues.createComment({\n  issue_number: context.issue.number,\n\
-          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  body: comment\n\
-          });\n"
+            ### 🎯 System Status
+            Neural Archaeology-systemet har katalogisert feil, ekstrahert læringsmønstre og generert prediktive alerter for å forbedre systemresiliens.
+
+            **Den Usynlige Hånd**: *Kaos transformert til visdom* 🔄
+
+            ---
+            *Generert av Neural Archaeology Pipeline - ${new Date().toISOString()}*
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
     timeout-minutes: 30
   failure-pattern-detection:
     name: "\U0001F6A8 Real-time Failure Pattern Detection"
@@ -140,89 +179,138 @@ jobs:
     needs: neural-archaeology-analysis
     if: always()
     steps:
-    - name: "\U0001F4E5 Checkout Repository"
-      uses: actions/checkout@v4
-    - name: "\U0001F40D Set up Python"
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
-    - name: Cache Python dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: ${{ runner.os }}-pip-
-    - name: "\U0001F4E6 Install Dependencies"
-      run: 'python -m pip install --upgrade pip
+      - name: "\U0001F4E5 Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "\U0001F40D Set up Python"
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Cache Python dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+      - name: "📦 Install Dependencies"
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+      - name: "\U0001F4E5 Download Archaeology Database"
+        uses: actions/download-artifact@v3
+        with:
+          name: failure-archaeology-database
+          path: data/generert/
+        continue-on-error: true
+      - name: "🔮 Generate Predictive Alerts"
+        run: |
+          echo "🔮 Generating predictive alerts for current context..."
+          cd backend/python
 
-        pip install -r backend/requirements.txt
+          # Create context for current workflow
+          cat > current_context.json << EOF
+          {
+            "workflow_trigger": "${{ github.event_name }}",
+            "branch": "${{ github.ref_name }}",
+            "actor": "${{ github.actor }}",
+            "repository": "${{ github.repository }}",
+            "pr_number": "${{ github.event.number }}",
+            "changed_files": "$(git diff --name-only HEAD~1 HEAD | wc -l)",
+            "commit_message": "${{ github.event.head_commit.message }}",
+            "environment": "github_actions",
+            "runner_os": "${{ runner.os }}"
+          }
+          EOF
 
-        '
-    - name: "\U0001F4E5 Download Archaeology Database"
-      uses: actions/download-artifact@v3
-      with:
-        name: failure-archaeology-database
-        path: data/generert/
-      continue-on-error: true
-    - name: "\U0001F52E Generate Predictive Alerts"
-      run: "echo \"\U0001F52E Generating predictive alerts for current context...\"\
-        \ncd backend/python\n\n# Create context for current workflow\ncat > current_context.json\
-        \ << EOF\n{\n  \"workflow_trigger\": \"${{ github.event_name }}\",\n  \"branch\"\
-        : \"${{ github.ref_name }}\",\n  \"actor\": \"${{ github.actor }}\",\n  \"\
-        repository\": \"${{ github.repository }}\",\n  \"pr_number\": \"${{ github.event.number\
-        \ }}\",\n  \"changed_files\": \"$(git diff --name-only HEAD~1 HEAD | wc -l)\"\
-        ,\n  \"commit_message\": \"${{ github.event.head_commit.message }}\",\n  \"\
-        environment\": \"github_actions\",\n  \"runner_os\": \"${{ runner.os }}\"\n\
-        }\nEOF\n\npython -c \"\nimport json\nimport sys\nsys.path.append('.')\n\n\
-        try:\n    from neural_archaeology_orchestrator import NeuralArchaeologyOrchestrator\n\
-        \    import asyncio\n    \n    with open('current_context.json') as f:\n \
-        \       context = json.load(f)\n    \n    async def quick_predict():\n   \
-        \     orchestrator = NeuralArchaeologyOrchestrator()\n        try:\n     \
-        \       # Initialize if database exists\n            orchestrator.intelligence_engine.initialize_intelligence()\n\
-        \            alerts = orchestrator.intelligence_engine.predict_failure_risk(context)\n\
-        \            \n            print('\U0001F52E PREDICTIVE ALERTS:')\n      \
-        \      for alert in alerts[:5]:\n                print(f'   \u26A0\uFE0F \
-        \ {alert.predicted_failure_type} (Confidence: {alert.confidence_level:.2f})')\n\
-        \                for action in alert.recommended_preemptive_actions:\n   \
-        \                 print(f'      \u2192 {action}')\n        except Exception\
-        \ as e:\n            print(f'Prediction analysis completed with info: {e}')\n\
-        \    \n    asyncio.run(quick_predict())\nexcept ImportError as e:\n    print(f'Predictive\
-        \ analysis skipped: {e}')\n\"\n"
-    - name: "\U0001F4CA System Health Check"
-      run: "echo \"\U0001F4CA Performing Neural Archaeology system health check...\"\
-        \necho \"Database status:\"\nls -la data/generert/ || echo \"No database artifacts\
-        \ found\"\n\necho \"Reports generated:\"\nls -la data/rapporter/ || echo \"\
-        No reports found\"\n\necho \"\u2705 Health check complete\"\n"
+          python -c "
+          import json
+          import sys
+          sys.path.append('.')
+
+          try:
+              from neural_archaeology_orchestrator import NeuralArchaeologyOrchestrator
+              import asyncio
+              
+              with open('current_context.json') as f:
+                  context = json.load(f)
+              
+              async def quick_predict():
+                  orchestrator = NeuralArchaeologyOrchestrator()
+                  try:
+                      # Initialize if database exists
+                      orchestrator.intelligence_engine.initialize_intelligence()
+                      alerts = orchestrator.intelligence_engine.predict_failure_risk(context)
+                      
+                      print('🔮 PREDICTIVE ALERTS:')
+                      for alert in alerts[:5]:
+                          print(f'   ⚠️  {alert.predicted_failure_type} (Confidence: {alert.confidence_level:.2f})')
+                          for action in alert.recommended_preemptive_actions:
+                              print(f'      → {action}')
+                  except Exception as e:
+                      print(f'Prediction analysis completed with info: {e}')
+              
+              asyncio.run(quick_predict())
+          except ImportError as e:
+              print(f'Predictive analysis skipped: {e}')
+          "
+      - name: "📊 System Health Check"
+        run: |
+          echo "📊 Performing Neural Archaeology system health check..."
+          echo "Database status:"
+          ls -la data/generert/ || echo "No database artifacts found"
+
+          echo "Reports generated:"
+          ls -la data/rapporter/ || echo "No reports found"
+
+          echo "✅ Health check complete"
     timeout-minutes: 30
   resilience-score-update:
     name: "\U0001F3AF Update System Resilience Score"
     runs-on: ubuntu-latest
     needs:
-    - neural-archaeology-analysis
-    - failure-pattern-detection
+      - neural-archaeology-analysis
+      - failure-pattern-detection
     if: always() && github.ref == 'refs/heads/main'
     steps:
-    - name: "\U0001F4E5 Checkout Repository"
-      uses: actions/checkout@v4
-    - name: "\U0001F4E5 Download Analysis Results"
-      uses: actions/download-artifact@v3
-      with:
-        name: neural-archaeology-reports
-        path: data/rapporter/
-      continue-on-error: true
-    - name: "\U0001F3AF Calculate Resilience Improvement"
-      run: "echo \"\U0001F3AF Calculating system resilience improvement...\"\n\n#\
-        \ Check if reports exist and extract resilience score\nRESILIENCE_SCORE=\"\
-        0.0\"\nif ls data/rapporter/*.json 1> /dev/null 2>&1; then\n  RESILIENCE_SCORE=$(python\
-        \ -c \"\n  import json\n  import glob\n  \n  reports = glob.glob('data/rapporter/*.json')\n\
-        \  if reports:\n      with open(reports[-1]) as f:\n          data = json.load(f)\n\
-        \          score = data.get('stages', {}).get('intelligence', {}).get('resilience_score',\
-        \ 0.0)\n          print(f'{score:.3f}')\n  else:\n      print('0.000')\n \
-        \ \" 2>/dev/null || echo \"0.000\")\nfi\n\necho \"\U0001F4CA Current System\
-        \ Resilience Score: $RESILIENCE_SCORE\"\n\n# Create resilience badge\nmkdir\
-        \ -p badges\npython -c \"\nscore = float('$RESILIENCE_SCORE')\ncolor = 'red'\
-        \ if score < 0.3 else 'orange' if score < 0.6 else 'yellow' if score < 0.8\
-        \ else 'brightgreen'\nbadge_text = f'resilience-{score:.1f}-{color}'\nprint(f'![Resilience](https://img.shields.io/badge/{badge_text})')\n\
-        \" > badges/resilience.md\n\necho \"\U0001F3AF Resilience score updated: $RESILIENCE_SCORE\"\
-        \n"
+      - name: "\U0001F4E5 Checkout Repository"
+        uses: actions/checkout@v4
+      - name: "\U0001F4E5 Download Analysis Results"
+        uses: actions/download-artifact@v3
+        with:
+          name: neural-archaeology-reports
+          path: data/rapporter/
+        continue-on-error: true
+      - name: "🎯 Calculate Resilience Improvement"
+        run: |
+          echo "🎯 Calculating system resilience improvement..."
+
+          # Check if reports exist and extract resilience score
+          RESILIENCE_SCORE="0.0"
+          if ls data/rapporter/*.json 1> /dev/null 2>&1; then
+            RESILIENCE_SCORE=$(python -c "
+            import json
+            import glob
+            
+            reports = glob.glob('data/rapporter/*.json')
+            if reports:
+                with open(reports[-1]) as f:
+                    data = json.load(f)
+                    score = data.get('stages', {}).get('intelligence', {}).get('resilience_score', 0.0)
+                    print(f'{score:.3f}')
+            else:
+                print('0.000')
+            " 2>/dev/null || echo "0.000")
+          fi
+
+          echo "📊 Current System Resilience Score: $RESILIENCE_SCORE"
+
+          # Create resilience badge
+          mkdir -p badges
+          python -c "
+          score = float('$RESILIENCE_SCORE')
+          color = 'red' if score < 0.3 else 'orange' if score < 0.6 else 'yellow' if score < 0.8 else 'brightgreen'
+          badge_text = f'resilience-{score:.1f}-{color}'
+          print(f'![Resilience](https://img.shields.io/badge/{badge_text})')
+          " > badges/resilience.md
+
+          echo "🎯 Resilience score updated: $RESILIENCE_SCORE"
     timeout-minutes: 30

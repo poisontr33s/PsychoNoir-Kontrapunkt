@@ -67,25 +67,30 @@ jobs:
         echo "📡 PERFORMING INCREMENTAL FAILURE HARVESTING..."
         cd backend/python
         
-        # Get failures from last 24 hours
-        python -c "
-import json
-from datetime import datetime, timedelta
-from failed_runs_harvester import FailedRunsHarvester
-
-harvester = FailedRunsHarvester()
-recent_failures = harvester.harvest_github_actions_failures()
-
-print(f'📊 Harvested {len(recent_failures)} recent failures')
-with open('../../../harvest_summary.json', 'w') as f:
-    json.dump({
-        'failures_count': len(recent_failures),
-        'timestamp': datetime.now().isoformat(),
-        'mode': 'incremental'
-    }, f)
-"
+        # Get failures from last 24 hours (use heredoc to avoid YAML quoting/indent issues)
+        python - <<'PY'
+        import json
+        from datetime import datetime
+        from failed_runs_harvester import FailedRunsHarvester
         
-        FAILURES_COUNT=$(cat harvest_summary.json | python -c "import sys, json; print(json.load(sys.stdin)['failures_count'])")
+        harvester = FailedRunsHarvester()
+        recent_failures = harvester.harvest_github_actions_failures()
+        
+        print(f"📊 Harvested {len(recent_failures)} recent failures")
+        with open('../../harvest_summary.json', 'w') as f:
+            json.dump({
+                'failures_count': len(recent_failures),
+                'timestamp': datetime.now().isoformat(),
+                'mode': 'incremental'
+            }, f)
+        PY
+
+        # Robust lesing av resultat med fallback
+        if [ -f harvest_summary.json ]; then
+          FAILURES_COUNT=$(python -c "import json; print(json.load(open('harvest_summary.json'))['failures_count'])" 2>/dev/null || echo "0")
+        else
+          FAILURES_COUNT=0
+        fi
         echo "failures_harvested=$FAILURES_COUNT" >> $GITHUB_OUTPUT
 
     - name: 🧠 Update Intelligence Engine
@@ -106,12 +111,13 @@ with open('../../../harvest_summary.json', 'w') as f:
         # Generate current state analysis
         python failure_analysis_visualizer.py > ../../../learning_progress.txt
         
-        # Extract key metrics for tracking
         TOTAL_FAILURES=$(grep "TOTAL FAILURES CATALOGED:" ../../../learning_progress.txt | grep -oE '[0-9]+' || echo "0")
-        RESOLVED_PERCENTAGE=$(grep "% failures remain UNRESOLVED" ../../../learning_progress.txt | grep -oE '[0-9]+\.[0-9]+' | head -1 || echo "100.0")
-        RESOLVED_PERCENTAGE=$(echo "100 - $RESOLVED_PERCENTAGE" | bc -l 2>/dev/null || echo "0")
+        UNRESOLVED_PERCENTAGE=$(grep "% failures remain UNRESOLVED" ../../../learning_progress.txt | grep -oE '[0-9]+\.[0-9]+' | head -1 || echo "100.0")
+        # Calculate resolved percentage in shell for clarity
+        RESOLVED_PERCENTAGE=$(awk "BEGIN { print (100.0 - $UNRESOLVED_PERCENTAGE) }")
         
         echo "total_failures=$TOTAL_FAILURES" >> $GITHUB_OUTPUT
+        echo "resolved_percentage=$RESOLVED_PERCENTAGE" >> $GITHUB_OUTPUT
         echo "resolved_percentage=$RESOLVED_PERCENTAGE" >> $GITHUB_OUTPUT
 
     - name: 🎯 Check Learning Milestones
@@ -134,9 +140,9 @@ with open('../../../harvest_summary.json', 'w') as f:
         fi
         
         # Check resolution rate milestones
-        if (( $(echo "$RESOLVED_PCT >= 50.0" | bc -l) )); then
+        if awk 'BEGIN{exit !('"$RESOLVED_PCT"' >= 50.0)}'; then
           MILESTONE_REACHED="${MILESTONE_REACHED}_resolution_50_plus"
-        elif (( $(echo "$RESOLVED_PCT >= 25.0" | bc -l) )); then
+        elif awk 'BEGIN{exit !('"$RESOLVED_PCT"' >= 25.0)}'; then
           MILESTONE_REACHED="${MILESTONE_REACHED}_resolution_25_plus"
         fi
         
@@ -157,39 +163,39 @@ with open('../../../harvest_summary.json', 'w') as f:
           
           const issueBody = `# 🧠 PSYCHO-NOIR KONTRAPUNKT: NEURAL ARCHAEOLOGY LEARNING PROGRESS
           
-**Last Updated:** ${new Date().toISOString()}
-**Milestone Reached:** \`${milestone}\`
+          Last Updated: ${new Date().toISOString()}
+          Milestone Reached: ${milestone}
 
-## 📊 Current Statistics:
-- **Total Failures Cataloged:** ${totalFailures}
-- **Resolution Rate:** ${resolvedPct}%
-- **Learning Engine Status:** 🟢 Active
-- **Database Location:** \`data/generert/failure_archaeology.db\`
+          ## 📊 Current Statistics:
+          - Total Failures Cataloged: ${totalFailures}
+          - Resolution Rate: ${resolvedPct}%
+          - Learning Engine Status: 🟢 Active
+          - Database Location: data/generert/failure_archaeology.db
 
-## 🎯 Recent Milestones:
-- ✅ **${milestone}** - ${new Date().toLocaleDateString()}
+          ## 🎯 Recent Milestones:
+          - ✅ ${milestone} - ${new Date().toLocaleDateString()}
 
-## 🔮 Predictive Intelligence Status:
-- **Pattern Recognition:** Continuous learning from failure patterns
-- **Bidirectional Learning:** Active transformation of failures to fixes
-- **Risk Assessment:** Pre-PR analysis operational
+          ## 🔮 Predictive Intelligence Status:
+          - Pattern Recognition: Continuous learning from failure patterns
+          - Bidirectional Learning: Active transformation of failures to fixes
+          - Risk Assessment: Pre-PR analysis operational
 
-## 🚀 Next Goals:
-- [ ] Achieve 75% resolution rate
-- [ ] Extract 10+ successful fix patterns
-- [ ] Implement automated fix recommendations
-- [ ] Deploy predictive failure prevention
+          ## 🚀 Next Goals:
+          - [ ] Achieve 75% resolution rate
+          - [ ] Extract 10+ successful fix patterns
+          - [ ] Implement automated fix recommendations
+          - [ ] Deploy predictive failure prevention
 
----
-*Auto-updated by Continuous Neural Archaeology Learning System*
-*Den Usynlige Hånd: Systematisk transformasjon av kaos til visdom*
-`;
+          ---
+          Auto-updated by Continuous Neural Archaeology Learning System
+          Den Usynlige Hånd: Systematisk transformasjon av kaos til visdom
+          `;
 
-          // Check if issue already exists
+          // Check if issue already exists (labels må være streng, ikke array)
           const issues = await github.rest.issues.listForRepo({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            labels: ['neural-archaeology', 'learning-progress'],
+            labels: 'neural-archaeology,learning-progress',
             state: 'open'
           });
           
@@ -249,6 +255,7 @@ with open('../../../harvest_summary.json', 'w') as f:
           data/
           learning_progress.txt
           harvest_summary.json
+        if-no-files-found: warn
         retention-days: 7
 
     - name: ✅ Continuous Learning Status Summary
