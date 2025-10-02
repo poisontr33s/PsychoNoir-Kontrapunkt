@@ -24,25 +24,31 @@ echo "📋 Scanning for active workflow files..."
 echo ""
 
 # Find all .yml and .yaml files that are NOT already disabled
-for workflow in "$WORKFLOWS_DIR"/*.yml "$WORKFLOWS_DIR"/*.yaml; do
-    # Skip if glob didn't match any files
-    if [ ! -f "$workflow" ]; then
-        continue
-    fi
-    
-    # Check if already disabled
-    if [[ "$workflow" == *.disabled ]]; then
-        ALREADY_DISABLED=$((ALREADY_DISABLED + 1))
-        continue
-    fi
-    
-    # Disable the workflow by renaming
-    DISABLED_NAME="${workflow}.disabled"
-    echo "🔒 Disabling: $(basename "$workflow")"
-    mv "$workflow" "$DISABLED_NAME"
-    DISABLED_COUNT=$((DISABLED_COUNT + 1))
-done
+workflow_files=("$WORKFLOWS_DIR"/*.yml "$WORKFLOWS_DIR"/*.yaml)
 
+# Check if any workflow files exist
+if [ ! -e "${workflow_files[0]}" ]; then
+    echo "⚠️  No workflow files (.yml/.yaml) found in $WORKFLOWS_DIR"
+else
+    for workflow in "${workflow_files[@]}"; do
+        # Skip if not a regular file
+        if [ ! -f "$workflow" ]; then
+            continue
+        fi
+        
+        # Check if already disabled
+        if [[ "$workflow" == *.disabled ]]; then
+            ALREADY_DISABLED=$((ALREADY_DISABLED + 1))
+            continue
+        fi
+        
+        # Disable the workflow by renaming
+        DISABLED_NAME="${workflow}.disabled"
+        echo "🔒 Disabling: $(basename "$workflow")"
+        mv "$workflow" "$DISABLED_NAME"
+        DISABLED_COUNT=$((DISABLED_COUNT + 1))
+    done
+fi
 echo ""
 echo "✅ VACATION MODE ACTIVATION COMPLETE"
 echo "===================================="
