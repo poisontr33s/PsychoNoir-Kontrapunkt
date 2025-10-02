@@ -87,7 +87,7 @@ for BRANCH in $BRANCHES; do
     fi
     
     # Count workflows to disable
-    WORKFLOW_COUNT=$(find .github/workflows -name "*.yml" -o -name "*.yaml" 2>/dev/null | grep -v ".disabled" | wc -l)
+    WORKFLOW_COUNT=$(find .github/workflows -name "*.yml" -o -name "*.yaml" 2>/dev/null | wc -l)
     
     if [ "$WORKFLOW_COUNT" -eq 0 ]; then
         echo "✅ No active workflows in branch: $BRANCH (already disabled or none exist)"
