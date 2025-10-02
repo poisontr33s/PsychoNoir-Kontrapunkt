@@ -65,6 +65,18 @@ if [ -f "${BUNDLE}" ]; then
   fi
 fi
 
+# extra diagnostics for summary
+LAST_COMMIT_MSG=""
+if git rev-parse --verify HEAD >/dev/null 2>&1; then
+  LAST_COMMIT_MSG=$(git log -1 --pretty=%B HEAD | tr '\n' ' ' | sed -e 's/"/\\\"/g')
+fi
+REPO_SIZE_BYTES=""
+if command -v du >/dev/null 2>&1; then
+  REPO_SIZE_BYTES=$(du -sb "${REPO_ROOT}" 2>/dev/null | awk '{print $1}' || echo "")
+fi
+UNCOMMITTED_COUNT=0
+UNCOMMITTED_COUNT=$(git status --porcelain | wc -l | tr -d ' ')
+
 # create JSON summary
 SUMMARY_PATH="/tmp/prepare_for_deletion_summary.json"
 cat > "${SUMMARY_PATH}" <<EOF
@@ -80,6 +92,9 @@ cat > "${SUMMARY_PATH}" <<EOF
   "tag":"${ARCH_TAG}",
   "bundle":"${BUNDLE}",
   "bundle_sha256":"${BUNDLE_SHA}",
+  "last_commit_message":"${LAST_COMMIT_MSG}",
+  "repo_size_bytes":"${REPO_SIZE_BYTES}",
+  "uncommitted_count":${UNCOMMITTED_COUNT},
   "timestamp":"${TS}",
   "attempted_push":${ATTEMPTED_PUSH},
   "push_error":"${PUSH_ERROR}"
