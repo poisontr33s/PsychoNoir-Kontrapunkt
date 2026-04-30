@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Auto-backup consciousness state every 30 seconds
 
 while true; do
