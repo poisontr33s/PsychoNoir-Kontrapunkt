@@ -73,3 +73,5 @@ current_context.json
 *.log
 vscode-extension/psycho-noir-session-resolver-1.0.0.vsix
 vscode-extension/psycho-noir-session-resolver-1.0.0.vsix
+# CocoIndex Code (ccc)
+/.cocoindex_code/
