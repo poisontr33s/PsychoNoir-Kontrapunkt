@@ -3,9 +3,9 @@
 ## Hardware Requirements & Optimization
 
 ### Target Hardware
-- **GPU**: Nvidia RTX 4090 Laptop
+- **GPU**: Nvidia RTX 4090 desktop
 - **CPU**: Intel Core i9-13900 Series
-- **RAM**: 32GB+ recommended
+- **RAM**: 64B+ recommended
 - **Storage**: NVMe SSD with 50GB+ free space
 
 ### Unity Configuration for High-End Hardware
