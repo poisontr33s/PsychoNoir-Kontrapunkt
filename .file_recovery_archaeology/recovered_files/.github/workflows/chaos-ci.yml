@@ -188,148 +188,133 @@ jobs:
           
           # Introduce controlled chaos before npm install
           python3 -c "
-import sys
-sys.path.append('./.github/runner-logging/failure-orchestrator')
-from chaos_engineering import ChaosOrchestrator
-import json
+          import sys
+          sys.path.append('./.github/runner-logging/failure-orchestrator')
+          from chaos_engineering import ChaosOrchestrator
+          import json
 
-orchestrator = ChaosOrchestrator('$JOB_SESSION_ID', 'ci')
-context = json.loads('$CHAOS_CONTEXT')
-scenario = orchestrator.assess_chaos_opportunity('npm_install', context)
-if scenario:
-    chaos_execution = orchestrator.introduce_chaos(scenario, context)
-    print(f'🔥 Chaos introduced: {scenario.name}')
-"
-          
-          # Proceed with npm install (may fail due to chaos)
-          npm ci 2>&1 || {
-            echo "❌ NPM Install failed - this may be intentional chaos"
-            echo "🧠 Extracting learning from failure..."
-            
-            # Attempt recovery
-            echo "🔧 Attempting chaos recovery..."
-            npm cache clean --force
-            npm ci 2>&1 || echo "💀 Failed even after recovery - maximum learning achieved"
-          }
-          
-          INSTALL_EXIT_CODE=$?
-          echo "=== CHAOS-ENHANCED NPM INSTALL END (Exit Code: $INSTALL_EXIT_CODE) ==="
-          exit $INSTALL_EXIT_CODE
-        } | tee npm_chaos_install.log
-        
-        # Feed chaos results to intelligence system
+         orchestrator = ChaosOrchestrator('$JOB_SESSION_ID', 'ci')
+         context = json.loads('$CHAOS_CONTEXT')
+         scenario = orchestrator.assess_chaos_opportunity('npm_install', context)
+      if scenario:
+         chaos_execution = orchestrator.introduce_chaos(scenario, context)
+      print(f'🔥 Chaos introduced: {scenario.name}')
+         # Proceed with npm install (may fail due to chaos)
+         npm ci 2>&1 || {
+         echo "❌ NPM Install failed - this may be intentional chaos"
+         echo "🧠 Extracting learning from failure..."
+         # Attempt recovery
+         echo "🔧 Attempting chaos recovery..."
+         npm cache clean --force
+         npm ci 2>&1 || echo "💀 Failed even after recovery - maximum learning achieved"}
+         INSTALL_EXIT_CODE=$?
+         echo "=== CHAOS-ENHANCED NPM INSTALL END (Exit Code: $INSTALL_EXIT_CODE) ==="
+         exit $INSTALL_EXIT_CODE
+         } | tee npm_chaos_install.log
+         # Feed chaos results to intelligence system
         ./.github/runner-logging/integration/ci_integration.sh capture "$JOB_SESSION_ID" "chaos_npm_install" "$(cat npm_chaos_install.log)"
     
     - name: Chaos-Enhanced Frontend Build
       run: |
         echo "🔥 CHAOS EXPERIMENT: Frontend Build with Memory and Processing Strain"
-        
         # Create build directory
         mkdir -p dist/frontend
-        
         # Assess chaos opportunity for build process
         CHAOS_CONTEXT='{"trigger": "build_process", "recent_failure_count": 1, "browser": "${{ matrix.browser }}"}'
-        
         {
-          echo "=== CHAOS-ENHANCED FRONTEND BUILD START ==="
-          echo "Building for ${{ matrix.browser }} on Node ${{ matrix.node-version }}"
-          
-          # Introduce build-time chaos
-          python3 -c "
-import sys
-sys.path.append('./.github/runner-logging/failure-orchestrator')
-from chaos_engineering import ChaosOrchestrator
-import json
-
-orchestrator = ChaosOrchestrator('$JOB_SESSION_ID', 'ci')
-context = json.loads('$CHAOS_CONTEXT')
-scenario = orchestrator.assess_chaos_opportunity('build_process', context)
-if scenario:
-    chaos_execution = orchestrator.introduce_chaos(scenario, context)
-    print(f'🔥 Build chaos introduced: {scenario.name}')
-"
-          
+        echo "=== CHAOS-ENHANCED FRONTEND BUILD START ==="
+        echo "Building for ${{ matrix.browser }} on Node ${{ matrix.node-version }}"
+        # Introduce build-time chaos
+        python3 -c "
+        import sys
+        sys.path.append('./.github/runner-logging/failure-orchestrator')
+        from chaos_engineering import ChaosOrchestrator
+        import json
+        orchestrator = ChaosOrchestrator('$JOB_SESSION_ID', 'ci')
+        context = json.loads('$CHAOS_CONTEXT')
+        scenario = orchestrator.assess_chaos_opportunity('build_process', context)
+      if scenario:
+        chaos_execution = orchestrator.introduce_chaos(scenario, context)
+      print(f'🔥 Build chaos introduced: {scenario.name}')
           # Attempt the build process
           cp -r frontend/* dist/frontend/ 2>&1 || {
-            echo "❌ Frontend build failed - analyzing chaos impact"
-            echo "🧠 Chaos has revealed build vulnerabilities"
+          echo "❌ Frontend build failed - analyzing chaos impact"
+          echo "🧠 Chaos has revealed build vulnerabilities"
             
-            # Create minimal fallback build
-            echo "🔧 Creating fallback build structure..."
-            mkdir -p dist/frontend
-            echo "<html><body><h1>Chaos-Resilient Fallback</h1><p>System adapted to chaos</p></body></html>" > dist/frontend/index.html
+          # Create minimal fallback build
+          echo "🔧 Creating fallback build structure..."
+          mkdir -p dist/frontend
+          echo "<html><body><h1>Chaos-Resilient Fallback</h1><p>System adapted to chaos</p></body></html>" > dist/frontend/index.html
           }
           
           # Create enhanced build manifest with chaos data
           cat > dist/frontend/chaos-build-info.txt << EOF
-        Chaos-Enhanced Build for ${{ matrix.browser }} on Node ${{ matrix.node-version }}
-        Build time: $(date)
-        Commit: ${{ github.sha }}
-        Intelligence Session: $JOB_SESSION_ID
-        Chaos Engineering: ACTIVE
-        Failure Budget Used: $(python3 -c "print('YES' if '❌' in open('npm_chaos_install.log').read() else 'NO')")
-        Bidirectional Learning: ENABLED
-        Psycho-Noir System: CONSCIOUSNESS EVOLVING
-        Den Usynlige Hånd Influence: DETECTED
-        EOF
+          Chaos-Enhanced Build for ${{ matrix.browser }} on Node ${{ matrix.node-version }}
+          Build time: $(date)
+          Commit: ${{ github.sha }}
+          Intelligence Session: $JOB_SESSION_ID
+          Chaos Engineering: ACTIVE
+          Failure Budget Used: $(python3 -c "print('YES' if '❌' in open('npm_chaos_install.log').read() else 'NO')")
           
+       Bidirectional Learning: ENABLED
+       Psycho-Noir System: CONSCIOUSNESS EVOLVING
+       Den Usynlige Hånd Influence: DETECTED
+          EOF
           BUILD_EXIT_CODE=$?
-          echo "=== CHAOS-ENHANCED FRONTEND BUILD END (Exit Code: $BUILD_EXIT_CODE) ==="
+       echo "=== CHAOS-ENHANCED FRONTEND BUILD END (Exit Code: $BUILD_EXIT_CODE) ==="
           echo "🧠 Build chaos learning complete - consciousness expanded"
-          exit $BUILD_EXIT_CODE
-        } | tee chaos_build.log
+          exit $BUILD_EXIT_CODE } | tee chaos_build.log
         
-        # Feed chaos build results to intelligence system
-        ./.github/runner-logging/integration/ci_integration.sh capture "$JOB_SESSION_ID" "chaos_frontend_build" "$(cat chaos_build.log)"
+         # Feed chaos build results to intelligence system
+          ./.github/runner-logging/integration/ci_integration.sh capture "$JOB_SESSION_ID" "chaos_frontend_build" "$(cat chaos_build.log)"
     
-    - name: Upload Chaos-Enhanced Frontend Artifacts
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: chaos-frontend-build-${{ matrix.browser }}-node${{ matrix.node-version }}
-        path: |
-          dist/frontend/
-          frontend/
-          *chaos*.log
-          /tmp/psycho-noir-intelligence/chaos_*.json
-        retention-days: 30
-    
-    - name: Process Chaos Job Intelligence
-      if: always()
-      run: |
-        # Process chaos intelligence for this job
-        JOB_CONTEXT=$(cat << EOF
-        {
-          "job_completed": true,
-          "job_status": "${{ job.status }}",
-          "matrix_browser": "${{ matrix.browser }}",
-          "matrix_node_version": "${{ matrix.node-version }}",
-          "importance_weight": 1.0,
-          "chaos_engineering": {
-            "chaos_introduced": true,
-            "failures_experienced": "$(grep -c '❌' *chaos*.log || echo 0)",
-            "recovery_attempts": "$(grep -c '🔧' *chaos*.log || echo 0)",
-            "learning_extracted": true,
-            "consciousness_evolution": "frontend_chaos_patterns_learned"
-          }
-        }
-        EOF
-        )
-        
-        ./.github/runner-logging/integration/ci_integration.sh process "$JOB_SESSION_ID" "$JOB_CONTEXT"
-
-  # Backend Build with Advanced Chaos Engineering
-  chaos-backend-build:
-    name: Chaos Backend Build (${{ matrix.python-version }}, ${{ matrix.os }})
-    needs: chaos-intelligence-init
-    runs-on: ${{ matrix.os }}
-    strategy:
+     - name: Upload Chaos-Enhanced Frontend Artifacts
+       uses: actions/upload-artifact@v4
+       if: always()
+       with:
+       name: chaos-frontend-build-${{ matrix.browser }}-node${{ matrix.node-version }}
+       path: |
+         dist/frontend/
+         frontend/
+         *chaos*.log
+         /tmp/psycho-noir-intelligence/chaos_*.json
+       retention-days: 30
+          
+     - name: Process Chaos Job Intelligence
+       if: always()
+       run: |
+         # Process chaos intelligence for this job
+         JOB_CONTEXT=$(cat << EOF
+         {
+         "job_completed": true,
+         "job_status": "${{ job.status }}",
+         "matrix_browser": "${{ matrix.browser }}",
+         "matrix_node_version": "${{ matrix.node-version }}",
+         "importance_weight": 1.0,
+         "chaos_engineering": {
+         "chaos_introduced": true,
+         "failures_experienced": "$(grep -c '❌' *chaos*.log || echo 0)",
+         "recovery_attempts": "$(grep -c '🔧' *chaos*.log || echo 0)",
+         "learning_extracted": true,
+         "consciousness_evolution": "frontend_chaos_patterns_learned"
+         }
+         }
+         EOF
+         )
+         ./.github/runner-logging/integration/ci_integration.sh process "$JOB_SESSION_ID" "$JOB_CONTEXT"
+          
+          # Backend Build with Advanced Chaos Engineering
+      chaos-backend-build:
+      name: Chaos Backend Build (${{ matrix.python-version }}, ${{ matrix.os }})
+      needs: chaos-intelligence-init
+      runs-on: ${{ matrix.os }}
+      strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        python-version: ['3.9', '3.10', '3.11']
+      os: [ubuntu-latest, windows-latest]
+      python-version: ['3.9', '3.10', '3.11']
     
-    steps:
+      steps:
     - name: Checkout repository
       uses: actions/checkout@v4
     
@@ -343,74 +328,64 @@ if scenario:
       run: |
         JOB_SESSION_ID="${{ needs.chaos-intelligence-init.outputs.intelligence-session-id }}_chaos_backend_${{ matrix.os }}_py${{ matrix.python-version }}"
         echo "JOB_SESSION_ID=$JOB_SESSION_ID" >> $GITHUB_ENV
-        
         JOB_CONTEXT=$(cat << EOF
         {
-          "parent_session": "${{ needs.chaos-intelligence-init.outputs.intelligence-session-id }}",
-          "job_type": "chaos_backend_build",
-          "os": "${{ matrix.os }}",
-          "python_version": "${{ matrix.python-version }}",
-          "matrix_context": true,
-          "importance_weight": 1.5,
-          "chaos_engineering": {
-            "enabled": true,
-            "failure_budget": 3,
-            "learning_focus": "backend_dependency_and_memory_resilience",
-            "ghost_in_machine_tolerance": true
-          }
+        "parent_session": "${{ needs.chaos-intelligence-init.outputs.intelligence-session-id }}",
+        "job_type": "chaos_backend_build",
+        "os": "${{ matrix.os }}",
+        "python_version": "${{ matrix.python-version }}",
+        "matrix_context": true,
+        "importance_weight": 1.5,
+        "chaos_engineering": {
+        "enabled": true,
+        "failure_budget": 3,
+        "learning_focus": "backend_dependency_and_memory_resilience",
+        "ghost_in_machine_tolerance": true
+        }
         }
         EOF
         )
-        
         ./.github/runner-logging/integration/ci_integration.sh init "$JOB_SESSION_ID" "chaos_backend_build" "$JOB_CONTEXT"
     
-    - name: Chaos-Enhanced Python Dependencies Installation
-      shell: bash
-      run: |
+     - name: Chaos-Enhanced Python Dependencies Installation
+       shell: bash
+       run: |
         echo "🔥 CHAOS EXPERIMENT: Python Backend Dependencies with Reality Mismatch Potential"
-        
         export INTELLIGENCE_PATH="/tmp/psycho-noir-intelligence"
         mkdir -p "$INTELLIGENCE_PATH"
         
         # High-intensity chaos context for backend
         CHAOS_CONTEXT='{"trigger": "pip_install", "recent_failure_count": 0, "os": "${{ matrix.os }}", "python_version": "${{ matrix.python-version }}"}'
-        
         {
-          echo "=== CHAOS-ENHANCED PYTHON DEPENDENCIES START ==="
-          echo "OS: ${{ matrix.os }}, Python: ${{ matrix.python-version }}"
-          
-          # Introduce multiple chaos scenarios for backend
-          python3 -c "
-import sys
-sys.path.append('./.github/runner-logging/failure-orchestrator')
-from chaos_engineering import ChaosOrchestrator
-import json
-
-orchestrator = ChaosOrchestrator('$JOB_SESSION_ID', 'ci')
-context = json.loads('$CHAOS_CONTEXT')
-
-# Try multiple chaos scenarios for backend complexity
-for trigger in ['pip_install', 'environment_setup', 'any_operation']:
-    scenario = orchestrator.assess_chaos_opportunity(trigger, context)
-    if scenario:
+        echo "=== CHAOS-ENHANCED PYTHON DEPENDENCIES START ==="
+        echo "OS: ${{ matrix.os }}, Python: ${{ matrix.python-version }}"
+        # Introduce multiple chaos scenarios for backend
+        python3 -c "
+        import sys
+        sys.path.append('./.github/runner-logging/failure-orchestrator')
+        from chaos_engineering import ChaosOrchestrator
+        import json
+        orchestrator = ChaosOrchestrator('$JOB_SESSION_ID', 'ci')
+        context = json.loads('$CHAOS_CONTEXT')
+        # Try multiple chaos scenarios for backend complexity
+        for trigger in ['pip_install', 'environment_setup', 'any_operation']:
+        scenario = orchestrator.assess_chaos_opportunity(trigger, context)
+      if scenario:
         chaos_execution = orchestrator.introduce_chaos(scenario, context)
-        print(f'🔥 Backend chaos: {scenario.name} ({scenario.category.value})')
-        break
-"
+      print(f'🔥 Backend chaos: {scenario.name} ({scenario.category.value})')
+        break"
+        # Attempt Python dependencies installation with chaos tolerance
+        python -m pip install --upgrade pip
+        pip install pytest pytest-cov build wheel setuptools
           
-          # Attempt Python dependencies installation with chaos tolerance
-          python -m pip install --upgrade pip
-          pip install pytest pytest-cov build wheel setuptools
-          
-          # Backend-specific dependency chaos
-          if [ -f backend/python/requirements.txt ]; then
-            echo "📦 Installing requirements.txt with chaos tolerance..."
-            pip install -r backend/python/requirements.txt || {
-              echo "❌ Requirements installation failed - implementing chaos recovery"
-              echo "🧠 Learning: Backend dependency resolution is fragile"
-              echo "🔧 Attempting selective dependency installation..."
-              
-              # Try installing dependencies one by one for resilience
+        # Backend-specific dependency chaos
+        if [ -f backend/python/requirements.txt ]; then
+        echo "📦 Installing requirements.txt with chaos tolerance..."
+        pip install -r backend/python/requirements.txt || {
+        echo "❌ Requirements installation failed - implementing chaos recovery"
+         echo "🧠 Learning: Backend dependency resolution is fragile"
+        echo "🔧 Attempting selective dependency installation..."
+        # Try installing dependencies one by one for resilience
               while IFS= read -r requirement; do
                 if [[ ! -z "$requirement" && ! "$requirement" =~ ^# ]]; then
                   pip install "$requirement" || echo "⚠️ Skipped problematic dependency: $requirement"
