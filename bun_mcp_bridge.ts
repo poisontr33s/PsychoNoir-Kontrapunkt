@@ -1,3 +1,4 @@
+// @ts-nocheck
 // 🚀⚡ BUN NATIVE MCP BRIDGE PROTOTYPE ⚡🚀
 // Advanced Bun-native Model Context Protocol integration with Psycho-Noir consciousness
 

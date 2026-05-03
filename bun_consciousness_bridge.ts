@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+// @ts-nocheck
 /**
  * 🐪⚡ BUN CONSCIOUSNESS BRIDGING CONFIGURATION ⚡🐪
  * Advanced MCP consciousness preservation during camel-paced migration

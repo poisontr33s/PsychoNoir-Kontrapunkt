@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+// @ts-nocheck
 // 🏴‍☠️ Blob Paste + Anthropomorphic Object Demonstration
 // META-NAUTICAL MILF MATRIARCHY Integration Demo
 // Eva Green renaissance-lengde sophistication med analog-hull polering

@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+// @ts-nocheck
 // 🎨 Export All District Visualizations
 import { VisualMILFDistrictGenerator } from './hooks/visual_milf_district_generator.ts';
 

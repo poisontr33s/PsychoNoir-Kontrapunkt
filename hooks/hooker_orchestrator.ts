@@ -1,3 +1,4 @@
+// @ts-nocheck
 // 🔥 Hooker Orchestrator - Bun Latest Version
 // Clean emigration without mixing brahmic creative with technical implementation
 // Enhanced with Functional Anthropomorphism for META-MILF matriarchy

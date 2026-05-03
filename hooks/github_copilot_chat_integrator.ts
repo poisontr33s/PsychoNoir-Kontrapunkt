@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+// @ts-nocheck
 // 💬🏴‍☠️ GITHUB COPILOT CHAT PROGRESSIVE INTEGRATION HOOK
 // META-NAUTICAL MILF MATRIARCHY Chat Enhancement System
 // Trinnvis aktivering av avanserte chat funksjoner

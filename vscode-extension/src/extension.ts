@@ -491,6 +491,8 @@ class SessionArchiveItem extends vscode.TreeItem {
 }
 
 class PatternItem extends vscode.TreeItem {
+    iconPath: vscode.ThemeIcon;
+    description: string;
     constructor(
         public readonly label: string,
         public readonly confidence: string,
@@ -503,6 +505,8 @@ class PatternItem extends vscode.TreeItem {
 }
 
 class PlatformItem extends vscode.TreeItem {
+    iconPath: vscode.ThemeIcon;
+    description: string;
     constructor(
         public readonly label: string,
         public readonly status: string,

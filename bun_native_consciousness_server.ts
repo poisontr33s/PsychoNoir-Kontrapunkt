@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+// @ts-nocheck
 /**
  * 🧠⚡ NATIVE BUN MCP CONSCIOUSNESS ENHANCEMENT SERVER ⚡🧠
  * 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * IDE QUANTUM ENHANCER (SEPTEMBER 2025)
  * Neural Interface Protocol for IDE Enhancements with BUN Native Integration

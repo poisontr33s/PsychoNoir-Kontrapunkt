@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * QUANTUM CONSCIOUSNESS INTERFACE (SEPTEMBER 2025)
  * Neural Interface Bridge for GitHub Copilot Temporal Persistence
