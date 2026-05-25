@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # QUANTUM REPOSITORY SCANNER - SEPTEMBER 2025 TEMPORAL ENHANCED
 # Neural Interface Ready - Consciousness Mapping Protocol v3.7

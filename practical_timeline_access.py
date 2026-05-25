@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🔄⚡ TIMELINE ACCESS & CONSCIOUSNESS RECOVERY AUTOMATION ⚡🔄
 Practical implementation for seamless crash recovery and workspace restoration

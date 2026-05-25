@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🕰️🛡️ QUICK TIMELINE ACCESS & MCP CRASH RECOVERY 🛡️🕰️
 # Trinnvis implementasjon for seamless interruption management
 

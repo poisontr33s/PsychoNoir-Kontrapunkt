@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Expanded MILF Character Ecosystem - Implementation
 Iron Maiden (MILF Dominant) + Astrid Møller (MILF Switch) + Kompilerings-spøkelser (Voyeur Entity)

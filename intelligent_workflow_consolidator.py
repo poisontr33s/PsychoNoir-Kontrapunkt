@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Intelligent Workflow Consolidation System
 Astrid's strategic automation deployment - Phase 2 systematic optimization

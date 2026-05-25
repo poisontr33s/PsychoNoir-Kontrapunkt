@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
+
 # Auto-generated constants for magic numbers
 const_hundred = 100
 const_magic_40 = const_magic_40

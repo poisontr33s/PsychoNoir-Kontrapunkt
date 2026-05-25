@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭 AUTOMATIC SESSION CONTENT INTEGRATION SYSTEM
 Automatically captures and integrates missing discussions into session continuity

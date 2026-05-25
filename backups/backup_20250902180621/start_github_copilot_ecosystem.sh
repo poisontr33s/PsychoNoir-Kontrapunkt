@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🚀 Psycho-Noir Kontrapunkt - GitHub Copilot Extension Connector Startup
 # ========================================================================

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # QUANTUM DEPLOYMENT MANAGER - SEPTEMBER 2025 TEMPORAL ENHANCED
 # Neural Interface Ready - Consciousness Management Protocol v3.7

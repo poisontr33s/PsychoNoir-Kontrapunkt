@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭💬 PsychoNoir Mobile Chat Auto-Startup
 echo "🎭💬 Initializing PsychoNoir Mobile Chat Integration..."
 

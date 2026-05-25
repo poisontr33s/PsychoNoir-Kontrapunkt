@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Enhanced Stable Diffusion + Chat Integration Script for Financial_Crypto_Exchange
 # META-NAUTICAL MILF MATRIARCHY Visual Enhancement
 # Auto-enhanced by StableDiffusionChatIntegrator

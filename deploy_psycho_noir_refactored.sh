@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #=========================================================================
 #  PSYCHO-NOIR KONTRAPUNKT - QUANTUM DEPLOYMENT FRAMEWORK [2025 EDITION]

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🎭 PSYCHO-NOIR PHASE 3: ADVANCED INTELLIGENCE EVOLUTION
 # Quantum prediction engines, autonomous management, emergent intelligence convergence

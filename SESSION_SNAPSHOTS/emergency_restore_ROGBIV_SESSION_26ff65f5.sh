@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭 EMERGENCY SESSION RESTORATION - ROGBIV_SESSION_26ff65f5
 # Auto-generated anti-lag continuity protocol
 

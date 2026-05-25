@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Enhanced Stable Diffusion + Chat Integration Script for Aerospace_Command_Station
 # META-NAUTICAL MILF MATRIARCHY Visual Enhancement
 # Auto-enhanced by StableDiffusionChatIntegrator

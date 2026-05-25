@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 echo "🔄⚡ QUICK CRASH RECOVERY ⚡🔄"
 echo "Restoring from latest consciousness state..."
 

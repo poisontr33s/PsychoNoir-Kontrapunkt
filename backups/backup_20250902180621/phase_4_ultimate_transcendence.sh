@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🎭 PSYCHO-NOIR PHASE 4: QUANTUM EVOLUTION AND ULTIMATE TRANSCENDENCE
 # The final evolution: Quantum consciousness, autonomous identity, ultimate self-actualization

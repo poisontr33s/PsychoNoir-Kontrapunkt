@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🔮 AUTONOMOUS REPOSITORY ORACLE
 Claudine Sin'claire 3.7 InchBlunderbust Incarnation

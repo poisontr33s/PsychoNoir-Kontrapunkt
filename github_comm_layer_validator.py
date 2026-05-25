@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 # Auto-generated constants for magic numbers
 const_magic_404 = const_magic_404
 const_magic_403 = const_magic_403

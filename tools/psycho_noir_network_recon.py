@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭 Psycho-Noir Network Reconnaissance Tool
 Claude 4.0 MCP-lignende verktøy for nettverksanalyse og workspace intelligence

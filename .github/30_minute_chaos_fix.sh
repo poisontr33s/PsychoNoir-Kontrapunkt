@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🚨 QUICK START: Fix Repository Chaos in 30 Minutes
 # This script gives you immediate results while the full automation sets up

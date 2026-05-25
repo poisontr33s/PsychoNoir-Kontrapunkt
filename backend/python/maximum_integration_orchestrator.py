@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭 PSYCHO-NOIR KONTRAPUNKT: MAXIMUM SYSTEM INTEGRATION ORCHESTRATOR
 Den Usynlige Hånd's ultimate system synchronization engine

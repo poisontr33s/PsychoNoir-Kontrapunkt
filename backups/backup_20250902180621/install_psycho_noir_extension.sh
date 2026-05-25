@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭 PSYCHO-NOIR EXTENSION QUICK INSTALLER - ETERNAL SADHANA VERSION
 # Swimming upstream against VS Code extension fragmentation
 

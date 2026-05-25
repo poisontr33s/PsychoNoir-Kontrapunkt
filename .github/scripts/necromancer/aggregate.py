@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Necromancer Aggregator
 Psycho-Noir Kontrapunkt - Failure Observability System

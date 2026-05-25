@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 echo "🔄 Reconnecting MCP servers..."
 
 # Check if MCP servers are running

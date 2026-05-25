@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🎭 Psycho-Noir Kontrapunkt Repository Cleanup & Organization Script
 # GitHub + Copilot Ninja Course - Immediate Action Implementation

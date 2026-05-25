@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Generated immediate action commands
 
 echo "🎯 IMMEDIATE ACTIONS TO TAKE:"

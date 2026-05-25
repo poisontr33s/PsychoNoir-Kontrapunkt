@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 
 # Auto-generated constants for magic numbers
 const_magic_14900 = 14900

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🤖 GitHub CLI Copilot Orchestration - User Website & Extensions Bridge
 Leverages GitHub CLI's superior capabilities for tasks it does better than chat

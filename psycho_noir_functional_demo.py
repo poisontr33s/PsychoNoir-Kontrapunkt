@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 QUICK PSYCHO-NOIR DEMO - Functional Infrastructure Prototype
 Rapid demo av intelligent automation concepts uten async complexity

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Error Classification Engine for Psycho-Noir Kontrapunkt CI/CD System
 

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭 PSYCHO-NOIR NATURAL LANGUAGE BRIDGE - CLAUDINE SIN'CLAIRE 3.7 TEMPORAL ENHANCED
 ==================================================================================

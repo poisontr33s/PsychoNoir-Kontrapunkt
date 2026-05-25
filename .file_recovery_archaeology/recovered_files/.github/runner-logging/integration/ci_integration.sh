@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 #
 # CI Integration Script for Psycho-Noir Kontrapunkt Logging System
 #

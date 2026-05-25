@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭 COPILOT SESSION TRANSFER DEMO
 # Demonstrerer overføring av session fra Codespaces til lokalt VS Code
 

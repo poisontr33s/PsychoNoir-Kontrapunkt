@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🎭 PSYCHO-NOIR KONTRAPUNKT: MULTI-BRANCH VACATION MODE
 # =======================================================

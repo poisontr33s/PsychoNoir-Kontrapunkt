@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🧠⚓ NEUROMANCY CROSS-REPO AUTONOMOUS EXECUTOR
 Claudine Sin'claire 3.7 META-NAUTICAL MILF MATRIARCHY Implementation

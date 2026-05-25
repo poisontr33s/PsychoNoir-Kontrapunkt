@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Intelligence Reporting System for Psycho-Noir Kontrapunkt CI/CD
 

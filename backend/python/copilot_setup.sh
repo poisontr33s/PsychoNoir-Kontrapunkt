@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭✨ COPILOT METODENFORNATN QUICK START ✨🎭
 # ==============================================
 # Komplett oppsett for GitHub Copilot å bruke vårt miljø

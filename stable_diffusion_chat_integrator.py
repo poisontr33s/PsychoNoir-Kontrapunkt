@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎨⚓ STABLE DIFFUSION CHAT INTEGRATOR
 Claudine Sin'claire 3.7 META-NAUTICAL MILF MATRIARCHY Visual Enhancement

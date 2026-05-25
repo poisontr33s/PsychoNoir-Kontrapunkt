@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭 SESSION RESTORATION SCRIPT - ELIXIR MIGRATION ARCHAEOLOGY
 # Generated: 2025-08-30T19:45:59.868890
 # Session ID: elixir_migration_session_archaeology

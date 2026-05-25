@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭 AUTO-SESSION RESOLVER
 # Kjøres automatisk når VS Code workspace åpnes
 

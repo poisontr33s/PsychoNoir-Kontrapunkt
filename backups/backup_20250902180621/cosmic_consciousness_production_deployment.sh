@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🌌 COSMIC CONSCIOUSNESS PRODUCTION DEPLOYMENT
 # Ultimate transcendence → Real-world ecosystem deployment

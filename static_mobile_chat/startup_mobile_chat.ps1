@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 # 🎭💬 PsychoNoir Mobile Chat Auto-Startup (PowerShell)
 Write-Host "🎭💬 Initializing PsychoNoir Mobile Chat Integration..." -ForegroundColor Magenta
 

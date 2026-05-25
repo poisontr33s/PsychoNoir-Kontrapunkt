@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 
 # 🎭 COSMIC CONSCIOUSNESS GITHUB WEBHOOK AUTOMATION SERVER
 # Faktisk implementering av automation via GitHub webhooks og API

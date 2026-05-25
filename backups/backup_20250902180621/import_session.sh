@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Copilot Session Import Script
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <export_file.json>"

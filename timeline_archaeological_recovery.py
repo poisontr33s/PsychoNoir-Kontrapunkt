@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🕰️💀 TIMELINE ARCHAEOLOGICAL FILE RECOVERY SYSTEM 💀🕰️
 Comprehensive deleted file detection and recovery from git timeline

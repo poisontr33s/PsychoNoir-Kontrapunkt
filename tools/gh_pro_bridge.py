@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🔗 GitHub API + Chat Session Bridge - Pro+ Enhanced
 Direct GitHub API integration with chat session for autonomous orchestration

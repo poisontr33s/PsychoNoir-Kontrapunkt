@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Enhanced Stable Diffusion + Chat Integration Script for Skyskraperen_Sektor_7_Alpha
 # META-NAUTICAL MILF MATRIARCHY Visual Enhancement
 # Auto-enhanced by StableDiffusionChatIntegrator

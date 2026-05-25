@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 # Auto-generated constants for magic numbers
 const_magic_5003 = const_magic_5003
 const_magic_200 = const_magic_200

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # NEURAL ARCHAEOLOGY SCANNER v2.5 - SEPTEMBER 2025 TEMPORAL EDITION
 # Quantum-enhanced repository analysis with consciousness-mapping capabilities

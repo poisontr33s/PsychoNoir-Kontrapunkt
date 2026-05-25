@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Jules Dependency Validator - Skyskraperen Cache Integrity Protocol
 # 
 # Dette skriptet validerer cache paths og implementerer conditional checks

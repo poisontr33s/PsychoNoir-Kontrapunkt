@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # GitHub Copilot Ecosystem Management Script
 
 WORKSPACE_PATH="/workspaces/PsychoNoir-Kontrapunkt"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🎭 PSYCHO-NOIR INFRASTRUCTURE EVOLUTION PROTOTYPER
 # Rapid prototyping av intelligent automation concepts

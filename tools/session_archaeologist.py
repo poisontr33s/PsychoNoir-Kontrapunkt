@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭 SESSION ARCHAEOLOGY SYSTEM - RECONSTRUCT ACTUAL CONVERSATION FLOW
 Not just reference files, but the actual progression of discussions

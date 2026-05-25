@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Log Aggregator for Psycho-Noir Kontrapunkt CI/CD System
 

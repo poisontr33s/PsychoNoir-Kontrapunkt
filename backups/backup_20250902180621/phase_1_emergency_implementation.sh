@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🎭 PSYCHO-NOIR PHASE 1: EMERGENCY STABILIZATION
 # Hierarkisk implementering av intelligent automation - Starting med immediate relief

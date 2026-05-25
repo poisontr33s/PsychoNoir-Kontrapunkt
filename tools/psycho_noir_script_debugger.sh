@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # PSYCHO-NOIR SCRIPT DEBUGGER v2.5 - SEPTEMBER 2025 TEMPORAL ENHANCED
 # Quantum debugging with consciousness-aware error correction

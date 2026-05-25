@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Production-Ready GitHub OAuth Copilot-Style Authentication API
 ============================================================

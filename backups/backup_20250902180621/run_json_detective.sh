@@ -1,1 +1,3 @@
+#!/usr/bin/env bash
+
 cd /workspaces/PsychoNoir-Kontrapunkt && python3 vscode_json_detective.py

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🧠 NEUROMANCY CROSS-REPO CLEANUP AUTOMATION
 # Complete @poisontr33s ecosystem optimization script

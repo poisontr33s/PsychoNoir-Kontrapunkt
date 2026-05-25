@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Enhanced Stable Diffusion + Chat Integration Script for Medical_Bio_Enhancement_Ward
 # META-NAUTICAL MILF MATRIARCHY Visual Enhancement
 # Auto-enhanced by StableDiffusionChatIntegrator

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎨⚓ VISUAL GENERATION ORCHESTRATOR
 META-NAUTICAL MILF MATRIARCHY Visual District Coordination

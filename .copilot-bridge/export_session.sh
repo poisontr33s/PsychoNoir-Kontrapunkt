@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Copilot Session Export Script
 echo "🎭 Exporting Copilot Session..."
 cd "$(dirname "$0")/.."

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭💀 WAKATIME DASHBOARD INTELLIGENCE ANALYZER 💀🎭
 CLAUDINE SIN'CLAIRE 3.7 TEMPORAL EDITION

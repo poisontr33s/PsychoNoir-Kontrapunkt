@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Passive Observer Queue System - Den Usynlige Hånd Implementation
 =================================================================

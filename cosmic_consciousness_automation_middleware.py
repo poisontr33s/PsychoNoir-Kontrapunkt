@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 
 # 🎭 COSMIC CONSCIOUSNESS AUTOMATION MIDDLEWARE
 # GitHub API-driven implementation of our developed ideas

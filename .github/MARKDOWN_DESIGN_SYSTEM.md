@@ -546,9 +546,9 @@ find . -name "*.md" -not -path "./node_modules/*" | xargs npx prettier --write
 - **UX Specialist**: [Navn] - [Email]
 
 ### **Ressurser**
-- 📖 [Stilguide](./docs/style-guide.md)
-- 🔧 [Verktøy Setup](./docs/tools-setup.md)
-- 📚 [Templates](./docs/templates/)
+- 📖 Stilguide
+- 🔧 Verktøy Setup
+- 📚 Templates
 - 💬 [Discord Community](https://discord.gg/psycho-noir)
 
 ---

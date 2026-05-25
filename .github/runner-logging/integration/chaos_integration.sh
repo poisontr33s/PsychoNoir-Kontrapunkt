@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 #
 # Chaos Integration Script for Psycho-Noir Kontrapunkt Intelligence System
 #

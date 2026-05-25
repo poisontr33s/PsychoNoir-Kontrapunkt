@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 # IMPLEMENTATION KICKSTART SCRIPT
 # Psycho-Noir Kontrapunkt - Begynner implementation av top preventions
 

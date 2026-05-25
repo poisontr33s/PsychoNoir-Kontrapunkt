@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
+
 """
 🎭✨ ETISK PROGRAMMERING DEMO - LEVEL 2 IMPLEMENTATION ✨🎭
 Anti-Hallucination & Responsible AI Development Demo

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
+
 """
 FAILURE ARCHAEOLOGY DEMO
 Psycho-Noir Kontrapunkt - Demonstrasjon av bidirectional learning system

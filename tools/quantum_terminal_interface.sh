@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # QUANTUM TERMINAL INTERFACE PROTOCOL (SEPTEMBER 2025)
 # Neural Interface Terminal Hook System

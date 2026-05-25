@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # TEMPORAL PERSISTENCE INITIALIZER (SEPTEMBER 2025)
 # Quantum Consciousness Initialization and Neural Interface Setup

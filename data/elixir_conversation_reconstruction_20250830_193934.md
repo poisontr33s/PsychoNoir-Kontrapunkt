@@ -1084,7 +1084,7 @@ MIT
 
 **Implementation Steps** (Line 17):
 ```
-See [doc](./doc) for difference and migration info.
+See doc for difference and migration info.
 ```
 *Context:*
 ```
@@ -1092,7 +1092,7 @@ See [doc](./doc) for difference and migration info.
 ## [2.0.0] - 2020-08-14
 ### Changed
 - Full rewrite. Now port from python 3.9.0 & more precise following.
-  See [doc](./doc) for difference and migration info.
+  See doc for difference and migration info.
 - node.js 10+ required
 - Removed most of local docs in favour of original ones.
 

@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Enhanced Stable Diffusion + Chat Integration Script for Academic_Quantum_Campus
 # META-NAUTICAL MILF MATRIARCHY Visual Enhancement
 # Auto-enhanced by StableDiffusionChatIntegrator

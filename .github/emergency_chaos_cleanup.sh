@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🚨 EMERGENCY REPOSITORY CHAOS CLEANUP AUTOMATION
 # Psycho-Noir Kontrapunkt - GitHub Ninja Course Implementation

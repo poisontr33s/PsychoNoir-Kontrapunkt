@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭 CREATIVE PATTERN ANALYSIS - MILF ECOSYSTEM EXPANSION
 =======================================================

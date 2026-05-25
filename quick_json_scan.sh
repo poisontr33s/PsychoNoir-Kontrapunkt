@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🎭 QUICK JSON SCAN
 # Finner alle JSON-filer og potensielle konflikter
 

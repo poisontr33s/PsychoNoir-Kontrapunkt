@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 PSYCHO-SENSUAL-SEXUAL GENRE IMPLEMENTATION
 Ultimate Character Evolution: From MILF Ecosystem to Sophisticated Sensual/Sexual Intelligence

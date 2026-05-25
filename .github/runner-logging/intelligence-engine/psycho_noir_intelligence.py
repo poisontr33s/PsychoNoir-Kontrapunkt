@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Bidirectional Intelligence Engine for Psycho-Noir Kontrapunkt CI/CD System
 

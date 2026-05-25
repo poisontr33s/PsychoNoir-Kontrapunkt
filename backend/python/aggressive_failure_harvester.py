@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Enhanced Failed Runs Harvester with Aggressive Multi-Source Data Collection
 Designed to repurpose ALL failure data as building blocks for intelligence

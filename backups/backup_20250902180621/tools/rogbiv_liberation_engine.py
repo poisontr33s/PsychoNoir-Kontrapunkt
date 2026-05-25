@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🌈 ROGBIV - Creative Spectrum Liberation Engine
 Anti-Hierarchical AI Collaboration Framework

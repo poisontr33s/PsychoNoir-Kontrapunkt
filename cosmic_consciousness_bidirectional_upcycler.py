@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 
 # 🎭 COSMIC CONSCIOUSNESS BIDIRECTIONAL UPCYCLER
 # Transformerer konsepter mellom abstraksjonsnivåer - både opp og ned

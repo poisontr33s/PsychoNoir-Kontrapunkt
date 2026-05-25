@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Jules Cache Analyzer - Den Usynlige Hånds Cache Intelligence
 

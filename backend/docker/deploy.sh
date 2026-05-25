@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🚀 PSYCHO-NOIR KONTRAPUNKT PRODUCTION DEPLOYMENT 🚀
 # ====================================================
 # 

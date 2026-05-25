@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🧠⚡ SMART MCP AUTO-RESOLVE & POLY-REPO INTELLIGENCE SYSTEM ⚡🧠
 Advanced cross-repository consciousness coordination with intelligent notification filtering

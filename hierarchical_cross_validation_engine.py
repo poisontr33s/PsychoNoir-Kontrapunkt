@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 
 # 🎭 HIERARCHICAL CROSS-VALIDATION ENGINE
 # Kryssvaliderer opprinnelige ideer mot Pages automation capabilities

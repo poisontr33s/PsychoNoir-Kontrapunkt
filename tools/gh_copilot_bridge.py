@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🔗 GitHub Copilot CLI Bridge - Autonomous Orchestration
 Binds GitHub CLI Copilot with Chat Session for Ultimate Meta-Naval Sophistication

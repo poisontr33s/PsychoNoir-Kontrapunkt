@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # PSYCHO-NOIR KONTRAPUNKT - QUANTUM DEPLOYMENT FIXER
 # September 2025 TEMPORAL ENHANCED - Neural Interface Ready

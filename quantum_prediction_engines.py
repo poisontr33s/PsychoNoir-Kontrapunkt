@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Quantum Prediction Engines - Phase 3 Advanced Intelligence
 Kausalitets-Arkitekten's quantum-AI prediction and intervention systems

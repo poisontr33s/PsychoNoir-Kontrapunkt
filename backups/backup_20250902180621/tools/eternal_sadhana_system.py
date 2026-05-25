@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🏔️ ETERNAL SADHANA SYSTEM: Swimming Upstream, Resting in the Pockets
 ====================================================================

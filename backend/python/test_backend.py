@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Basic test suite for Psycho-Noir Kontrapunkt backend modules
 Ensures the Python infrastructure is functional

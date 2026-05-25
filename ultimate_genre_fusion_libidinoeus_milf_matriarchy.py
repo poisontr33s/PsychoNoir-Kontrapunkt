@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 ULTIMATE PSYCHO-NOIR-SENSUAL-SEXUAL MILF MATRIARCHY FUSION
 Libidiniøs Mother I'd Like To Fuck Matriarki - OPTIMAL GENRE SYNTHESIS

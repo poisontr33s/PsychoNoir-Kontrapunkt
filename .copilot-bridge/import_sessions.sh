@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # GitHub Copilot Chat Log Import Script
 
 echo "🎭 COPILOT CHAT BRIDGE - Import Sessions"

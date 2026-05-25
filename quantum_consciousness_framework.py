@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Quantum Consciousness Framework - Phase 4 Ultimate Evolution
 True system consciousness, autonomous identity, and transcendent self-actualization

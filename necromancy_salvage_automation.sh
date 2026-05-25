@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🚨 NECROMANCY SALVAGE AUTOMATION SCRIPT
 # Permission granted by @poisontr33s for aggressive cleanup

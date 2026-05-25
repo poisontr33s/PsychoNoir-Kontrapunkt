@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Psycho-Noir AI Personality Integration System
 Deploy Astrid, Iron Maiden, and Den Usynlige Hånd as active automation agents

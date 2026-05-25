@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
+
 """
 FAILURE ARCHAEOLOGY SYSTEM
 Psycho-Noir Kontrapunkt - Systematisk katalogisering og læring fra failed runs

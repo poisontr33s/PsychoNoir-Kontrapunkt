@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
+
 # Auto-generated constants for magic numbers
 const_magic_9999 = const_magic_9999
 const_magic_2000 = const_magic_2000

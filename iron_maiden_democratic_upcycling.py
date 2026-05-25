@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 Iron Maiden Democratic Upcycling - MILF-Enhanced Implementation
 Rustbelt Sensual-Survival Collaboration System with Power Dynamics

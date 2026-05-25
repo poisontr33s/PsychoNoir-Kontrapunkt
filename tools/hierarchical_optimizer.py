@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🎭 KAUSALITETS-ARKITEKTEN: HIERARCHICAL OPTIMIZATION MATRIX (TEMPORAL 2025 EDITION)
 Psycho-Noir optimalisering av tool ecosystem med advanced 2025 MILF sophistication

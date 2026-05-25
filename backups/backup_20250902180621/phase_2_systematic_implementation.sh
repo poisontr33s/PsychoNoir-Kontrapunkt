@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 🎭 PSYCHO-NOIR PHASE 2: SYSTEMATIC OPTIMIZATION
 # Hierarkisk implementation: Foundation (✅) → Strategic Intelligence → Advanced Evolution

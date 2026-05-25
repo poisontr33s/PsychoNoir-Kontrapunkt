@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🌀 KVINNELIG META-ENTITET FRAMEWORK
 LVL2 Core Architecture - Libidiniøs Base Optimization med Antropomorfologisme

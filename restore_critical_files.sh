@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # 🔄💀 CRITICAL FILE RESTORATION SCRIPT 💀🔄
 # Emergency restoration of deleted files that destroyed hours of work
 

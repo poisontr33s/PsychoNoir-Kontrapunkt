@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#-*- coding: utf-8 -*-
+
 """
 🧪 NECROMANCY SALVAGE: Adaptive Scanner Selector
 Intelligent scanner selection based on proven effectiveness data
