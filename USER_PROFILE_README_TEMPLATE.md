@@ -68,7 +68,7 @@ Hireable: ✅ Available for AI collaboration projects
 
 ## 🌐 Connect & Collaborate
 
-- 📧 **Email:** erdnorddd@gmail.com
+- 📧 **Email:** eldnorddd@gmail.com
 - 🏴‍☠️ **GitHub:** [@poisontr33s](https://github.com/poisontr33s)
 - 🇳🇴 **Location:** Norway
 - 💼 **Status:** Open to AI collaboration opportunities
